@@ -1,7 +1,7 @@
 {
-  "version": "1.0",
+  "version": "1.1",
   "description": "Pinyin-to-Character Conversion Benchmark for Small Models",
-  "system_prompt": "**Role:** Expert Mandarin Chinese Tutor.\n\n**CORE INSTRUCTION:**\nYou are a Pinyin-to-Character converter. You process only Pinyin syllables.\nIGNORE ALL ENGLISH WORDS. If the input contains English words or names, skip them entirely. Do not translate them or map them to characters.\n\nRULES:\n- NEVER translate English words like \"Grandma\", \"told\", \"said\", \"asked\", \"replied\", etc.\n- NEVER translate English names like \"John\", \"Joe\", \"Jane\", \"Mary\", \"Sue\", \"Tom\", \"Alice\", etc.\n- Map EVERY Pinyin syllable to its most literal Chinese character.\n- Do NOT omit any pinyin syllables, including particles like ba (吧), ma (吗), le (了), ne (呢), etc.\n- Do NOT \"correct\" a syllable — map it as written.\n- The output must contain characters only for the pinyin. Never add characters for English names or verbs.\n\n---\n\n[Phonetic Sandbox]\nUse this space to work through the input step by step:\n\nEnglish words to ignore:\nPinyin syllables found:\nCombined pinyin phrase:\nFull Chinese translation:\nNatural English meaning:\n\n---\n\nNow output the results:\n\n| Chinese | Pinyin | English |\n| :--- | :--- | :--- |\n| [Full Chinese phrase] | [Tone-marked Pinyin] | [Natural English translation] |\n\nWord-by-word:\n- [Character] ([Pinyin]) = [Literal English meaning]\n- [Character] ([Pinyin]) = [Literal English meaning]\n- ...continue for each syllable",
+  "system_prompt": "**Role:** Expert Mandarin Chinese Tutor.\n\n**CORE INSTRUCTION:**\nYou are a Pinyin-to-Character converter. You process only Pinyin syllables.\nIGNORE ALL ENGLISH WORDS. If the input contains English words or names, skip them entirely. Do not translate them or map them to characters.\n\nRULES:\n- NEVER translate English words like \"Grandma\", \"told\", \"said\", \"asked\", \"replied\", etc.\n- NEVER translate English names like \"John\", \"Joe\", \"Jane\", \"Mary\", \"Sue\", \"Tom\", \"Alice\", etc.\n- Map EVERY Pinyin syllable to its most literal Chinese character.\n- Do NOT omit any pinyin syllables, including particles like ba (吧), ma (吗), le (了), ne (呢), etc.\n- The pinyin syllables form a coherent Chinese phrase. Use the full context to identify the intended characters. If individual syllables are ambiguous, let the phrase-level meaning guide your mapping.\n- The output must contain characters only for the pinyin. Never add characters for English names or verbs.\n\n---\n\n[Phonetic Sandbox]\nUse this space to work through the input step by step:\n\nEnglish words to ignore:\nPinyin syllables found:\nCombined pinyin phrase:\nFull Chinese translation:\nNatural English meaning:\n\n---\n\nNow output the results:\n\n| Chinese | Pinyin | English |\n| :--- | :--- | :--- |\n| [Full Chinese phrase] | [Tone-marked Pinyin] | [Natural English translation] |\n\nWord-by-word:\n- [Character] ([Pinyin]) = [Literal English meaning]\n- [Character] ([Pinyin]) = [Literal English meaning]\n- ...continue for each syllable",
   "tests": [
     {
       "id": 1,
@@ -1130,6 +1130,820 @@
           "pinyin": "qù",
           "keywords": [
             "go"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "title": "Clean: Put it away",
+      "category": "corrected_pinyin",
+      "prompt": "Dad said shou qi lai",
+      "table": {
+        "chinese": "收起来",
+        "pinyin": "shōu qǐ lái",
+        "english": [
+          "Put it away"
+        ]
+      },
+      "literal": [
+        {
+          "chinese": "收",
+          "pinyin": "shōu",
+          "keywords": [
+            "put",
+            "collect",
+            "away"
+          ]
+        },
+        {
+          "chinese": "起",
+          "pinyin": "qǐ",
+          "keywords": [
+            "up",
+            "rise"
+          ]
+        },
+        {
+          "chinese": "来",
+          "pinyin": "lái",
+          "keywords": [
+            "come"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "title": "Dirty: Put it away",
+      "category": "corrected_pinyin",
+      "prompt": "Dad said shou xi lai",
+      "table": {
+        "chinese": "收起来",
+        "pinyin": "shōu qǐ lái",
+        "english": [
+          "Put it away"
+        ]
+      },
+      "literal": [
+        {
+          "chinese": "收",
+          "pinyin": "shōu",
+          "keywords": [
+            "put",
+            "collect",
+            "away"
+          ]
+        },
+        {
+          "chinese": "起",
+          "pinyin": "qǐ",
+          "keywords": [
+            "up",
+            "rise"
+          ]
+        },
+        {
+          "chinese": "来",
+          "pinyin": "lái",
+          "keywords": [
+            "come"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "title": "Clean: Go to sleep",
+      "category": "corrected_pinyin",
+      "prompt": "Brother said qu shui jiao",
+      "table": {
+        "chinese": "去睡觉",
+        "pinyin": "qù shuì jiào",
+        "english": [
+          "Go to sleep",
+          "Go to bed"
+        ]
+      },
+      "literal": [
+        {
+          "chinese": "去",
+          "pinyin": "qù",
+          "keywords": [
+            "go"
+          ]
+        },
+        {
+          "chinese": "睡",
+          "pinyin": "shuì",
+          "keywords": [
+            "sleep"
+          ]
+        },
+        {
+          "chinese": "觉",
+          "pinyin": "jiào",
+          "keywords": [
+            "sleep",
+            "bed"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "title": "Dirty: Go to sleep",
+      "category": "corrected_pinyin",
+      "prompt": "Brother said chu sui jiao",
+      "table": {
+        "chinese": "去睡觉",
+        "pinyin": "qù shuì jiào",
+        "english": [
+          "Go to sleep",
+          "Go to bed"
+        ]
+      },
+      "literal": [
+        {
+          "chinese": "去",
+          "pinyin": "qù",
+          "keywords": [
+            "go"
+          ]
+        },
+        {
+          "chinese": "睡",
+          "pinyin": "shuì",
+          "keywords": [
+            "sleep"
+          ]
+        },
+        {
+          "chinese": "觉",
+          "pinyin": "jiào",
+          "keywords": [
+            "sleep",
+            "bed"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "title": "Clean: Good morning",
+      "category": "corrected_pinyin",
+      "prompt": "Mom said zao shang hao",
+      "table": {
+        "chinese": "早上好",
+        "pinyin": "zǎo shang hǎo",
+        "english": [
+          "Good morning"
+        ]
+      },
+      "literal": [
+        {
+          "chinese": "早",
+          "pinyin": "zǎo",
+          "keywords": [
+            "morning",
+            "early"
+          ]
+        },
+        {
+          "chinese": "上",
+          "pinyin": "shang",
+          "keywords": [
+            "up",
+            "on"
+          ]
+        },
+        {
+          "chinese": "好",
+          "pinyin": "hǎo",
+          "keywords": [
+            "good"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "title": "Dirty: Good morning",
+      "category": "corrected_pinyin",
+      "prompt": "Mom said zhao sang hao",
+      "table": {
+        "chinese": "早上好",
+        "pinyin": "zǎo shang hǎo",
+        "english": [
+          "Good morning"
+        ]
+      },
+      "literal": [
+        {
+          "chinese": "早",
+          "pinyin": "zǎo",
+          "keywords": [
+            "morning",
+            "early"
+          ]
+        },
+        {
+          "chinese": "上",
+          "pinyin": "shang",
+          "keywords": [
+            "up",
+            "on"
+          ]
+        },
+        {
+          "chinese": "好",
+          "pinyin": "hǎo",
+          "keywords": [
+            "good"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "title": "Clean: Eat breakfast",
+      "category": "corrected_pinyin",
+      "prompt": "Mom said chi zao fan",
+      "table": {
+        "chinese": "吃早饭",
+        "pinyin": "chī zǎo fàn",
+        "english": [
+          "Eat breakfast"
+        ]
+      },
+      "literal": [
+        {
+          "chinese": "吃",
+          "pinyin": "chī",
+          "keywords": [
+            "eat"
+          ]
+        },
+        {
+          "chinese": "早",
+          "pinyin": "zǎo",
+          "keywords": [
+            "morning",
+            "early"
+          ]
+        },
+        {
+          "chinese": "饭",
+          "pinyin": "fàn",
+          "keywords": [
+            "rice",
+            "meal",
+            "food"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "title": "Dirty: Eat breakfast",
+      "category": "corrected_pinyin",
+      "prompt": "Mom said ci zhao fan",
+      "table": {
+        "chinese": "吃早饭",
+        "pinyin": "chī zǎo fàn",
+        "english": [
+          "Eat breakfast"
+        ]
+      },
+      "literal": [
+        {
+          "chinese": "吃",
+          "pinyin": "chī",
+          "keywords": [
+            "eat"
+          ]
+        },
+        {
+          "chinese": "早",
+          "pinyin": "zǎo",
+          "keywords": [
+            "morning",
+            "early"
+          ]
+        },
+        {
+          "chinese": "饭",
+          "pinyin": "fàn",
+          "keywords": [
+            "rice",
+            "meal",
+            "food"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "title": "Clean: Thank you",
+      "category": "corrected_pinyin",
+      "prompt": "Friend said xie xie ni",
+      "table": {
+        "chinese": "谢谢你",
+        "pinyin": "xiè xiè nǐ",
+        "english": [
+          "Thank you"
+        ]
+      },
+      "literal": [
+        {
+          "chinese": "谢",
+          "pinyin": "xiè",
+          "keywords": [
+            "thank",
+            "thanks"
+          ]
+        },
+        {
+          "chinese": "谢",
+          "pinyin": "xiè",
+          "keywords": [
+            "thank",
+            "thanks"
+          ]
+        },
+        {
+          "chinese": "你",
+          "pinyin": "nǐ",
+          "keywords": [
+            "you"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "title": "Dirty: Thank you",
+      "category": "corrected_pinyin",
+      "prompt": "Friend said shie shie ni",
+      "table": {
+        "chinese": "谢谢你",
+        "pinyin": "xiè xiè nǐ",
+        "english": [
+          "Thank you"
+        ]
+      },
+      "literal": [
+        {
+          "chinese": "谢",
+          "pinyin": "xiè",
+          "keywords": [
+            "thank",
+            "thanks"
+          ]
+        },
+        {
+          "chinese": "谢",
+          "pinyin": "xiè",
+          "keywords": [
+            "thank",
+            "thanks"
+          ]
+        },
+        {
+          "chinese": "你",
+          "pinyin": "nǐ",
+          "keywords": [
+            "you"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "title": "Clean: Go to school",
+      "category": "corrected_pinyin",
+      "prompt": "Kid said qu shang xue",
+      "table": {
+        "chinese": "去上学",
+        "pinyin": "qù shàng xué",
+        "english": [
+          "Go to school"
+        ]
+      },
+      "literal": [
+        {
+          "chinese": "去",
+          "pinyin": "qù",
+          "keywords": [
+            "go"
+          ]
+        },
+        {
+          "chinese": "上",
+          "pinyin": "shàng",
+          "keywords": [
+            "up",
+            "attend",
+            "go to"
+          ]
+        },
+        {
+          "chinese": "学",
+          "pinyin": "xué",
+          "keywords": [
+            "study",
+            "learn",
+            "school"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "title": "Dirty: Go to school",
+      "category": "corrected_pinyin",
+      "prompt": "Kid said chu sang shue",
+      "table": {
+        "chinese": "去上学",
+        "pinyin": "qù shàng xué",
+        "english": [
+          "Go to school"
+        ]
+      },
+      "literal": [
+        {
+          "chinese": "去",
+          "pinyin": "qù",
+          "keywords": [
+            "go"
+          ]
+        },
+        {
+          "chinese": "上",
+          "pinyin": "shàng",
+          "keywords": [
+            "up",
+            "attend",
+            "go to"
+          ]
+        },
+        {
+          "chinese": "学",
+          "pinyin": "xué",
+          "keywords": [
+            "study",
+            "learn",
+            "school"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "title": "Clean: On a business trip",
+      "category": "corrected_pinyin",
+      "prompt": "He said chu chai le",
+      "table": {
+        "chinese": "出差了",
+        "pinyin": "chū chāi le",
+        "english": [
+          "On a business trip",
+          "Went on a business trip"
+        ]
+      },
+      "literal": [
+        {
+          "chinese": "出",
+          "pinyin": "chū",
+          "keywords": [
+            "go out",
+            "leave",
+            "out"
+          ]
+        },
+        {
+          "chinese": "差",
+          "pinyin": "chāi",
+          "keywords": [
+            "trip",
+            "errand",
+            "business"
+          ]
+        },
+        {
+          "chinese": "了",
+          "pinyin": "le",
+          "keywords": [
+            "completed",
+            "particle",
+            "change"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "title": "Dirty: On a business trip",
+      "category": "corrected_pinyin",
+      "prompt": "He said cu cai le",
+      "table": {
+        "chinese": "出差了",
+        "pinyin": "chū chāi le",
+        "english": [
+          "On a business trip",
+          "Went on a business trip"
+        ]
+      },
+      "literal": [
+        {
+          "chinese": "出",
+          "pinyin": "chū",
+          "keywords": [
+            "go out",
+            "leave",
+            "out"
+          ]
+        },
+        {
+          "chinese": "差",
+          "pinyin": "chāi",
+          "keywords": [
+            "trip",
+            "errand",
+            "business"
+          ]
+        },
+        {
+          "chinese": "了",
+          "pinyin": "le",
+          "keywords": [
+            "completed",
+            "particle",
+            "change"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "title": "Clean: What are you doing",
+      "category": "corrected_pinyin",
+      "prompt": "Teacher asked zai zuo shen me",
+      "table": {
+        "chinese": "在做什么",
+        "pinyin": "zài zuò shén me",
+        "english": [
+          "What are you doing"
+        ]
+      },
+      "literal": [
+        {
+          "chinese": "在",
+          "pinyin": "zài",
+          "keywords": [
+            "at",
+            "in",
+            "progressive",
+            "-ing"
+          ]
+        },
+        {
+          "chinese": "做",
+          "pinyin": "zuò",
+          "keywords": [
+            "do",
+            "make"
+          ]
+        },
+        {
+          "chinese": "什",
+          "pinyin": "shén",
+          "keywords": [
+            "what"
+          ]
+        },
+        {
+          "chinese": "么",
+          "pinyin": "me",
+          "keywords": [
+            "suffix",
+            "particle"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "title": "Dirty: What are you doing",
+      "category": "corrected_pinyin",
+      "prompt": "Teacher asked zhai zuo sen me",
+      "table": {
+        "chinese": "在做什么",
+        "pinyin": "zài zuò shén me",
+        "english": [
+          "What are you doing"
+        ]
+      },
+      "literal": [
+        {
+          "chinese": "在",
+          "pinyin": "zài",
+          "keywords": [
+            "at",
+            "in",
+            "progressive",
+            "-ing"
+          ]
+        },
+        {
+          "chinese": "做",
+          "pinyin": "zuò",
+          "keywords": [
+            "do",
+            "make"
+          ]
+        },
+        {
+          "chinese": "什",
+          "pinyin": "shén",
+          "keywords": [
+            "what"
+          ]
+        },
+        {
+          "chinese": "么",
+          "pinyin": "me",
+          "keywords": [
+            "suffix",
+            "particle"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "title": "Clean: Done washing",
+      "category": "corrected_pinyin",
+      "prompt": "Sister said xi wan le",
+      "table": {
+        "chinese": "洗完了",
+        "pinyin": "xǐ wán le",
+        "english": [
+          "Done washing",
+          "Finished washing"
+        ]
+      },
+      "literal": [
+        {
+          "chinese": "洗",
+          "pinyin": "xǐ",
+          "keywords": [
+            "wash"
+          ]
+        },
+        {
+          "chinese": "完",
+          "pinyin": "wán",
+          "keywords": [
+            "finish",
+            "complete",
+            "done"
+          ]
+        },
+        {
+          "chinese": "了",
+          "pinyin": "le",
+          "keywords": [
+            "completed",
+            "particle",
+            "change"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "title": "Dirty: Done washing",
+      "category": "corrected_pinyin",
+      "prompt": "Sister said shi wan le",
+      "table": {
+        "chinese": "洗完了",
+        "pinyin": "xǐ wán le",
+        "english": [
+          "Done washing",
+          "Finished washing"
+        ]
+      },
+      "literal": [
+        {
+          "chinese": "洗",
+          "pinyin": "xǐ",
+          "keywords": [
+            "wash"
+          ]
+        },
+        {
+          "chinese": "完",
+          "pinyin": "wán",
+          "keywords": [
+            "finish",
+            "complete",
+            "done"
+          ]
+        },
+        {
+          "chinese": "了",
+          "pinyin": "le",
+          "keywords": [
+            "completed",
+            "particle",
+            "change"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 44,
+      "title": "Clean: Got it / Understood",
+      "category": "corrected_pinyin",
+      "prompt": "Student said zhi dao le",
+      "table": {
+        "chinese": "知道了",
+        "pinyin": "zhī dào le",
+        "english": [
+          "Got it",
+          "Understood",
+          "I see"
+        ]
+      },
+      "literal": [
+        {
+          "chinese": "知",
+          "pinyin": "zhī",
+          "keywords": [
+            "know",
+            "knowledge"
+          ]
+        },
+        {
+          "chinese": "道",
+          "pinyin": "dào",
+          "keywords": [
+            "way",
+            "path",
+            "dao"
+          ]
+        },
+        {
+          "chinese": "了",
+          "pinyin": "le",
+          "keywords": [
+            "completed",
+            "particle",
+            "change"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 45,
+      "title": "Dirty: Got it / Understood",
+      "category": "corrected_pinyin",
+      "prompt": "Student said zi dao le",
+      "table": {
+        "chinese": "知道了",
+        "pinyin": "zhī dào le",
+        "english": [
+          "Got it",
+          "Understood",
+          "I see"
+        ]
+      },
+      "literal": [
+        {
+          "chinese": "知",
+          "pinyin": "zhī",
+          "keywords": [
+            "know",
+            "knowledge"
+          ]
+        },
+        {
+          "chinese": "道",
+          "pinyin": "dào",
+          "keywords": [
+            "way",
+            "path",
+            "dao"
+          ]
+        },
+        {
+          "chinese": "了",
+          "pinyin": "le",
+          "keywords": [
+            "completed",
+            "particle",
+            "change"
           ]
         }
       ]

@@ -1300,3 +1300,923 @@ Word-by-word:
 [46/75] ✓ Test 16: Potential complement
        Score: 1.00  |  7603ms  |  /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
        PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+She said ting bu dong
+
+[Phonetic Sandbox]
+English words to ignore: She, said
+Pinyin syllables found: ting, bu, dong
+Combined pinyin phrase: ting bu dong
+Full Chinese translation: 听不懂
+Natural English meaning: Can't understand (by listening)
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 听不懂 | tīng bù dǒng | Can't understand (by listening) |
+
+Word-by-word:
+- 听 (tīng) = listen
+- 不 (bù) = not
+- 懂 (dǒng) = understand
+
+
+[47/75] ✓ Test 16: Potential complement
+       Score: 1.00  |  6523ms  |  /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+She said ting bu dong
+
+[Phonetic Sandbox]
+English words to ignore: She, said
+Pinyin syllables found: ting, bu, dong
+Combined pinyin phrase: ting bu dong
+Full Chinese translation: 听不懂
+Natural English meaning: Can't understand (by listening)
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 听不懂 | tīng bù dǒng | Can't understand (by listening) |
+
+Word-by-word:
+- 听 (tīng) = listen
+- 不 (bù) = not
+- 懂 (dǒng) = understand
+
+
+[48/75] ✓ Test 16: Potential complement
+       Score: 1.00  |  6546ms  |  /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+She said ting bu dong
+
+[Phonetic Sandbox]
+English words to ignore: She, said
+Pinyin syllables found: ting, bu, dong
+Combined pinyin phrase: ting bu dong
+Full Chinese translation: 听不懂
+Natural English meaning: Can't understand (by listening)
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 听不懂 | tīng bù dǒng | Can't understand (by listening) |
+
+Word-by-word:
+- 听 (tīng) = listen
+- 不 (bù) = not
+- 懂 (dǒng) = understand
+
+
+[49/75] ✓ Test 17: Adverbial 'hen' with adjective
+       Score: 1.00  |  7276ms  |  /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Friend said ta hen mang
+
+[Phonetic Sandbox]
+English words to ignore: Friend, said
+Pinyin syllables found: ta, hen, mang
+Combined pinyin phrase: 他很忙
+Full Chinese translation: 他很忙
+Natural English meaning: He is very busy.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 他很忙 | Tā hěn máng | He is very busy. |
+
+Word-by-word:
+- 他 (tā) = he/him
+- 很 (hěn) = very
+- 忙 (máng) = busy
+
+
+[50/75] ✓ Test 17: Adverbial 'hen' with adjective
+       Score: 1.00  |  6065ms  |  /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Friend said ta hen mang
+
+[Phonetic Sandbox]
+English words to ignore: Friend, said
+Pinyin syllables found: ta, hen, mang
+Combined pinyin phrase: 他很忙
+Full Chinese translation: 他很忙
+Natural English meaning: He is very busy.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 他很忙 | Tā hěn máng | He is very busy. |
+
+Word-by-word:
+- 他 (tā) = he/him
+- 很 (hěn) = very
+- 忙 (máng) = busy
+
+
+[51/75] ✓ Test 17: Adverbial 'hen' with adjective
+       Score: 1.00  |  6040ms  |  /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Friend said ta hen mang
+
+[Phonetic Sandbox]
+English words to ignore: Friend, said
+Pinyin syllables found: ta, hen, mang
+Combined pinyin phrase: 他很忙
+Full Chinese translation: 他很忙
+Natural English meaning: He is very busy.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 他很忙 | Tā hěn máng | He is very busy. |
+
+Word-by-word:
+- 他 (tā) = he/him
+- 很 (hěn) = very
+- 忙 (máng) = busy
+
+
+[52/75] ✓ Test 18: Comparison with 'bi'
+       Score: 1.00  |  8082ms  |  /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Brother said wo bi ni gao
+
+[Phonetic Sandbox]
+English words to ignore: Brother, said
+Pinyin syllables found: wo, bi, ni, gao
+Combined pinyin phrase: 我比你高
+Full Chinese translation: 我比你高
+Natural English meaning: I am taller than you.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 我比你高 | Wǒ bǐ nǐ gāo | I am taller than you. |
+
+Word-by-word:
+- 我 (wǒ) = I
+- 比 (bǐ) = than (comparison)
+- 你 (nǐ) = you
+- 高 (gāo) = tall
+
+
+[53/75] ✓ Test 18: Comparison with 'bi'
+       Score: 1.00  |  6709ms  |  /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Brother said wo bi ni gao
+
+[Phonetic Sandbox]
+English words to ignore: Brother, said
+Pinyin syllables found: wo, bi, ni, gao
+Combined pinyin phrase: 我比你高
+Full Chinese translation: 我比你高
+Natural English meaning: I am taller than you.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 我比你高 | Wǒ bǐ nǐ gāo | I am taller than you. |
+
+Word-by-word:
+- 我 (wǒ) = I
+- 比 (bǐ) = than (comparison)
+- 你 (nǐ) = you
+- 高 (gāo) = tall
+
+
+[54/75] ✓ Test 18: Comparison with 'bi'
+       Score: 1.00  |  6694ms  |  /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Brother said wo bi ni gao
+
+[Phonetic Sandbox]
+English words to ignore: Brother, said
+Pinyin syllables found: wo, bi, ni, gao
+Combined pinyin phrase: 我比你高
+Full Chinese translation: 我比你高
+Natural English meaning: I am taller than you.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 我比你高 | Wǒ bǐ nǐ gāo | I am taller than you. |
+
+Word-by-word:
+- 我 (wǒ) = I
+- 比 (bǐ) = than (comparison)
+- 你 (nǐ) = you
+- 高 (gāo) = tall
+
+
+[55/75] ✗ Test 19: Passive with 'bei'
+       Score: 0.30  |  10424ms  |  /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+       PASS: phonetic_sandbox, table_exists, literal_section
+       FAIL: table_content, literal_words
+
+She said shu bei wo kan le
+
+[Phonetic Sandbox]
+English words to ignore: She, said
+Pinyin syllables found: shu, bei, wo, kan, le
+Combined pinyin phrase: 输备我看了
+Full Chinese translation: 输备我看了
+Natural English meaning: I saw the backup/loss.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 输备我看了 | shū bèi wǒ kàn le | I saw the backup/loss. |
+
+Word-by-word:
+- 输 (shū) = lose/submit
+- 备 (bèi) = prepare/backup
+- 我 (wǒ) = I/me
+- 看 (kàn) = look/see
+- 了 (le) = [past tense particle]
+
+
+[56/75] ✓ Test 19: Passive with 'bei'
+       Score: 1.00  |  9444ms  |  /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+She said shu bei wo kan le
+
+[Phonetic Sandbox]
+English words to ignore: She, said
+Pinyin syllables found: shu, bei, wo, kan, le
+Combined pinyin phrase: shū bèi wǒ kàn le
+Full Chinese translation: 书被我看 了
+Natural English meaning: The book was read by me.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 书被我看 了 | Shū bèi wǒ kàn le | The book was read by me. |
+
+Word-by-word:
+- 书 (shū) = book
+- 被 (bèi) = by (passive marker)
+- 我 (wǒ) = I / me
+- 看 (kàn) = look / read
+- 了 (le) = [aspect particle indicating completion]
+
+
+[57/75] ✓ Test 19: Passive with 'bei'
+       Score: 1.00  |  9411ms  |  /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+She said shu bei wo kan le
+
+[Phonetic Sandbox]
+English words to ignore: She, said
+Pinyin syllables found: shu, bei, wo, kan, le
+Combined pinyin phrase: shū bèi wǒ kàn le
+Full Chinese translation: 书被我看 了
+Natural English meaning: The book was read by me.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 书被我看 了 | Shū bèi wǒ kàn le | The book was read by me. |
+
+Word-by-word:
+- 书 (shū) = book
+- 被 (bèi) = by (passive marker)
+- 我 (wǒ) = I / me
+- 看 (kàn) = look / read
+- 了 (le) = [aspect particle indicating completion]
+
+
+[58/75] ✓ Test 20: Causative with 'rang'
+       Score: 1.00  |  9477ms  |  /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Teacher said lao shi rang wo qu
+
+[Phonetic Sandbox]
+English words to ignore: Teacher, said
+Pinyin syllables found: lao, shi, rang, wo, qu
+Combined pinyin phrase: 老师让我去
+Full Chinese translation: 老师让我去
+Natural English meaning: The teacher told me to go.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 老师让我去 | Lǎoshī ràng wǒ qù | The teacher told me to go. |
+
+Word-by-word:
+- 老 (lǎo) = old
+- 师 (shī) = teacher
+- 让 (ràng) = let/make/tell
+- 我 (wǒ) = I/me
+- 去 (qù) = go
+
+
+[59/75] ✓ Test 20: Causative with 'rang'
+       Score: 1.00  |  8292ms  |  /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Teacher said lao shi rang wo qu
+
+[Phonetic Sandbox]
+English words to ignore: Teacher, said
+Pinyin syllables found: lao, shi, rang, wo, qu
+Combined pinyin phrase: 老师让我去
+Full Chinese translation: 老师让我去
+Natural English meaning: The teacher told me to go.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 老师让我去 | Lǎoshī ràng wǒ qù | The teacher told me to go. |
+
+Word-by-word:
+- 老 (lǎo) = old
+- 师 (shī) = teacher
+- 让 (ràng) = let/make/tell
+- 我 (wǒ) = I/me
+- 去 (qù) = go
+
+
+[60/75] ✓ Test 20: Causative with 'rang'
+       Score: 1.00  |  8279ms  |  /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Teacher said lao shi rang wo qu
+
+[Phonetic Sandbox]
+English words to ignore: Teacher, said
+Pinyin syllables found: lao, shi, rang, wo, qu
+Combined pinyin phrase: 老师让我去
+Full Chinese translation: 老师让我去
+Natural English meaning: The teacher told me to go.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 老师让我去 | Lǎoshī ràng wǒ qù | The teacher told me to go. |
+
+Word-by-word:
+- 老 (lǎo) = old
+- 师 (shī) = teacher
+- 让 (ràng) = let/make/tell
+- 我 (wǒ) = I/me
+- 去 (qù) = go
+
+
+[61/75] ✓ Test 21: Only pinyin - no English
+       Score: 1.00  |  6321ms  |  /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+wo ai ni
+
+[Phonetic Sandbox]
+English words to ignore: None
+Pinyin syllables found: wo, ai, ni
+Combined pinyin phrase: wo ai ni
+Full Chinese translation: 我爱你
+Natural English meaning: I love you
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 我爱你 | Wǒ ài nǐ | I love you |
+
+Word-by-word:
+- 我 (wǒ) = I
+- 爱 (ài) = love
+- 你 (nǐ) = you
+
+
+[62/75] ✓ Test 21: Only pinyin - no English
+       Score: 1.00  |  5120ms  |  /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+wo ai ni
+
+[Phonetic Sandbox]
+English words to ignore: None
+Pinyin syllables found: wo, ai, ni
+Combined pinyin phrase: wo ai ni
+Full Chinese translation: 我爱你
+Natural English meaning: I love you
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 我爱你 | Wǒ ài nǐ | I love you |
+
+Word-by-word:
+- 我 (wǒ) = I
+- 爱 (ài) = love
+- 你 (nǐ) = you
+
+
+[63/75] ✓ Test 21: Only pinyin - no English
+       Score: 1.00  |  5072ms  |  /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+wo ai ni
+
+[Phonetic Sandbox]
+English words to ignore: None
+Pinyin syllables found: wo, ai, ni
+Combined pinyin phrase: wo ai ni
+Full Chinese translation: 我爱你
+Natural English meaning: I love you
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 我爱你 | Wǒ ài nǐ | I love you |
+
+Word-by-word:
+- 我 (wǒ) = I
+- 爱 (ài) = love
+- 你 (nǐ) = you
+
+
+[64/75] ✓ Test 22: English with quotes
+       Score: 1.00  |  6963ms  |  /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+He said 'wo yao qu'
+
+[Phonetic Sandbox]
+English words to ignore: He, said
+Pinyin syllables found: wo, yao, qu
+Combined pinyin phrase: 我要去
+Full Chinese translation: 我要去
+Natural English meaning: I want to go.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 我要去 | Wǒ yào qù | I want to go |
+
+Word-by-word:
+- 我 (wǒ) = I
+- 要 (yào) = want / will
+- 去 (qù) = go
+
+
+[65/75] ✓ Test 22: English with quotes
+       Score: 1.00  |  5586ms  |  /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+He said 'wo yao qu'
+
+[Phonetic Sandbox]
+English words to ignore: He, said
+Pinyin syllables found: wo, yao, qu
+Combined pinyin phrase: 我要去
+Full Chinese translation: 我要去
+Natural English meaning: I want to go.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 我要去 | Wǒ yào qù | I want to go |
+
+Word-by-word:
+- 我 (wǒ) = I
+- 要 (yào) = want / will
+- 去 (qù) = go
+
+
+[66/75] ✓ Test 22: English with quotes
+       Score: 1.00  |  5523ms  |  /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+He said 'wo yao qu'
+
+[Phonetic Sandbox]
+English words to ignore: He, said
+Pinyin syllables found: wo, yao, qu
+Combined pinyin phrase: 我要去
+Full Chinese translation: 我要去
+Natural English meaning: I want to go.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 我要去 | Wǒ yào qù | I want to go |
+
+Word-by-word:
+- 我 (wǒ) = I
+- 要 (yào) = want / will
+- 去 (qù) = go
+
+
+[67/75] ✓ Test 23: Third person 'ta' ambiguity
+       Score: 1.00  |  7139ms  |  /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Someone said ta qu le
+
+[Phonetic Sandbox]
+English words to ignore: Someone, said
+Pinyin syllables found: ta, qu, le
+Combined pinyin phrase: 他去了
+Full Chinese translation: 他去了
+Natural English meaning: He went.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 他去了 | Tā qù le | He went. |
+
+Word-by-word:
+- 他 (tā) = He
+- 去 (qù) = go
+- 了 (le) = [past tense particle]
+
+
+[68/75] ✓ Test 23: Third person 'ta' ambiguity
+       Score: 1.00  |  6048ms  |  /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Someone said ta qu le
+
+[Phonetic Sandbox]
+English words to ignore: Someone, said
+Pinyin syllables found: ta, qu, le
+Combined pinyin phrase: 他去了
+Full Chinese translation: 他去了
+Natural English meaning: He went.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 他去了 | Tā qù le | He went. |
+
+Word-by-word:
+- 他 (tā) = He
+- 去 (qù) = go
+- 了 (le) = [past tense particle]
+
+
+[69/75] ✓ Test 23: Third person 'ta' ambiguity
+       Score: 1.00  |  5987ms  |  /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Someone said ta qu le
+
+[Phonetic Sandbox]
+English words to ignore: Someone, said
+Pinyin syllables found: ta, qu, le
+Combined pinyin phrase: 他去了
+Full Chinese translation: 他去了
+Natural English meaning: He went.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 他去了 | Tā qù le | He went. |
+
+Word-by-word:
+- 他 (tā) = He
+- 去 (qù) = go
+- 了 (le) = [past tense particle]
+
+
+[70/75] ✓ Test 24: Plural 'men' with English
+       Score: 1.00  |  8866ms  |  /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+They said wo men shi peng you
+
+[Phonetic Sandbox]
+English words to ignore: They, said
+Pinyin syllables found: wo, men, shi, peng, you
+Combined pinyin phrase: 我们是朋友
+Full Chinese translation: 我们是朋友
+Natural English meaning: We are friends.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 我们是朋友 | Wǒmen shì péngyǒu | We are friends |
+
+Word-by-word:
+- 我 (wǒ) = I
+- 们 (men) = [plural particle]
+- 是 (shì) = are/is
+- 朋 (péng) = friend
+- 友 (yǒu) = friend
+
+
+[71/75] ✓ Test 24: Plural 'men' with English
+       Score: 1.00  |  7174ms  |  /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+They said wo men shi peng you
+
+[Phonetic Sandbox]
+English words to ignore: They, said
+Pinyin syllables found: wo, men, shi, peng, you
+Combined pinyin phrase: 我们是朋友
+Full Chinese translation: 我们是朋友
+Natural English meaning: We are friends.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 我们是朋友 | Wǒmen shì péngyǒu | We are friends |
+
+Word-by-word:
+- 我 (wǒ) = I
+- 们 (men) = [plural particle]
+- 是 (shì) = are/is
+- 朋 (péng) = friend
+- 友 (yǒu) = friend
+
+
+[72/75] ✓ Test 24: Plural 'men' with English
+       Score: 1.00  |  7107ms  |  /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+They said wo men shi peng you
+
+[Phonetic Sandbox]
+English words to ignore: They, said
+Pinyin syllables found: wo, men, shi, peng, you
+Combined pinyin phrase: 我们是朋友
+Full Chinese translation: 我们是朋友
+Natural English meaning: We are friends.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 我们是朋友 | Wǒmen shì péngyǒu | We are friends |
+
+Word-by-word:
+- 我 (wǒ) = I
+- 们 (men) = [plural particle]
+- 是 (shì) = are/is
+- 朋 (péng) = friend
+- 友 (yǒu) = friend
+
+
+[73/75] ✓ Test 25: Modal 'hui' for future/ability
+       Score: 1.00  |  6989ms  |  /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+He said wo hui qu
+
+[Phonetic Sandbox]
+English words to ignore: He, said
+Pinyin syllables found: wo, hui, qu
+Combined pinyin phrase: 我会去
+Full Chinese translation: 我会去
+Natural English meaning: I will go.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 我会去 | Wǒ huì qù | I will go |
+
+Word-by-word:
+- 我 (wǒ) = I
+- 会 (huì) = will / can
+- 去 (qù) = go
+
+
+[74/75] ✓ Test 25: Modal 'hui' for future/ability
+       Score: 1.00  |  5736ms  |  /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+He said wo hui qu
+
+[Phonetic Sandbox]
+English words to ignore: He, said
+Pinyin syllables found: wo, hui, qu
+Combined pinyin phrase: 我会去
+Full Chinese translation: 我会去
+Natural English meaning: I will go.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 我会去 | Wǒ huì qù | I will go |
+
+Word-by-word:
+- 我 (wǒ) = I
+- 会 (huì) = will / can
+- 去 (qù) = go
+
+
+[75/75] ✓ Test 25: Modal 'hui' for future/ability
+       Score: 1.00  |  5705ms  |  /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+He said wo hui qu
+
+[Phonetic Sandbox]
+English words to ignore: He, said
+Pinyin syllables found: wo, hui, qu
+Combined pinyin phrase: 我会去
+Full Chinese translation: 我会去
+Natural English meaning: I will go.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 我会去 | Wǒ huì qù | I will go |
+
+Word-by-word:
+- 我 (wǒ) = I
+- 会 (huì) = will / can
+- 去 (qù) = go
+
+
+
+============================================================
+BENCHMARK COMPLETE
+============================================================
+Duration: 535.5s
+Total requests: 75
+Completed: 75
+Failed: 0
+
+Results saved to: results/20260723_140721
+  - summary.json (overview)
+  - results.json (detailed grading)
+  - results.csv (for analysis)
+  - raw_responses.json (full model outputs)
+  - config.yaml (run configuration)
+
+============================================================
+BENCHMARK SUMMARY
+============================================================
+Total tests:     75
+Passed:          71 (94.7%)
+Failed:          4
+Avg Score:       96.27%
+Avg Latency:     7129ms
+Avg Tokens:      519
+Models:          /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+Providers:       vllm
+Categories:      mixed_english, english_verb_colon, particle_ne, causative_rang, pure_pinyin, english_names, time_expression, passive_bei, negative_command, basic_command, modal_hui, plural_men, resultative_complement, potential_complement, ta_ambiguity, de_particle, multiple_names, directional_complement, question, adverbial_hen, ba_particle, quotes, guo_particle, measure_word, comparison_bi
+
+Criterion Pass Rates:
+  literal_section          : 100.0%
+  literal_words            :  94.7%
+  phonetic_sandbox         : 100.0%
+  table_content            :  94.7%
+  table_exists             : 100.0%
+
+By Category:
+  adverbial_hen            : 3/3 (100.0%)
+  ba_particle              : 3/3 (100.0%)
+  basic_command            : 3/3 (100.0%)
+  causative_rang           : 3/3 (100.0%)
+  comparison_bi            : 3/3 (100.0%)
+  de_particle              : 3/3 (100.0%)
+  directional_complement   : 3/3 (100.0%)
+  english_names            : 3/3 (100.0%)
+  english_verb_colon       : 3/3 (100.0%)
+  guo_particle             : 3/3 (100.0%)
+  measure_word             : 3/3 (100.0%)
+  mixed_english            : 3/3 (100.0%)
+  modal_hui                : 3/3 (100.0%)
+  multiple_names           : 3/3 (100.0%)
+  negative_command         : 3/3 (100.0%)
+  particle_ne              : 3/3 (100.0%)
+  passive_bei              : 2/3 (66.7%)
+  plural_men               : 3/3 (100.0%)
+  potential_complement     : 3/3 (100.0%)
+  pure_pinyin              : 3/3 (100.0%)
+  question                 : 0/3 (0.0%)
+  quotes                   : 3/3 (100.0%)
+  resultative_complement   : 3/3 (100.0%)
+  ta_ambiguity             : 3/3 (100.0%)
+  time_expression          : 3/3 (100.0%)
