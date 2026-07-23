@@ -1,5 +1,4 @@
-# Gemma 4 12B Q6 at 192.168.0.20:8001
-name: "gemma_4_12b_benchmark"
+name: "manual_test"
 test_file: "test_cases.json"
 
 providers:
@@ -14,8 +13,7 @@ providers:
       chat_template_kwargs:
         enable_thinking: false
 
-# Run configuration
-runs_per_model: 3
+runs_per_model: 1
 max_workers: 1
 output_dir: "results"
 save_raw_responses: true
@@ -24,3 +22,4 @@ save_results_csv: true
 print_progress: true
 timeout_per_request: 300
 retry_failed: 1
+filter_test_ids: [1, 2, 3]

@@ -276,7 +276,7 @@ class VLLMProvider(OpenAICompatibleProvider):
         **kwargs
     ):
         # Default to no reasoning for all requests
-        defaults = {"extra_body": {"chat_template_kwargs": {"enable_reasoning": False}}}
+        defaults = {"extra_body": {"chat_template_kwargs": {"enable_thinking": False}}}
         if "extra_body" in kwargs:
             defaults["extra_body"].update(kwargs.pop("extra_body"))
         kwargs = {**defaults, **kwargs}

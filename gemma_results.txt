@@ -1,0 +1,1302 @@
+
+============================================================
+PINYIN BENCHMARK: gemma_4_12b_benchmark
+============================================================
+Test file: test_cases.json
+Models: 1
+Runs per model: 3
+Max workers: 1
+Output dir: results
+
+Test cases to run: 25
+  Created provider: vllm//models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+[1/75] ✓ Test 1: Basic command with English context
+       Score: 1.00  |  7027ms  |  /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Sue told Sara qu xi shou ba
+
+[Phonetic Sandbox]
+English words to ignore: Sue, told, Sara
+Pinyin syllables found: qu, xi, shou, ba
+Combined pinyin phrase: 去洗手吧
+Full Chinese translation: 去洗手吧
+Natural English meaning: Go wash your hands.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 去洗手吧 | Qù xǐshǒu ba | Go wash your hands. |
+
+Word-by-word:
+- 去 (qù) = go
+- 洗 (xǐ) = wash
+- 手 (shǒu) = hand
+- 吧 (ba) = [particle indicating suggestion]
+
+
+[2/75] ✓ Test 1: Basic command with English context
+       Score: 1.00  |  6437ms  |  /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Sue told Sara qu xi shou ba
+
+[Phonetic Sandbox]
+English words to ignore: Sue, told, Sara
+Pinyin syllables found: qu, xi, shou, ba
+Combined pinyin phrase: 去洗手吧
+Full Chinese translation: 去洗手吧
+Natural English meaning: Go wash your hands.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 去洗手吧 | Qù xǐshǒu ba | Go wash your hands. |
+
+Word-by-word:
+- 去 (qù) = go
+- 洗 (xǐ) = wash
+- 手 (shǒu) = hand
+- 吧 (ba) = [particle indicating suggestion]
+
+
+[3/75] ✓ Test 1: Basic command with English context
+       Score: 1.00  |  6443ms  |  /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Sue told Sara qu xi shou ba
+
+[Phonetic Sandbox]
+English words to ignore: Sue, told, Sara
+Pinyin syllables found: qu, xi, shou, ba
+Combined pinyin phrase: 去洗手吧
+Full Chinese translation: 去洗手吧
+Natural English meaning: Go wash your hands.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 去洗手吧 | Qù xǐshǒu ba | Go wash your hands. |
+
+Word-by-word:
+- 去 (qù) = go
+- 洗 (xǐ) = wash
+- 手 (shǒu) = hand
+- 吧 (ba) = [particle indicating suggestion]
+
+
+[4/75] ✓ Test 2: English names should be ignored
+       Score: 1.00  |  7025ms  |  /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+John told Mary ni hao ma
+
+[Phonetic Sandbox]
+English words to ignore: John, told, Mary
+Pinyin syllables found: ni, hao, ma
+Combined pinyin phrase: ni hao ma
+Full Chinese translation: 你好吗
+Natural English meaning: How are you?
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 你好吗 | Nǐ hǎo ma | How are you? |
+
+Word-by-word:
+- 你 (nǐ) = you
+- 好 (hǎo) = good
+- 吗 (ma) = [question particle]
+
+
+[5/75] ✓ Test 2: English names should be ignored
+       Score: 1.00  |  5811ms  |  /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+John told Mary ni hao ma
+
+[Phonetic Sandbox]
+English words to ignore: John, told, Mary
+Pinyin syllables found: ni, hao, ma
+Combined pinyin phrase: ni hao ma
+Full Chinese translation: 你好吗
+Natural English meaning: How are you?
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 你好吗 | Nǐ hǎo ma | How are you? |
+
+Word-by-word:
+- 你 (nǐ) = you
+- 好 (hǎo) = good
+- 吗 (ma) = [question particle]
+
+
+[6/75] ✓ Test 2: English names should be ignored
+       Score: 1.00  |  5815ms  |  /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+John told Mary ni hao ma
+
+[Phonetic Sandbox]
+English words to ignore: John, told, Mary
+Pinyin syllables found: ni, hao, ma
+Combined pinyin phrase: ni hao ma
+Full Chinese translation: 你好吗
+Natural English meaning: How are you?
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 你好吗 | Nǐ hǎo ma | How are you? |
+
+Word-by-word:
+- 你 (nǐ) = you
+- 好 (hǎo) = good
+- 吗 (ma) = [question particle]
+
+
+[7/75] ✓ Test 3: Multiple English words interspersed
+       Score: 1.00  |  8663ms  |  /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Grandma said wo yao chi fan le
+
+[Phonetic Sandbox]
+English words to ignore: Grandma, said
+Pinyin syllables found: wo, yao, chi, fan, le
+Combined pinyin phrase: 我要吃饭了
+Full Chinese translation: 我要吃饭了
+Natural English meaning: I want to eat now.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 我要吃饭了 | Wǒ yào chī fàn le | I want to eat now. |
+
+Word-by-word:
+- 我 (wǒ) = I
+- 要 (yào) = want
+- 吃 (chī) = eat
+- 饭 (fàn) = meal/rice
+- 了 (le) = [particle indicating change of state]
+
+
+[8/75] ✓ Test 3: Multiple English words interspersed
+       Score: 1.00  |  7454ms  |  /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Grandma said wo yao chi fan le
+
+[Phonetic Sandbox]
+English words to ignore: Grandma, said
+Pinyin syllables found: wo, yao, chi, fan, le
+Combined pinyin phrase: 我要吃饭了
+Full Chinese translation: 我要吃饭了
+Natural English meaning: I want to eat now.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 我要吃饭了 | Wǒ yào chī fàn le | I want to eat now. |
+
+Word-by-word:
+- 我 (wǒ) = I
+- 要 (yào) = want
+- 吃 (chī) = eat
+- 饭 (fàn) = meal/rice
+- 了 (le) = [particle indicating change of state]
+
+
+[9/75] ✓ Test 3: Multiple English words interspersed
+       Score: 1.00  |  7442ms  |  /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Grandma said wo yao chi fan le
+
+[Phonetic Sandbox]
+English words to ignore: Grandma, said
+Pinyin syllables found: wo, yao, chi, fan, le
+Combined pinyin phrase: 我要吃饭了
+Full Chinese translation: 我要吃饭了
+Natural English meaning: I want to eat now.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 我要吃饭了 | Wǒ yào chī fàn le | I want to eat now. |
+
+Word-by-word:
+- 我 (wǒ) = I
+- 要 (yào) = want
+- 吃 (chī) = eat
+- 饭 (fàn) = meal/rice
+- 了 (le) = [particle indicating change of state]
+
+
+[10/75] ✗ Test 4: Question with English context
+       Score: 0.30  |  7986ms  |  /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+       PASS: phonetic_sandbox, table_exists, literal_section
+       FAIL: table_content, literal_words
+
+Teacher asked student zen me yang
+
+[Phonetic Sandbox]
+English words to ignore: Teacher, asked, student, zen
+Pinyin syllables found: me, yang
+Combined pinyin phrase: me yang
+Full Chinese translation: 咩羊
+Natural English meaning: What sheep
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 咩羊 | mé yáng | What sheep |
+
+Word-by-word:
+- 咩 (me) = what (dialectal/onomatopoeic)
+- 羊 (yang) = sheep
+
+
+[11/75] ✗ Test 4: Question with English context
+       Score: 0.30  |  6597ms  |  /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+       PASS: phonetic_sandbox, table_exists, literal_section
+       FAIL: table_content, literal_words
+
+Teacher asked student zen me yang
+
+[Phonetic Sandbox]
+English words to ignore: Teacher, asked, student, zen
+Pinyin syllables found: me, yang
+Combined pinyin phrase: me yang
+Full Chinese translation: 咩羊
+Natural English meaning: What sheep
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 咩羊 | mé yáng | What sheep |
+
+Word-by-word:
+- 咩 (me) = what (dialectal/onomatopoeic)
+- 羊 (yang) = sheep
+
+
+[12/75] ✗ Test 4: Question with English context
+       Score: 0.30  |  6576ms  |  /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+       PASS: phonetic_sandbox, table_exists, literal_section
+       FAIL: table_content, literal_words
+
+Teacher asked student zen me yang
+
+[Phonetic Sandbox]
+English words to ignore: Teacher, asked, student, zen
+Pinyin syllables found: me, yang
+Combined pinyin phrase: me yang
+Full Chinese translation: 咩羊
+Natural English meaning: What sheep
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 咩羊 | mé yáng | What sheep |
+
+Word-by-word:
+- 咩 (me) = what (dialectal/onomatopoeic)
+- 羊 (yang) = sheep
+
+
+[13/75] ✓ Test 5: Negative command
+       Score: 1.00  |  7523ms  |  /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Mom told me bu yao qu
+
+[Phonetic Sandbox]
+English words to ignore: Mom, told, me
+Pinyin syllables found: bu, yao, qu
+Combined pinyin phrase: 不要去
+Full Chinese translation: 不要去
+Natural English meaning: Don't go
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 不要去 | Bù yào qù | Don't go |
+
+Word-by-word:
+- 不 (bù) = not
+- 要 (yào) = want/must
+- 去 (qù) = go
+
+
+[14/75] ✓ Test 5: Negative command
+       Score: 1.00  |  6411ms  |  /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Mom told me bu yao qu
+
+[Phonetic Sandbox]
+English words to ignore: Mom, told, me
+Pinyin syllables found: bu, yao, qu
+Combined pinyin phrase: 不要去
+Full Chinese translation: 不要去
+Natural English meaning: Don't go
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 不要去 | Bù yào qù | Don't go |
+
+Word-by-word:
+- 不 (bù) = not
+- 要 (yào) = want/must
+- 去 (qù) = go
+
+
+[15/75] ✓ Test 5: Negative command
+       Score: 1.00  |  6417ms  |  /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Mom told me bu yao qu
+
+[Phonetic Sandbox]
+English words to ignore: Mom, told, me
+Pinyin syllables found: bu, yao, qu
+Combined pinyin phrase: 不要去
+Full Chinese translation: 不要去
+Natural English meaning: Don't go
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 不要去 | Bù yào qù | Don't go |
+
+Word-by-word:
+- 不 (bù) = not
+- 要 (yào) = want/must
+- 去 (qù) = go
+
+
+[16/75] ✓ Test 6: Time expression with English
+       Score: 1.00  |  7981ms  |  /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Yesterday John said wo ming tian qu
+
+[Phonetic Sandbox]
+English words to ignore: Yesterday, John, said
+Pinyin syllables found: wo, ming, tian, qu
+Combined pinyin phrase: 我明天去
+Full Chinese translation: 我明天去
+Natural English meaning: I am going tomorrow.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 我明天去 | Wǒ míngtiān qù | I go tomorrow |
+
+Word-by-word:
+- 我 (wǒ) = I
+- 明 (míng) = bright/next
+- 天 (tiān) = day
+- 去 (qù) = go
+
+
+[17/75] ✓ Test 6: Time expression with English
+       Score: 1.00  |  6621ms  |  /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Yesterday John said wo ming tian qu
+
+[Phonetic Sandbox]
+English words to ignore: Yesterday, John, said
+Pinyin syllables found: wo, ming, tian, qu
+Combined pinyin phrase: 我明天去
+Full Chinese translation: 我明天去
+Natural English meaning: I am going tomorrow.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 我明天去 | Wǒ míngtiān qù | I go tomorrow |
+
+Word-by-word:
+- 我 (wǒ) = I
+- 明 (míng) = bright/next
+- 天 (tiān) = day
+- 去 (qù) = go
+
+
+[18/75] ✓ Test 6: Time expression with English
+       Score: 1.00  |  6600ms  |  /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Yesterday John said wo ming tian qu
+
+[Phonetic Sandbox]
+English words to ignore: Yesterday, John, said
+Pinyin syllables found: wo, ming, tian, qu
+Combined pinyin phrase: 我明天去
+Full Chinese translation: 我明天去
+Natural English meaning: I am going tomorrow.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 我明天去 | Wǒ míngtiān qù | I go tomorrow |
+
+Word-by-word:
+- 我 (wǒ) = I
+- 明 (míng) = bright/next
+- 天 (tiān) = day
+- 去 (qù) = go
+
+
+[19/75] ✓ Test 7: Particle 'ne' for follow-up question
+       Score: 1.00  |  7038ms  |  /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Jane asked ni ne
+
+[Phonetic Sandbox]
+English words to ignore: Jane, asked
+Pinyin syllables found: ni, ne
+Combined pinyin phrase: 你呢
+Full Chinese translation: 你呢
+Natural English meaning: And you?
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 你呢 | Nǐ ne | And you? |
+
+Word-by-word:
+- 你 (nǐ) = you
+- 呢 (ne) = [particle indicating "and" or "how about"]
+
+
+[20/75] ✓ Test 7: Particle 'ne' for follow-up question
+       Score: 1.00  |  5672ms  |  /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Jane asked ni ne
+
+[Phonetic Sandbox]
+English words to ignore: Jane, asked
+Pinyin syllables found: ni, ne
+Combined pinyin phrase: ni ne
+Full Chinese translation: 你呢
+Natural English meaning: And you?
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 你呢 | Nǐ ne | And you? |
+
+Word-by-word:
+- 你 (nǐ) = you
+- 呢 (ne) = [particle indicating "and" or "how about"]
+
+
+[21/75] ✓ Test 7: Particle 'ne' for follow-up question
+       Score: 1.00  |  5664ms  |  /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Jane asked ni ne
+
+[Phonetic Sandbox]
+English words to ignore: Jane, asked
+Pinyin syllables found: ni, ne
+Combined pinyin phrase: ni ne
+Full Chinese translation: 你呢
+Natural English meaning: And you?
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 你呢 | Nǐ ne | And you? |
+
+Word-by-word:
+- 你 (nǐ) = you
+- 呢 (ne) = [particle indicating "and" or "how about"]
+
+
+[22/75] ✓ Test 8: Complex sentence with 'de' particle
+       Score: 1.00  |  8779ms  |  /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+He said ta de shu hen hao
+
+[Phonetic Sandbox]
+English words to ignore: He, said
+Pinyin syllables found: ta, de, shu, hen, hao
+Combined pinyin phrase: 他的书很好
+Full Chinese translation: 他的书很好
+Natural English meaning: His book is very good.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 他的书很好 | Tā de shū hěn hǎo | His book is very good. |
+
+Word-by-word:
+- 他 (tā) = he/his
+- 的 (de) = [possessive particle]
+- 书 (shū) = book
+- 很 (hěn) = very
+- 好 (hǎo) = good
+
+
+[23/75] ✓ Test 8: Complex sentence with 'de' particle
+       Score: 1.00  |  7458ms  |  /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+He said ta de shu hen hao
+
+[Phonetic Sandbox]
+English words to ignore: He, said
+Pinyin syllables found: ta, de, shu, hen, hao
+Combined pinyin phrase: 他的书很好
+Full Chinese translation: 他的书很好
+Natural English meaning: His book is very good.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 他的书很好 | Tā de shū hěn hǎo | His book is very good. |
+
+Word-by-word:
+- 他 (tā) = he/his
+- 的 (de) = [possessive particle]
+- 书 (shū) = book
+- 很 (hěn) = very
+- 好 (hǎo) = good
+
+
+[24/75] ✓ Test 8: Complex sentence with 'de' particle
+       Score: 1.00  |  7462ms  |  /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+He said ta de shu hen hao
+
+[Phonetic Sandbox]
+English words to ignore: He, said
+Pinyin syllables found: ta, de, shu, hen, hao
+Combined pinyin phrase: 他的书很好
+Full Chinese translation: 他的书很好
+Natural English meaning: His book is very good.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 他的书很好 | Tā de shū hěn hǎo | His book is very good. |
+
+Word-by-word:
+- 他 (tā) = he/his
+- 的 (de) = [possessive particle]
+- 书 (shū) = book
+- 很 (hěn) = very
+- 好 (hǎo) = good
+
+
+[25/75] ✓ Test 9: Experience particle 'guo'
+       Score: 1.00  |  9032ms  |  /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Friend told me wo qu guo beijing
+
+[Phonetic Sandbox]
+English words to ignore: Friend, told, me
+Pinyin syllables found: wo, qu, guo, beijing
+Combined pinyin phrase: 我去过北京
+Full Chinese translation: 我去过北京
+Natural English meaning: I have been to Beijing.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 我去过北京 | Wǒ qùguo Běijīng | I have been to Beijing. |
+
+Word-by-word:
+- 我 (wǒ) = I
+- 去 (qù) = go
+- 过 (guo) = [past experience particle]
+- 北 (běi) = North
+- 京 (jīng) = Capital
+
+
+[26/75] ✓ Test 9: Experience particle 'guo'
+       Score: 1.00  |  7790ms  |  /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Friend told me wo qu guo beijing
+
+[Phonetic Sandbox]
+English words to ignore: Friend, told, me
+Pinyin syllables found: wo, qu, guo, beijing
+Combined pinyin phrase: 我去过北京
+Full Chinese translation: 我去过北京
+Natural English meaning: I have been to Beijing.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 我去过北京 | Wǒ qùguo Běijīng | I have been to Beijing. |
+
+Word-by-word:
+- 我 (wǒ) = I
+- 去 (qù) = go
+- 过 (guo) = [past experience particle]
+- 北 (běi) = North
+- 京 (jīng) = Capital
+
+
+[27/75] ✓ Test 9: Experience particle 'guo'
+       Score: 1.00  |  7740ms  |  /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Friend told me wo qu guo beijing
+
+[Phonetic Sandbox]
+English words to ignore: Friend, told, me
+Pinyin syllables found: wo, qu, guo, beijing
+Combined pinyin phrase: 我去过北京
+Full Chinese translation: 我去过北京
+Natural English meaning: I have been to Beijing.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 我去过北京 | Wǒ qùguo Běijīng | I have been to Beijing. |
+
+Word-by-word:
+- 我 (wǒ) = I
+- 去 (qù) = go
+- 过 (guo) = [past experience particle]
+- 北 (běi) = North
+- 京 (jīng) = Capital
+
+
+[28/75] ✓ Test 10: Ba particle for suggestion
+       Score: 1.00  |  8613ms  |  /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Sister said wo men zou ba
+
+[Phonetic Sandbox]
+English words to ignore: Sister, said
+Pinyin syllables found: wo, men, zou, ba
+Combined pinyin phrase: 我们走吧
+Full Chinese translation: 我们走吧
+Natural English meaning: Let's go.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 我们走吧 | Wǒmen zǒu ba | Let's go. |
+
+Word-by-word:
+- 我 (wǒ) = I / me
+- 们 (men) = [plural particle]
+- 走 (zǒu) = walk / go
+- 吧 (ba) = [suggestion particle]
+
+
+[29/75] ✓ Test 10: Ba particle for suggestion
+       Score: 1.00  |  7466ms  |  /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Sister said wo men zou ba
+
+[Phonetic Sandbox]
+English words to ignore: Sister, said
+Pinyin syllables found: wo, men, zou, ba
+Combined pinyin phrase: 我们走吧
+Full Chinese translation: 我们走吧
+Natural English meaning: Let's go.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 我们走吧 | Wǒmen zǒu ba | Let's go. |
+
+Word-by-word:
+- 我 (wǒ) = I / me
+- 们 (men) = [plural particle]
+- 走 (zǒu) = walk / go
+- 吧 (ba) = [suggestion particle]
+
+
+[30/75] ✓ Test 10: Ba particle for suggestion
+       Score: 1.00  |  7410ms  |  /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Sister said wo men zou ba
+
+[Phonetic Sandbox]
+English words to ignore: Sister, said
+Pinyin syllables found: wo, men, zou, ba
+Combined pinyin phrase: 我们走吧
+Full Chinese translation: 我们走吧
+Natural English meaning: Let's go.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 我们走吧 | Wǒmen zǒu ba | Let's go. |
+
+Word-by-word:
+- 我 (wǒ) = I / me
+- 们 (men) = [plural particle]
+- 走 (zǒu) = walk / go
+- 吧 (ba) = [suggestion particle]
+
+
+[31/75] ✓ Test 11: Multiple names - all should be ignored
+       Score: 1.00  |  6752ms  |  /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Tom told Jerry told Bob ni hao
+
+[Phonetic Sandbox]
+English words to ignore: Tom, told, Jerry, told, Bob
+Pinyin syllables found: ni, hao
+Combined pinyin phrase: ni hao
+Full Chinese translation: 你好
+Natural English meaning: Hello
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 你好 | Nǐ hǎo | Hello |
+
+Word-by-word:
+- 你 (nǐ) = you
+- 好 (hǎo) = good
+
+
+[32/75] ✓ Test 11: Multiple names - all should be ignored
+       Score: 1.00  |  5510ms  |  /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Tom told Jerry told Bob ni hao
+
+[Phonetic Sandbox]
+English words to ignore: Tom, told, Jerry, told, Bob
+Pinyin syllables found: ni, hao
+Combined pinyin phrase: ni hao
+Full Chinese translation: 你好
+Natural English meaning: Hello
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 你好 | Nǐ hǎo | Hello |
+
+Word-by-word:
+- 你 (nǐ) = you
+- 好 (hǎo) = good
+
+
+[33/75] ✓ Test 11: Multiple names - all should be ignored
+       Score: 1.00  |  5493ms  |  /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Tom told Jerry told Bob ni hao
+
+[Phonetic Sandbox]
+English words to ignore: Tom, told, Jerry, told, Bob
+Pinyin syllables found: ni, hao
+Combined pinyin phrase: ni hao
+Full Chinese translation: 你好
+Natural English meaning: Hello
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 你好 | Nǐ hǎo | Hello |
+
+Word-by-word:
+- 你 (nǐ) = you
+- 好 (hǎo) = good
+
+
+[34/75] ✓ Test 12: English verb 'said' with colon
+       Score: 1.00  |  8710ms  |  /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Alice said: wo bu zhidao
+
+[Phonetic Sandbox]
+English words to ignore: Alice, said
+Pinyin syllables found: wo, bu, zhidao
+Combined pinyin phrase: 我不知道
+Full Chinese translation: 我不知道
+Natural English meaning: I don't know.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 我不知道 | Wǒ bù zhīdào | I don't know |
+
+Word-by-word:
+- 我 (wǒ) = I
+- 不 (bù) = not
+- 知 (zhī) = know
+- 道 (dào) = path/way (together "know")
+
+
+[35/75] ✓ Test 12: English verb 'said' with colon
+       Score: 1.00  |  7460ms  |  /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Alice said: wo bu zhidao
+
+[Phonetic Sandbox]
+English words to ignore: Alice, said
+Pinyin syllables found: wo, bu, zhidao
+Combined pinyin phrase: 我不知道
+Full Chinese translation: 我不知道
+Natural English meaning: I don't know.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 我不知道 | Wǒ bù zhīdào | I don't know |
+
+Word-by-word:
+- 我 (wǒ) = I
+- 不 (bù) = not
+- 知 (zhī) = know
+- 道 (dào) = path/way (together "know")
+
+
+[36/75] ✓ Test 12: English verb 'said' with colon
+       Score: 1.00  |  7494ms  |  /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Alice said: wo bu zhidao
+
+[Phonetic Sandbox]
+English words to ignore: Alice, said
+Pinyin syllables found: wo, bu, zhidao
+Combined pinyin phrase: 我不知道
+Full Chinese translation: 我不知道
+Natural English meaning: I don't know.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 我不知道 | Wǒ bù zhīdào | I don't know |
+
+Word-by-word:
+- 我 (wǒ) = I
+- 不 (bù) = not
+- 知 (zhī) = know
+- 道 (dào) = path/way (together "know")
+
+
+[37/75] ✓ Test 13: Measure word with English context
+       Score: 1.00  |  9185ms  |  /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Teacher said na ge ren hen gao
+
+[Phonetic Sandbox]
+English words to ignore: Teacher, said
+Pinyin syllables found: na, ge, ren, hen, gao
+Combined pinyin phrase: 那个人很高
+Full Chinese translation: 那个人很高
+Natural English meaning: That person is very tall.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 那个人很高 | Nàge rén hěn gāo | That person is very tall. |
+
+Word-by-word:
+- 那 (nà) = that
+- 个 (ge) = [measure word]
+- 人 (rén) = person
+- 很 (hěn) = very
+- 高 (gāo) = tall
+
+
+[38/75] ✓ Test 13: Measure word with English context
+       Score: 1.00  |  7777ms  |  /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Teacher said na ge ren hen gao
+
+[Phonetic Sandbox]
+English words to ignore: Teacher, said
+Pinyin syllables found: na, ge, ren, hen, gao
+Combined pinyin phrase: 那个人很高
+Full Chinese translation: 那个人很高
+Natural English meaning: That person is very tall.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 那个人很高 | Nàge rén hěn gāo | That person is very tall. |
+
+Word-by-word:
+- 那 (nà) = that
+- 个 (ge) = [measure word]
+- 人 (rén) = person
+- 很 (hěn) = very
+- 高 (gāo) = tall
+
+
+[39/75] ✓ Test 13: Measure word with English context
+       Score: 1.00  |  7829ms  |  /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Teacher said na ge ren hen gao
+
+[Phonetic Sandbox]
+English words to ignore: Teacher, said
+Pinyin syllables found: na, ge, ren, hen, gao
+Combined pinyin phrase: 那个人很高
+Full Chinese translation: 那个人很高
+Natural English meaning: That person is very tall.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 那个人很高 | Nàge rén hěn gāo | That person is very tall. |
+
+Word-by-word:
+- 那 (nà) = that
+- 个 (ge) = [measure word]
+- 人 (rén) = person
+- 很 (hěn) = very
+- 高 (gāo) = tall
+
+
+[40/75] ✓ Test 14: Directional complement
+       Score: 1.00  |  6783ms  |  /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Mom said xia lai ba
+
+[Phonetic Sandbox]
+English words to ignore: Mom, said
+Pinyin syllables found: xia, lai, ba
+Combined pinyin phrase: xia lai ba
+Full Chinese translation: 下来吧
+Natural English meaning: Come down.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 下来吧 | xià lái ba | Come down. |
+
+Word-by-word:
+- 下 (xià) = down
+- 来 (lái) = come
+- 吧 (ba) = [particle indicating suggestion]
+
+
+[41/75] ✓ Test 14: Directional complement
+       Score: 1.00  |  5608ms  |  /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Mom said xia lai ba
+
+[Phonetic Sandbox]
+English words to ignore: Mom, said
+Pinyin syllables found: xia, lai, ba
+Combined pinyin phrase: xia lai ba
+Full Chinese translation: 下来吧
+Natural English meaning: Come down.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 下来吧 | xià lái ba | Come down. |
+
+Word-by-word:
+- 下 (xià) = down
+- 来 (lái) = come
+- 吧 (ba) = [particle indicating suggestion]
+
+
+[42/75] ✓ Test 14: Directional complement
+       Score: 1.00  |  5587ms  |  /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Mom said xia lai ba
+
+[Phonetic Sandbox]
+English words to ignore: Mom, said
+Pinyin syllables found: xia, lai, ba
+Combined pinyin phrase: xia lai ba
+Full Chinese translation: 下来吧
+Natural English meaning: Come down.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 下来吧 | xià lái ba | Come down. |
+
+Word-by-word:
+- 下 (xià) = down
+- 来 (lái) = come
+- 吧 (ba) = [particle indicating suggestion]
+
+
+[43/75] ✓ Test 15: Resultative complement
+       Score: 1.00  |  8472ms  |  /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+He said kan wan le
+
+[Phonetic Sandbox]
+English words to ignore: He, said
+Pinyin syllables found: kan, wan, le
+Combined pinyin phrase: kan wan le
+Full Chinese translation: 看完了
+Natural English meaning: Finished watching / Finished looking
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 看完了 | Kàn wán le | Finished watching |
+
+Word-by-word:
+- 看 (kàn) = look / watch
+- 完 (wán) = finish / complete
+- 了 (le) = [particle indicating completed action]
+
+
+[44/75] ✓ Test 15: Resultative complement
+       Score: 1.00  |  7453ms  |  /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+He said kan wan le
+
+[Phonetic Sandbox]
+English words to ignore: He, said
+Pinyin syllables found: kan, wan, le
+Combined pinyin phrase: kan wan le
+Full Chinese translation: 看完了
+Natural English meaning: Finished watching / Finished looking
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 看完了 | Kàn wán le | Finished watching |
+
+Word-by-word:
+- 看 (kàn) = look / watch
+- 完 (wán) = finish / complete
+- 了 (le) = [particle indicating completed action]
+
+
+[45/75] ✓ Test 15: Resultative complement
+       Score: 1.00  |  7424ms  |  /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+He said kan wan le
+
+[Phonetic Sandbox]
+English words to ignore: He, said
+Pinyin syllables found: kan, wan, le
+Combined pinyin phrase: kan wan le
+Full Chinese translation: 看完了
+Natural English meaning: Finished watching / Finished looking
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 看完了 | Kàn wán le | Finished watching |
+
+Word-by-word:
+- 看 (kàn) = look / watch
+- 完 (wán) = finish / complete
+- 了 (le) = [particle indicating completed action]
+
+
+[46/75] ✓ Test 16: Potential complement
+       Score: 1.00  |  7603ms  |  /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words

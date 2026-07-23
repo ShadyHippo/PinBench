@@ -210,9 +210,19 @@ def run_benchmark(config: RunConfig) -> Dict[str, Any]:
                 
                 status = "✓" if grading.passed else "✗"
                 if config.print_progress:
-                    print(f"[{completed}/{total_requests}] {status} {grading.provider}/{grading.model} | "
-                          f"Test {grading.test_id}: {grading.test_title} | "
-                          f"Score: {grading.score:.2f} | {grading.latency_ms:.0f}ms")
+                    passed_crit = [k for k, v in grading.details.items() if v]
+                    failed_crit = [k for k, v in grading.details.items() if not v]
+                    print(f"[{completed}/{total_requests}] {status} Test {grading.test_id}: {grading.test_title}")
+                    print(f"       Score: {grading.score:.2f}  |  {grading.latency_ms:.0f}ms  |  {grading.model}")
+                    print(f"       PASS: {', '.join(passed_crit) if passed_crit else '(none)'}")
+                    print(f"       FAIL: {', '.join(failed_crit) if failed_crit else '(none)'}")
+                    if config.verbose:
+                        print()
+                        print(result['test_case'].prompt)
+                        print()
+                        print(result['response'].text)
+                        print()
+                    print()
             else:
                 failed += 1
                 if config.print_progress:
@@ -350,6 +360,7 @@ def main():
     parser.add_argument("--filter-cat", nargs="+", help="Filter by categories")
     parser.add_argument("--filter-test", nargs="+", type=int, help="Filter by test IDs")
     parser.add_argument("--no-progress", action="store_true", help="Disable progress output")
+    parser.add_argument("--verbose", action="store_true", help="Print full prompt + response per test")
     args = parser.parse_args()
     
     # Handle comparison
@@ -383,6 +394,8 @@ def main():
         config.filter_test_ids = args.filter_test
     if args.no_progress:
         config.print_progress = False
+    if args.verbose:
+        config.verbose = True
     
     # Run benchmark
     run_benchmark(config)

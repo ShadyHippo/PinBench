@@ -7,7 +7,7 @@ import sys
 sys.path.insert(0, str(__file__).replace('test_grader.py', ''))
 
 from runner import BenchmarkConfig
-from grader import RegexGrader, GradingResult, create_grader_from_test_file
+from grader import Grader, GradingResult, create_grader_from_test_file
 
 
 def test_grader():

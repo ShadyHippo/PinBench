@@ -14,13 +14,8 @@ class TestCase:
     title: str
     category: str
     prompt: str
-    expected_literal_chars: str
-    expected_pinyin_table: str
-    expected_pinyin_tone_marked: str
-    expected_english_literal: str
-    expected_grammar_vocab: str
-    expected_natural_alternative: str
-    regex_patterns: Dict[str, str]
+    table: Dict[str, str]
+    literal: List[Dict[str, Any]]
 
     @classmethod
     def from_dict(cls, data: dict) -> "TestCase":
@@ -61,6 +56,7 @@ class RunConfig:
     filter_test_ids: Optional[List[int]] = None
     system_prompt_override: Optional[str] = None
     provider_kwargs: Dict[str, Any] = field(default_factory=dict)
+    verbose: bool = False
     
     @classmethod
     def from_yaml(cls, path: str) -> "RunConfig":

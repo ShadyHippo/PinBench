@@ -1,0 +1,1016 @@
+
+============================================================
+PINYIN BENCHMARK: qwen_3.5_9b_test
+============================================================
+Test file: test_cases.json
+Models: 1
+Runs per model: 1
+Max workers: 1
+Output dir: results
+
+Test cases to run: 25
+  Created provider: vllm//models/Qwen3.5_9b-Q5_K_M-instruct.gguf
+[1/25] ✗ Test 1: Basic command with English context
+       Score: 0.30  |  4048ms  |  /models/Qwen3.5_9b-Q5_K_M-instruct.gguf
+       PASS: phonetic_sandbox, table_exists, literal_section
+       FAIL: table_content, literal_words
+
+Sue told Sara qu xi shou ba
+
+
+
+[Phonetic Sandbox]
+English words to ignore:
+Sue, told, Sara, qu, shou
+
+Pinyin syllables found:
+xi, shou, ba
+
+Combined pinyin phrase:
+xi shou ba
+
+Full Chinese translation:
+洗手吧
+
+Natural English meaning:
+Wash hands, right?
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 洗手吧 | xǐ shǒu ba | Wash hands, right? |
+
+Word-by-word:
+- 洗 (xǐ) = wash
+- 手 (shǒu) = hand
+- 吧 (ba) = particle indicating suggestion or soft command
+
+
+[2/25] ✓ Test 2: English names should be ignored
+       Score: 1.00  |  2913ms  |  /models/Qwen3.5_9b-Q5_K_M-instruct.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+John told Mary ni hao ma
+
+
+
+[Phonetic Sandbox]
+English words to ignore:
+John, told, Mary
+
+Pinyin syllables found:
+ni, hao, ma
+
+Combined pinyin phrase:
+ni hao ma
+
+Full Chinese translation:
+你好吗
+
+Natural English meaning:
+How are you?
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 你好吗 | nǐ hǎo ma | How are you? |
+
+Word-by-word:
+- 你 (nǐ) = you
+- 好 (hǎo) = good
+- 吗 (ma) = question particle
+
+
+[3/25] ✓ Test 3: Multiple English words interspersed
+       Score: 1.00  |  4305ms  |  /models/Qwen3.5_9b-Q5_K_M-instruct.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Grandma said wo yao chi fan le
+
+
+
+[Phonetic Sandbox]
+English words to ignore:
+- Grandma
+- said
+- told
+- to
+- eat
+- rice
+- food
+- meal
+- already
+
+Pinyin syllables found:
+- wo
+- yao
+- chi
+- fan
+- le
+
+Combined pinyin phrase:
+wo yao chi fan le
+
+Full Chinese translation:
+我要吃饭了
+
+Natural English meaning:
+I want to eat a meal now.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 我要吃饭了 | wǒ yào chī fàn le | I want to eat a meal now. |
+
+Word-by-word:
+- 我 (wǒ) = I
+- 要 (yào) = want / to
+- 吃 (chī) = eat
+- 饭 (fàn) = rice / meal
+- 了 (le) = particle indicating change of state or completion
+
+
+[4/25] ✓ Test 4: Question with English context
+       Score: 1.00  |  3025ms  |  /models/Qwen3.5_9b-Q5_K_M-instruct.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Teacher asked student zen me yang
+
+
+
+[Phonetic Sandbox]
+English words to ignore: Teacher, asked, student
+Pinyin syllables found: zen, me, yang
+Combined pinyin phrase: zen me yang
+Full Chinese translation: 怎 么 样
+Natural English meaning: How is it? / How about it?
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 怎么样 | zěn me yàng | How is it? / How about it? |
+
+Word-by-word:
+- 怎 (zěn) = How
+- 么 (me) = (particle)
+- 样 (yàng) = What kind / appearance
+
+
+[5/25] ✓ Test 5: Negative command
+       Score: 1.00  |  3092ms  |  /models/Qwen3.5_9b-Q5_K_M-instruct.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Mom told me bu yao qu
+
+
+
+[Phonetic Sandbox]
+English words to ignore:
+- Mom
+- told
+- me
+- qu
+
+Pinyin syllables found:
+- bu
+- yao
+- qu
+
+Combined pinyin phrase:
+- bu yao qu
+
+Full Chinese translation:
+- 不要去
+
+Natural English meaning:
+- Do not go
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 不要去 | bú yào qù | Do not go |
+
+Word-by-word:
+- 不 (bù) = not
+- 要 (yào) = want / to
+- 去 (qù) = go
+
+
+[6/25] ✓ Test 6: Time expression with English
+       Score: 1.00  |  3343ms  |  /models/Qwen3.5_9b-Q5_K_M-instruct.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Yesterday John said wo ming tian qu
+
+
+
+[Phonetic Sandbox]
+English words to ignore:
+Yesterday, John, said
+
+Pinyin syllables found:
+wo, ming, tian, qu
+
+Combined pinyin phrase:
+wo ming tian qu
+
+Full Chinese translation:
+我明天去
+
+Natural English meaning:
+I go tomorrow
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 我明天去 | wǒ míng tiān qù | I go tomorrow |
+
+Word-by-word:
+- 我 (wǒ) = I
+- 明 (míng) = bright (part of tomorrow)
+- 天 (tiān) = day
+- 去 (qù) = go
+
+
+[7/25] ✓ Test 7: Particle 'ne' for follow-up question
+       Score: 1.00  |  2637ms  |  /models/Qwen3.5_9b-Q5_K_M-instruct.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Jane asked ni ne
+
+
+
+[Phonetic Sandbox]
+English words to ignore:
+Jane, asked
+
+Pinyin syllables found:
+ni, ne
+
+Combined pinyin phrase:
+ni ne
+
+Full Chinese translation:
+你 呢
+
+Natural English meaning:
+What about you?
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 你 呢 | nǐ ne | What about you? |
+
+Word-by-word:
+- 你 (nǐ) = you
+- 呢 (ne) = particle indicating a question or continuation
+
+
+[8/25] ✓ Test 8: Complex sentence with 'de' particle
+       Score: 1.00  |  3700ms  |  /models/Qwen3.5_9b-Q5_K_M-instruct.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+He said ta de shu hen hao
+
+
+
+[Phonetic Sandbox]
+English words to ignore:
+He, said, told
+
+Pinyin syllables found:
+ta, de, shu, hen, hao
+
+Combined pinyin phrase:
+ta de shu hen hao
+
+Full Chinese translation:
+他的书很好
+
+Natural English meaning:
+His book is very good.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 他的书很好 | tā de shū hěn hǎo | His book is very good. |
+
+Word-by-word:
+- 他 (tā) = He
+- 的 (de) = 's / possessive particle
+- 书 (shū) = book
+- 很 (hěn) = very
+- 好 (hǎo) = good
+
+
+[9/25] ✓ Test 9: Experience particle 'guo'
+       Score: 1.00  |  3441ms  |  /models/Qwen3.5_9b-Q5_K_M-instruct.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Friend told me wo qu guo beijing
+
+
+
+[Phonetic Sandbox]
+English words to ignore: Friend, told, me
+Pinyin syllables found: wo, qu, guo, beijing
+Combined pinyin phrase: wo qu guo beijing
+Full Chinese translation: 我去过北京
+Natural English meaning: I have been to Beijing
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 我去过北京 | wǒ qù guò Běijīng | I have been to Beijing |
+
+Word-by-word:
+- 我 (wǒ) = I
+- 去 (qù) = go
+- 过 (guò) = have been to / experienced
+- 北京 (Běijīng) = Beijing
+
+
+[10/25] ✓ Test 10: Ba particle for suggestion
+       Score: 1.00  |  3654ms  |  /models/Qwen3.5_9b-Q5_K_M-instruct.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Sister said wo men zou ba
+
+
+
+[Phonetic Sandbox]
+English words to ignore:
+- Sister
+- said
+- told
+- went
+- let's
+- go
+- okay
+
+Pinyin syllables found:
+- wo
+- men
+- zou
+- ba
+
+Combined pinyin phrase:
+wo men zou ba
+
+Full Chinese translation:
+我们走吧
+
+Natural English meaning:
+Let's go.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 我们走吧 | wǒmen zǒu ba | Let's go. |
+
+Word-by-word:
+- 我 (wǒ) = I
+- 们 (men) = plural marker
+- 走 (zǒu) = walk / go
+- 吧 (ba) = particle indicating suggestion
+
+
+[11/25] ✓ Test 11: Multiple names - all should be ignored
+       Score: 0.90  |  1345ms  |  /models/Qwen3.5_9b-Q5_K_M-instruct.gguf
+       PASS: table_exists, table_content, literal_section, literal_words
+       FAIL: phonetic_sandbox
+
+Tom told Jerry told Bob ni hao
+
+
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 你好 | nǐ hǎo | Hello |
+
+Word-by-word:
+- 你 (nǐ) = You
+- 好 (hǎo) = Good
+
+
+[12/25] ✗ Test 12: English verb 'said' with colon
+       Score: 0.70  |  2951ms  |  /models/Qwen3.5_9b-Q5_K_M-instruct.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section
+       FAIL: literal_words
+
+Alice said: wo bu zhidao
+
+
+
+[Phonetic Sandbox]
+English words to ignore:
+Alice, said
+
+Pinyin syllables found:
+wo, bu, zhidao
+
+Combined pinyin phrase:
+wo bu zhidao
+
+Full Chinese translation:
+我不知道
+
+Natural English meaning:
+I don't know
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 我不知道 | wǒ bù zhīdào | I don't know |
+
+Word-by-word:
+- 我 (wǒ) = I
+- 不 (bù) = not
+- 知道 (zhīdào) = know
+
+
+[13/25] ✓ Test 13: Measure word with English context
+       Score: 1.00  |  4103ms  |  /models/Qwen3.5_9b-Q5_K_M-instruct.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Teacher said na ge ren hen gao
+
+
+
+[Phonetic Sandbox]
+English words to ignore:
+- Teacher
+- said
+- told
+- person
+- is
+- very
+- tall
+
+Pinyin syllables found:
+- na
+- ge
+- ren
+- hen
+- gao
+
+Combined pinyin phrase:
+- na ge ren hen gao
+
+Full Chinese translation:
+- 那个人很高
+
+Natural English meaning:
+- That person is very tall.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 那个人很高 | nà gè rén hěn gāo | That person is very tall. |
+
+Word-by-word:
+- 那 (nà) = that
+- 个 (gè) = measure word (classifier)
+- 人 (rén) = person
+- 很 (hěn) = very
+- 高 (gāo) = tall
+
+
+[14/25] ✓ Test 14: Directional complement
+       Score: 1.00  |  3884ms  |  /models/Qwen3.5_9b-Q5_K_M-instruct.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Mom said xia lai ba
+
+
+
+[Phonetic Sandbox]
+English words to ignore:
+- Mom
+- said
+- told
+- xia (Wait, "xia" is pinyin, but "Mom" and "said" are English)
+- Pinyin syllables found:
+- xia (下)
+- lai (来)
+- ba (吧)
+- Combined pinyin phrase:
+- xia lai ba
+- Full Chinese translation:
+- 下来吧
+- Natural English meaning:
+- Come down, okay?
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 下来吧 | xià lái ba | Come down, okay? |
+
+Word-by-word:
+- 下 (xià) = down
+- 来 (lái) = come
+- 吧 (ba) = particle (suggestive tone)
+
+
+[15/25] ✗ Test 15: Resultative complement
+       Score: 0.30  |  2889ms  |  /models/Qwen3.5_9b-Q5_K_M-instruct.gguf
+       PASS: phonetic_sandbox, table_exists, literal_section
+       FAIL: table_content, literal_words
+
+He said kan wan le
+
+
+
+[Phonetic Sandbox]
+English words to ignore:
+He, said
+
+Pinyin syllables found:
+kan, wan, le
+
+Combined pinyin phrase:
+kan wan le
+
+Full Chinese translation:
+看完啦
+
+Natural English meaning:
+Finished watching
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 看完啦 | kàn wán le | Finished watching |
+
+Word-by-word:
+- 看 (kàn) = watch/look
+- 完 (wán) = finished
+- 啦 (la) = particle (colloquial "le")
+
+
+[16/25] ✓ Test 16: Potential complement
+       Score: 1.00  |  2870ms  |  /models/Qwen3.5_9b-Q5_K_M-instruct.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+She said ting bu dong
+
+
+
+[Phonetic Sandbox]
+English words to ignore:
+She, said, told
+
+Pinyin syllables found:
+ting, bu, dong
+
+Combined pinyin phrase:
+ting bu dong
+
+Full Chinese translation:
+听不懂
+
+Natural English meaning:
+Can't understand
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 听不懂 | tīng bù dǒng | Can't understand |
+
+Word-by-word:
+- 听 (tīng) = listen
+- 不 (bù) = not
+- 懂 (dǒng) = understand
+
+
+[17/25] ✓ Test 17: Adverbial 'hen' with adjective
+       Score: 1.00  |  2857ms  |  /models/Qwen3.5_9b-Q5_K_M-instruct.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Friend said ta hen mang
+
+
+
+[Phonetic Sandbox]
+English words to ignore: Friend, said
+Pinyin syllables found: ta, hen, mang
+Combined pinyin phrase: ta hen mang
+Full Chinese translation: 他 很 忙
+Natural English meaning: He is very busy.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 他 很 忙 | tā hěn máng | He is very busy |
+
+Word-by-word:
+- 他 (tā) = He
+- 很 (hěn) = very
+- 忙 (máng) = busy
+
+
+[18/25] ✓ Test 18: Comparison with 'bi'
+       Score: 1.00  |  3418ms  |  /models/Qwen3.5_9b-Q5_K_M-instruct.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Brother said wo bi ni gao
+
+
+
+[Phonetic Sandbox]
+English words to ignore: Brother, said
+Pinyin syllables found: wo, bi, ni, gao
+Combined pinyin phrase: wo bi ni gao
+Full Chinese translation: 我比你高
+Natural English meaning: I am taller than you.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 我比你高 | wǒ bǐ nǐ gāo | I am taller than you |
+
+Word-by-word:
+- 我 (wǒ) = I
+- 比 (bǐ) = than / compared to
+- 你 (nǐ) = you
+- 高 (gāo) = tall / high
+
+
+[19/25] ✗ ERROR | vllm//models/Qwen3.5_9b-Q5_K_M-instruct.gguf | Test 19: 'NoneType' object has no attribute 'lower'
+[20/25] ✓ Test 20: Causative with 'rang'
+       Score: 1.00  |  4258ms  |  /models/Qwen3.5_9b-Q5_K_M-instruct.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Teacher said lao shi rang wo qu
+
+
+
+[Phonetic Sandbox]
+English words to ignore:
+- Teacher
+- said
+- told
+- went
+- to
+- go
+
+Pinyin syllables found:
+- lao
+- shi
+- rang
+- wo
+- qu
+
+Combined pinyin phrase:
+- lao shi rang wo qu
+
+Full Chinese translation:
+- 老师让我去
+
+Natural English meaning:
+- The teacher told me to go.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 老师让我去 | lǎo shī ràng wǒ qù | The teacher told me to go. |
+
+Word-by-word:
+- 老 (lǎo) = old
+- 师 (shī) = teacher
+- 让 (ràng) = let / make
+- 我 (wǒ) = I / me
+- 去 (qù) = go
+
+
+[21/25] ✓ Test 21: Only pinyin - no English
+       Score: 1.00  |  2705ms  |  /models/Qwen3.5_9b-Q5_K_M-instruct.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+wo ai ni
+
+
+
+[Phonetic Sandbox]
+English words to ignore:
+Pinyin syllables found: wo, ai, ni
+Combined pinyin phrase: wo ai ni
+Full Chinese translation: 我爱你
+Natural English meaning: I love you
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 我爱你 | wǒ ài nǐ | I love you |
+
+Word-by-word:
+- 我 (wǒ) = I
+- 爱 (ài) = love
+- 你 (nǐ) = you
+
+
+[22/25] ✓ Test 22: English with quotes
+       Score: 1.00  |  3175ms  |  /models/Qwen3.5_9b-Q5_K_M-instruct.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+He said 'wo yao qu'
+
+
+
+[Phonetic Sandbox]
+English words to ignore:
+- He
+- said
+- '
+- '
+
+Pinyin syllables found:
+- wo
+- yao
+- qu
+
+Combined pinyin phrase:
+wo yao qu
+
+Full Chinese translation:
+我要去
+
+Natural English meaning:
+I want to go
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 我要去 | wǒ yào qù | I want to go |
+
+Word-by-word:
+- 我 (wǒ) = I
+- 要 (yào) = want / to
+- 去 (qù) = go
+
+
+[23/25] ✓ Test 23: Third person 'ta' ambiguity
+       Score: 1.00  |  3902ms  |  /models/Qwen3.5_9b-Q5_K_M-instruct.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Someone said ta qu le
+
+
+
+[Phonetic Sandbox]
+English words to ignore:
+- Someone
+- said
+- told
+- qu (part of "ta qu le", but "qu" is pinyin)
+- le (part of "ta qu le", but "le" is pinyin)
+
+Pinyin syllables found:
+- ta
+- qu
+- le
+
+Combined pinyin phrase:
+- ta qu le
+
+Full Chinese translation:
+- 他去了
+
+Natural English meaning:
+- He went (already)
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 他去了 | tā qù le | He went (already) |
+
+Word-by-word:
+- 他 (tā) = He
+- 去 (qù) = go
+- 了 (le) = (particle indicating completed action)
+
+
+[24/25] ✓ Test 24: Plural 'men' with English
+       Score: 1.00  |  3833ms  |  /models/Qwen3.5_9b-Q5_K_M-instruct.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+They said wo men shi peng you
+
+
+
+[Phonetic Sandbox]
+English words to ignore:
+They, said
+
+Pinyin syllables found:
+wo, men, shi, peng, you
+
+Combined pinyin phrase:
+wo men shi peng you
+
+Full Chinese translation:
+我们是朋友
+
+Natural English meaning:
+We are friends.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 我们 | wǒmen | We |
+| 是 | shì | are |
+| 朋友 | péngyou | friends |
+
+Word-by-word:
+- 我 (wǒ) = I
+- 们 (men) = plural marker
+- 是 (shì) = is/are
+- 朋 (péng) = friend
+- 友 (yǒu) = friend
+
+
+[25/25] ✓ Test 25: Modal 'hui' for future/ability
+       Score: 1.00  |  2935ms  |  /models/Qwen3.5_9b-Q5_K_M-instruct.gguf
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+He said wo hui qu
+
+
+
+[Phonetic Sandbox]
+English words to ignore:
+He, said
+
+Pinyin syllables found:
+wo, hui, qu
+
+Combined pinyin phrase:
+wo hui qu
+
+Full Chinese translation:
+我 会 去
+
+Natural English meaning:
+I will go
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 我会去 | wǒ huì qù | I will go |
+
+Word-by-word:
+- 我 (wǒ) = I
+- 会 (huì) = will
+- 去 (qù) = go
+
+
+
+============================================================
+BENCHMARK COMPLETE
+============================================================
+Duration: 161.4s
+Total requests: 25
+Completed: 25
+Failed: 1
+
+Results saved to: results/20260723_140036
+  - summary.json (overview)
+  - results.json (detailed grading)
+  - results.csv (for analysis)
+  - raw_responses.json (full model outputs)
+  - config.yaml (run configuration)
+
+============================================================
+BENCHMARK SUMMARY
+============================================================
+Total tests:     24
+Passed:          21 (87.5%)
+Failed:          3
+Avg Score:       92.50%
+Avg Latency:     3303ms
+Avg Tokens:      540
+Models:          /models/Qwen3.5_9b-Q5_K_M-instruct.gguf
+Providers:       vllm
+Categories:      english_names, english_verb_colon, guo_particle, pure_pinyin, modal_hui, measure_word, multiple_names, negative_command, adverbial_hen, time_expression, question, ba_particle, causative_rang, mixed_english, basic_command, directional_complement, de_particle, particle_ne, resultative_complement, quotes, plural_men, comparison_bi, ta_ambiguity, potential_complement
+
+Criterion Pass Rates:
+  literal_section          : 100.0%
+  literal_words            :  87.5%
+  phonetic_sandbox         :  95.8%
+  table_content            :  91.7%
+  table_exists             : 100.0%
+
+By Category:
+  adverbial_hen            : 1/1 (100.0%)
+  ba_particle              : 1/1 (100.0%)
+  basic_command            : 0/1 (0.0%)
+  causative_rang           : 1/1 (100.0%)
+  comparison_bi            : 1/1 (100.0%)
+  de_particle              : 1/1 (100.0%)
+  directional_complement   : 1/1 (100.0%)
+  english_names            : 1/1 (100.0%)
+  english_verb_colon       : 0/1 (0.0%)
+  guo_particle             : 1/1 (100.0%)
+  measure_word             : 1/1 (100.0%)
+  mixed_english            : 1/1 (100.0%)
+  modal_hui                : 1/1 (100.0%)
+  multiple_names           : 1/1 (100.0%)
+  negative_command         : 1/1 (100.0%)
+  particle_ne              : 1/1 (100.0%)
+  plural_men               : 1/1 (100.0%)
+  potential_complement     : 1/1 (100.0%)
+  pure_pinyin              : 1/1 (100.0%)
+  question                 : 1/1 (100.0%)
+  quotes                   : 1/1 (100.0%)
+  resultative_complement   : 0/1 (0.0%)
+  ta_ambiguity             : 1/1 (100.0%)
+  time_expression          : 1/1 (100.0%)
