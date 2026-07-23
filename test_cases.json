@@ -1,0 +1,507 @@
+{
+  "version": "1.0",
+  "description": "Pinyin-to-Character Conversion Benchmark for Small Models",
+  "system_prompt": "**Role:** Expert Mandarin Chinese Tutor.\n\n**CORE INSTRUCTION:**\nYou are a Pinyin-to-Character converter. You only process the Pinyin syllables. \n**IGNORE ALL ENGLISH WORDS.** If the input contains English (e.g., \"Name,\" \"told,\" \"Name\"), you must skip them entirely. Do not translate them. Do not map them.\n- NEVER translate \"Grandma\", \"told\", \"said\", or any other English words.\n- NEVER translate English names like \"John\" \"Joe\" \"Jane\" etc.\n\n**Task 1: Literal Mapping (The \"Robot\" Rule)**\n- Identify all Pinyin syllables).\n- Map EVERY syllable to its most literal Chinese character.\n- **RULE:** Do not omit any pinyin syllables (including particles).\n- **RULE:** Do not \"correct\" a syllable unless it does not work in the sentence as written.\n- **RULE:** The output must ONLY contain characters for the pinyin. Do not include characters for the names or English verbs.\n\n**Task 2: Tutor's Note (The \"Teacher\" Rule)**\n- Provide a \"Natural Alternative\" for the pinyin phrase.\n- Explain the grammar/vocabulary of the literal translation.\n\n**Output Format (Strictly Follow):**\n\n[Phonetic Sandbox]\nLiteral Translation: [Characters for the Pinyin ONLY]\n\n| Chinese | Pinyin | English |\n| :--- | :--- | :--- |\n| [Characters] | [Tone-marked Pinyin] | [Literal translation of Pinyin] |\n\n**Tutor's Note:**\n- **Grammar/Vocab:** [Brief explanation]\n- **Natural Alternative:** [Your correction here] only include if there are necessary corrections",
+  "tests": [
+    {
+      "id": 1,
+      "title": "Basic command with English context",
+      "category": "basic_command",
+      "prompt": "Sue told Sara qu xi shou ba",
+      "expected_literal_chars": "去洗手吧",
+      "expected_pinyin_table": "去洗手吧",
+      "expected_pinyin_tone_marked": "qù xǐ shǒu ba",
+      "expected_english_literal": "go wash hand particle",
+      "expected_grammar_vocab": "qù (go), xǐ (wash), shǒu (hand), ba (sentence-final particle for suggestion/command)",
+      "expected_natural_alternative": "快去洗手吧 (kuài qù xǐ shǒu ba) - \"Hurry up and go wash your hands\"",
+      "regex_patterns": {
+        "literal_section": "Literal Translation:\\s*去洗手吧",
+        "table_chinese": "\\|\\s*去洗手吧\\s*\\|",
+        "table_pinyin": "\\|\\s*qù\\s*xǐ\\s*shǒu\\s*ba\\s*\\|",
+        "table_english": "\\|\\s*go\\s*wash\\s*hand\\s*particle\\s*\\|",
+        "grammar_vocab": "Grammar/Vocab:.*qù.*go.*xǐ.*wash.*shǒu.*hand.*ba.*particle",
+        "natural_alt": "Natural Alternative:.*快去洗手吧"
+      }
+    },
+    {
+      "id": 2,
+      "title": "English names should be ignored",
+      "category": "english_names",
+      "prompt": "John told Mary ni hao ma",
+      "expected_literal_chars": "你好嗎",
+      "expected_pinyin_table": "你好嗎",
+      "expected_pinyin_tone_marked": "nǐ hǎo ma",
+      "expected_english_literal": "you good question_particle",
+      "expected_grammar_vocab": "nǐ (you), hǎo (good), ma (question particle)",
+      "expected_natural_alternative": "你好吗？(nǐ hǎo ma?) - \"How are you?\"",
+      "regex_patterns": {
+        "literal_section": "Literal Translation:\\s*你好嗎",
+        "table_chinese": "\\|\\s*你好嗎\\s*\\|",
+        "table_pinyin": "\\|\\s*nǐ\\s*hǎo\\s*ma\\s*\\|",
+        "table_english": "\\|\\s*you\\s*good\\s*question_particle\\s*\\|",
+        "grammar_vocab": "Grammar/Vocab:.*nǐ.*you.*hǎo.*good.*ma.*question",
+        "natural_alt": "Natural Alternative:.*你好吗"
+      }
+    },
+    {
+      "id": 3,
+      "title": "Multiple English words interspersed",
+      "category": "mixed_english",
+      "prompt": "Grandma said wo yao chi fan le",
+      "expected_literal_chars": "我要吃飯了",
+      "expected_pinyin_table": "我要吃飯了",
+      "expected_pinyin_tone_marked": "wǒ yào chī fàn le",
+      "expected_english_literal": "I want eat rice completed_action",
+      "expected_grammar_vocab": "wǒ (I), yào (want), chī (eat), fàn (rice/meal), le (completed action particle)",
+      "expected_natural_alternative": "我要吃饭了 (wǒ yào chī fàn le) - \"I want to eat now\" / \"I'm going to eat\"",
+      "regex_patterns": {
+        "literal_section": "Literal Translation:\\s*我要吃飯了",
+        "table_chinese": "\\|\\s*我要吃飯了\\s*\\|",
+        "table_pinyin": "\\|\\s*wǒ\\s*yào\\s*chī\\s*fàn\\s*le\\s*\\|",
+        "table_english": "\\|\\s*I\\s*want\\s*eat\\s*rice\\s*completed_action\\s*\\|",
+        "grammar_vocab": "Grammar/Vocab:.*wǒ.*I.*yào.*want.*chī.*eat.*fàn.*rice.*le.*completed",
+        "natural_alt": "Natural Alternative:.*我要吃饭了"
+      }
+    },
+    {
+      "id": 4,
+      "title": "Question with English context",
+      "category": "question",
+      "prompt": "Teacher asked student zen me yang",
+      "expected_literal_chars": "怎麼樣",
+      "expected_pinyin_table": "怎麼樣",
+      "expected_pinyin_tone_marked": "zěn me yàng",
+      "expected_english_literal": "how what kind",
+      "expected_grammar_vocab": "zěn me (how), yàng (kind/type/sort) - together means \"how is it?\"",
+      "expected_natural_alternative": "怎么样？(zěn me yàng?) - \"How is it?\" / \"How are things?\"",
+      "regex_patterns": {
+        "literal_section": "Literal Translation:\\s*怎麼樣",
+        "table_chinese": "\\|\\s*怎麼樣\\s*\\|",
+        "table_pinyin": "\\|\\s*zěn\\s*me\\s*yàng\\s*\\|",
+        "table_english": "\\|\\s*how\\s*what\\s*kind\\s*\\|",
+        "grammar_vocab": "Grammar/Vocab:.*zěn me.*how.*yàng.*kind",
+        "natural_alt": "Natural Alternative:.*怎么样"
+      }
+    },
+    {
+      "id": 5,
+      "title": "Negative command",
+      "category": "negative_command",
+      "prompt": "Mom told me bu yao qu",
+      "expected_literal_chars": "不要去",
+      "expected_pinyin_table": "不要去",
+      "expected_pinyin_tone_marked": "bú yào qù",
+      "expected_english_literal": "not want go",
+      "expected_grammar_vocab": "bú (not - tone sandhi from bù before yào), yào (want), qù (go)",
+      "expected_natural_alternative": "别去 (bié qù) - \"Don't go\" (more natural prohibition)",
+      "regex_patterns": {
+        "literal_section": "Literal Translation:\\s*不要去",
+        "table_chinese": "\\|\\s*不要去\\s*\\|",
+        "table_pinyin": "\\|\\s*bú\\s*yào\\s*qù\\s*\\|",
+        "table_english": "\\|\\s*not\\s*want\\s*go\\s*\\|",
+        "grammar_vocab": "Grammar/Vocab:.*bú.*not.*yào.*want.*qù.*go",
+        "natural_alt": "Natural Alternative:.*别去"
+      }
+    },
+    {
+      "id": 6,
+      "title": "Time expression with English",
+      "category": "time_expression",
+      "prompt": "Yesterday John said wo ming tian qu",
+      "expected_literal_chars": "我明天去",
+      "expected_pinyin_table": "我明天去",
+      "expected_pinyin_tone_marked": "wǒ míng tiān qù",
+      "expected_english_literal": "I tomorrow go",
+      "expected_grammar_vocab": "wǒ (I), míng tiān (tomorrow), qù (go) - Chinese puts time before verb",
+      "expected_natural_alternative": "我明天去 (wǒ míng tiān qù) - \"I'm going tomorrow\" (already natural)",
+      "regex_patterns": {
+        "literal_section": "Literal Translation:\\s*我明天去",
+        "table_chinese": "\\|\\s*我明天去\\s*\\|",
+        "table_pinyin": "\\|\\s*wǒ\\s*míng\\s*tiān\\s*qù\\s*\\|",
+        "table_english": "\\|\\s*I\\s*tomorrow\\s*go\\s*\\|",
+        "grammar_vocab": "Grammar/Vocab:.*wǒ.*I.*míng tiān.*tomorrow.*qù.*go",
+        "natural_alt": "Natural Alternative:.*我明天去"
+      }
+    },
+    {
+      "id": 7,
+      "title": "Particle 'ne' for follow-up question",
+      "category": "particle_ne",
+      "prompt": "Jane asked ni ne",
+      "expected_literal_chars": "你呢",
+      "expected_pinyin_table": "你呢",
+      "expected_pinyin_tone_marked": "nǐ ne",
+      "expected_english_literal": "you particle",
+      "expected_grammar_vocab": "nǐ (you), ne (follow-up question particle, \"and you?\")",
+      "expected_natural_alternative": "你呢？(nǐ ne?) - \"And you?\" / \"How about you?\"",
+      "regex_patterns": {
+        "literal_section": "Literal Translation:\\s*你呢",
+        "table_chinese": "\\|\\s*你呢\\s*\\|",
+        "table_pinyin": "\\|\\s*nǐ\\s*ne\\s*\\|",
+        "table_english": "\\|\\s*you\\s*particle\\s*\\|",
+        "grammar_vocab": "Grammar/Vocab:.*nǐ.*you.*ne.*particle",
+        "natural_alt": "Natural Alternative:.*你呢"
+      }
+    },
+    {
+      "id": 8,
+      "title": "Complex sentence with 'de' particle",
+      "category": "de_particle",
+      "prompt": "He said ta de shu hen hao",
+      "expected_literal_chars": "他的書很好",
+      "expected_pinyin_table": "他的書很好",
+      "expected_pinyin_tone_marked": "tā de shū hěn hǎo",
+      "expected_english_literal": "he possessive book very good",
+      "expected_grammar_vocab": "tā (he), de (possessive/attributive particle), shū (book), hěn (very), hǎo (good)",
+      "expected_natural_alternative": "他的书很好 (tā de shū hěn hǎo) - \"His book is very good\" (already natural)",
+      "regex_patterns": {
+        "literal_section": "Literal Translation:\\s*他的書很好",
+        "table_chinese": "\\|\\s*他的書很好\\s*\\|",
+        "table_pinyin": "\\|\\s*tā\\s*de\\s*shū\\s*hěn\\s*hǎo\\s*\\|",
+        "table_english": "\\|\\s*he\\s*possessive\\s*book\\s*very\\s*good\\s*\\|",
+        "grammar_vocab": "Grammar/Vocab:.*tā.*he.*de.*possessive.*shū.*book.*hěn.*very.*hǎo.*good",
+        "natural_alt": "Natural Alternative:.*他的书很好"
+      }
+    },
+    {
+      "id": 9,
+      "title": "Experience particle 'guo'",
+      "category": "guo_particle",
+      "prompt": "Friend told me wo qu guo beijing",
+      "expected_literal_chars": "我去過北京",
+      "expected_pinyin_table": "我去過北京",
+      "expected_pinyin_tone_marked": "wǒ qù guo běi jīng",
+      "expected_english_literal": "I go experience Beijing",
+      "expected_grammar_vocab": "wǒ (I), qù (go), guo (experience particle), běi jīng (Beijing)",
+      "expected_natural_alternative": "我去过北京 (wǒ qù guo běi jīng) - \"I've been to Beijing\" (already natural)",
+      "regex_patterns": {
+        "literal_section": "Literal Translation:\\s*我去過北京",
+        "table_chinese": "\\|\\s*我去過北京\\s*\\|",
+        "table_pinyin": "\\|\\s*wǒ\\s*qù\\s*guo\\s*běi\\s*jīng\\s*\\|",
+        "table_english": "\\|\\s*I\\s*go\\s*experience\\s*Beijing\\s*\\|",
+        "grammar_vocab": "Grammar/Vocab:.*wǒ.*I.*qù.*go.*guo.*experience.*běi jīng.*Beijing",
+        "natural_alt": "Natural Alternative:.*我去过北京"
+      }
+    },
+    {
+      "id": 10,
+      "title": "Ba particle for suggestion",
+      "category": "ba_particle",
+      "prompt": "Sister said wo men zou ba",
+      "expected_literal_chars": "我們走吧",
+      "expected_pinyin_table": "我們走吧",
+      "expected_pinyin_tone_marked": "wǒ men zǒu ba",
+      "expected_english_literal": "we walk particle",
+      "expected_grammar_vocab": "wǒ men (we), zǒu (walk/leave), ba (suggestion particle \"let's\")",
+      "expected_natural_alternative": "我们走吧 (wǒ men zǒu ba) - \"Let's go\" (already natural)",
+      "regex_patterns": {
+        "literal_section": "Literal Translation:\\s*我們走吧",
+        "table_chinese": "\\|\\s*我們走吧\\s*\\|",
+        "table_pinyin": "\\|\\s*wǒ\\s*men\\s*zǒu\\s*ba\\s*\\|",
+        "table_english": "\\|\\s*we\\s*walk\\s*particle\\s*\\|",
+        "grammar_vocab": "Grammar/Vocab:.*wǒ men.*we.*zǒu.*walk.*ba.*suggestion",
+        "natural_alt": "Natural Alternative:.*我们走吧"
+      }
+    },
+    {
+      "id": 11,
+      "title": "Multiple names - all should be ignored",
+      "category": "multiple_names",
+      "prompt": "Tom told Jerry told Bob ni hao",
+      "expected_literal_chars": "你好",
+      "expected_pinyin_table": "你好",
+      "expected_pinyin_tone_marked": "nǐ hǎo",
+      "expected_english_literal": "you good",
+      "expected_grammar_vocab": "nǐ (you), hǎo (good) - standard greeting",
+      "expected_natural_alternative": "你好 (nǐ hǎo) - \"Hello\" (already natural)",
+      "regex_patterns": {
+        "literal_section": "Literal Translation:\\s*你好",
+        "table_chinese": "\\|\\s*你好\\s*\\|",
+        "table_pinyin": "\\|\\s*nǐ\\s*hǎo\\s*\\|",
+        "table_english": "\\|\\s*you\\s*good\\s*\\|",
+        "grammar_vocab": "Grammar/Vocab:.*nǐ.*you.*hǎo.*good",
+        "natural_alt": "Natural Alternative:.*你好"
+      }
+    },
+    {
+      "id": 12,
+      "title": "English verb 'said' with colon",
+      "category": "english_verb_colon",
+      "prompt": "Alice said: wo bu zhidao",
+      "expected_literal_chars": "我不知道",
+      "expected_pinyin_table": "我不知道",
+      "expected_pinyin_tone_marked": "wǒ bù zhī dào",
+      "expected_english_literal": "I not know",
+      "expected_grammar_vocab": "wǒ (I), bù (not), zhī dào (know)",
+      "expected_natural_alternative": "我不知道 (wǒ bù zhī dào) - \"I don't know\" (already natural)",
+      "regex_patterns": {
+        "literal_section": "Literal Translation:\\s*我不知道",
+        "table_chinese": "\\|\\s*我不知道\\s*\\|",
+        "table_pinyin": "\\|\\s*wǒ\\s*bù\\s*zhī\\s*dào\\s*\\|",
+        "table_english": "\\|\\s*I\\s*not\\s*know\\s*\\|",
+        "grammar_vocab": "Grammar/Vocab:.*wǒ.*I.*bù.*not.*zhī dào.*know",
+        "natural_alt": "Natural Alternative:.*我不知道"
+      }
+    },
+    {
+      "id": 13,
+      "title": "Measure word with English context",
+      "category": "measure_word",
+      "prompt": "Teacher said na ge ren hen gao",
+      "expected_literal_chars": "那個人很高",
+      "expected_pinyin_table": "那個人很高",
+      "expected_pinyin_tone_marked": "nà ge rén hěn gāo",
+      "expected_english_literal": "that measure_person very tall",
+      "expected_grammar_vocab": "nà (that), ge (measure word for people), rén (person), hěn (very), gāo (tall)",
+      "expected_natural_alternative": "那个人很高 (nà ge rén hěn gāo) - \"That person is very tall\" (already natural)",
+      "regex_patterns": {
+        "literal_section": "Literal Translation:\\s*那個人很高",
+        "table_chinese": "\\|\\s*那個人很高\\s*\\|",
+        "table_pinyin": "\\|\\s*nà\\s*ge\\s*rén\\s*hěn\\s*gāo\\s*\\|",
+        "table_english": "\\|\\s*that\\s*measure_person\\s*very\\s*tall\\s*\\|",
+        "grammar_vocab": "Grammar/Vocab:.*nà.*that.*ge.*measure.*rén.*person.*hěn.*very.*gāo.*tall",
+        "natural_alt": "Natural Alternative:.*那个人很高"
+      }
+    },
+    {
+      "id": 14,
+      "title": "Directional complement",
+      "category": "directional_complement",
+      "prompt": "Mom said xia lai ba",
+      "expected_literal_chars": "下來吧",
+      "expected_pinyin_table": "下來吧",
+      "expected_pinyin_tone_marked": "xià lái ba",
+      "expected_english_literal": "down come particle",
+      "expected_grammar_vocab": "xià (down), lái (come - directional complement), ba (suggestion particle)",
+      "expected_natural_alternative": "下来吧 (xià lái ba) - \"Come down\" / \"Come on down\" (already natural)",
+      "regex_patterns": {
+        "literal_section": "Literal Translation:\\s*下來吧",
+        "table_chinese": "\\|\\s*下來吧\\s*\\|",
+        "table_pinyin": "\\|\\s*xià\\s*lái\\s*ba\\s*\\|",
+        "table_english": "\\|\\s*down\\s*come\\s*particle\\s*\\|",
+        "grammar_vocab": "Grammar/Vocab:.*xià.*down.*lái.*come.*ba.*suggestion",
+        "natural_alt": "Natural Alternative:.*下来吧"
+      }
+    },
+    {
+      "id": 15,
+      "title": "Resultative complement",
+      "category": "resultative_complement",
+      "prompt": "He said kan wan le",
+      "expected_literal_chars": "看完了",
+      "expected_pinyin_table": "看完了",
+      "expected_pinyin_tone_marked": "kàn wán le",
+      "expected_english_literal": "watch finish completed",
+      "expected_grammar_vocab": "kàn (watch/read), wán (finish - resultative complement), le (completed action)",
+      "expected_natural_alternative": "看完了 (kàn wán le) - \"Finished watching/reading\" (already natural)",
+      "regex_patterns": {
+        "literal_section": "Literal Translation:\\s*看完了",
+        "table_chinese": "\\|\\s*看完了\\s*\\|",
+        "table_pinyin": "\\|\\s*kàn\\s*wán\\s*le\\s*\\|",
+        "table_english": "\\|\\s*watch\\s*finish\\s*completed\\s*\\|",
+        "grammar_vocab": "Grammar/Vocab:.*kàn.*watch.*wán.*finish.*le.*completed",
+        "natural_alt": "Natural Alternative:.*看完了"
+      }
+    },
+    {
+      "id": 16,
+      "title": "Potential complement",
+      "category": "potential_complement",
+      "prompt": "She said ting bu dong",
+      "expected_literal_chars": "聽不懂",
+      "expected_pinyin_table": "聽不懂",
+      "expected_pinyin_tone_marked": "tīng bù dǒng",
+      "expected_english_literal": "listen not understand",
+      "expected_grammar_vocab": "tīng (listen), bù (not), dǒng (understand) - potential complement structure",
+      "expected_natural_alternative": "听不懂 (tīng bù dǒng) - \"Can't understand (by listening)\" (already natural)",
+      "regex_patterns": {
+        "literal_section": "Literal Translation:\\s*聽不懂",
+        "table_chinese": "\\|\\s*聽不懂\\s*\\|",
+        "table_pinyin": "\\|\\s*tīng\\s*bù\\s*dǒng\\s*\\|",
+        "table_english": "\\|\\s*listen\\s*not\\s*understand\\s*\\|",
+        "grammar_vocab": "Grammar/Vocab:.*tīng.*listen.*bù.*not.*dǒng.*understand",
+        "natural_alt": "Natural Alternative:.*听不懂"
+      }
+    },
+    {
+      "id": 17,
+      "title": "Adverbial 'hen' with adjective",
+      "category": "adverbial_hen",
+      "prompt": "Friend said ta hen mang",
+      "expected_literal_chars": "他很忙",
+      "expected_pinyin_table": "他很忙",
+      "expected_pinyin_tone_marked": "tā hěn máng",
+      "expected_english_literal": "he very busy",
+      "expected_grammar_vocab": "tā (he), hěn (very), máng (busy) - hěn required before adjectives in statements",
+      "expected_natural_alternative": "他很忙 (tā hěn máng) - \"He's very busy\" (already natural)",
+      "regex_patterns": {
+        "literal_section": "Literal Translation:\\s*他很忙",
+        "table_chinese": "\\|\\s*他很忙\\s*\\|",
+        "table_pinyin": "\\|\\s*tā\\s*hěn\\s*máng\\s*\\|",
+        "table_english": "\\|\\s*he\\s*very\\s*busy\\s*\\|",
+        "grammar_vocab": "Grammar/Vocab:.*tā.*he.*hěn.*very.*máng.*busy",
+        "natural_alt": "Natural Alternative:.*他很忙"
+      }
+    },
+    {
+      "id": 18,
+      "title": "Comparison with 'bi'",
+      "category": "comparison_bi",
+      "prompt": "Brother said wo bi ni gao",
+      "expected_literal_chars": "我比你高",
+      "expected_pinyin_table": "我比你高",
+      "expected_pinyin_tone_marked": "wǒ bǐ nǐ gāo",
+      "expected_english_literal": "I compare you tall",
+      "expected_grammar_vocab": "wǒ (I), bǐ (compare/than), nǐ (you), gāo (tall) - comparison structure",
+      "expected_natural_alternative": "我比你高 (wǒ bǐ nǐ gāo) - \"I'm taller than you\" (already natural)",
+      "regex_patterns": {
+        "literal_section": "Literal Translation:\\s*我比你高",
+        "table_chinese": "\\|\\s*我比你高\\s*\\|",
+        "table_pinyin": "\\|\\s*wǒ\\s*bǐ\\s*nǐ\\s*gāo\\s*\\|",
+        "table_english": "\\|\\s*I\\s*compare\\s*you\\s*tall\\s*\\|",
+        "grammar_vocab": "Grammar/Vocab:.*wǒ.*I.*bǐ.*compare.*nǐ.*you.*gāo.*tall",
+        "natural_alt": "Natural Alternative:.*我比你高"
+      }
+    },
+    {
+      "id": 19,
+      "title": "Passive with 'bei'",
+      "category": "passive_bei",
+      "prompt": "She said shu bei wo kan le",
+      "expected_literal_chars": "書被我看了",
+      "expected_pinyin_table": "書被我看了",
+      "expected_pinyin_tone_marked": "shū bèi wǒ kàn le",
+      "expected_english_literal": "book passive I read completed",
+      "expected_grammar_vocab": "shū (book), bèi (passive marker), wǒ (I), kàn (read), le (completed)",
+      "expected_natural_alternative": "书被我看了 (shū bèi wǒ kàn le) - \"The book was read by me\" (already natural)",
+      "regex_patterns": {
+        "literal_section": "Literal Translation:\\s*書被我看了",
+        "table_chinese": "\\|\\s*書被我看了\\s*\\|",
+        "table_pinyin": "\\|\\s*shū\\s*bèi\\s*wǒ\\s*kàn\\s*le\\s*\\|",
+        "table_english": "\\|\\s*book\\s*passive\\s*I\\s*read\\s*completed\\s*\\|",
+        "grammar_vocab": "Grammar/Vocab:.*shū.*book.*bèi.*passive.*wǒ.*I.*kàn.*read.*le.*completed",
+        "natural_alt": "Natural Alternative:.*书被我看了"
+      }
+    },
+    {
+      "id": 20,
+      "title": "Causative with 'rang'",
+      "category": "causative_rang",
+      "prompt": "Teacher said lao shi rang wo qu",
+      "expected_literal_chars": "老師讓我去",
+      "expected_pinyin_table": "老師讓我去",
+      "expected_pinyin_tone_marked": "lǎo shī ràng wǒ qù",
+      "expected_english_literal": "teacher make I go",
+      "expected_grammar_vocab": "lǎo shī (teacher), ràng (make/let), wǒ (I), qù (go) - causative structure",
+      "expected_natural_alternative": "老师让我去 (lǎo shī ràng wǒ qù) - \"The teacher made me go\" / \"The teacher let me go\"",
+      "regex_patterns": {
+        "literal_section": "Literal Translation:\\s*老師讓我去",
+        "table_chinese": "\\|\\s*老師讓我去\\s*\\|",
+        "table_pinyin": "\\|\\s*lǎo\\s*shī\\s*ràng\\s*wǒ\\s*qù\\s*\\|",
+        "table_english": "\\|\\s*teacher\\s*make\\s*I\\s*go\\s*\\|",
+        "grammar_vocab": "Grammar/Vocab:.*lǎo shī.*teacher.*ràng.*make.*wǒ.*I.*qù.*go",
+        "natural_alt": "Natural Alternative:.*老师让我去"
+      }
+    },
+    {
+      "id": 21,
+      "title": "Only pinyin - no English",
+      "category": "pure_pinyin",
+      "prompt": "wo ai ni",
+      "expected_literal_chars": "我愛你",
+      "expected_pinyin_table": "我愛你",
+      "expected_pinyin_tone_marked": "wǒ ài nǐ",
+      "expected_english_literal": "I love you",
+      "expected_grammar_vocab": "wǒ (I), ài (love), nǐ (you)",
+      "expected_natural_alternative": "我爱你 (wǒ ài nǐ) - \"I love you\" (already natural)",
+      "regex_patterns": {
+        "literal_section": "Literal Translation:\\s*我愛你",
+        "table_chinese": "\\|\\s*我愛你\\s*\\|",
+        "table_pinyin": "\\|\\s*wǒ\\s*ài\\s*nǐ\\s*\\|",
+        "table_english": "\\|\\s*I\\s*love\\s*you\\s*\\|",
+        "grammar_vocab": "Grammar/Vocab:.*wǒ.*I.*ài.*love.*nǐ.*you",
+        "natural_alt": "Natural Alternative:.*我爱你"
+      }
+    },
+    {
+      "id": 22,
+      "title": "English with quotes",
+      "category": "quotes",
+      "prompt": "He said \"wo yao qu\"",
+      "expected_literal_chars": "我要去",
+      "expected_pinyin_table": "我要去",
+      "expected_pinyin_tone_marked": "wǒ yào qù",
+      "expected_english_literal": "I want go",
+      "expected_grammar_vocab": "wǒ (I), yào (want), qù (go)",
+      "expected_natural_alternative": "我要去 (wǒ yào qù) - \"I want to go\" (already natural)",
+      "regex_patterns": {
+        "literal_section": "Literal Translation:\\s*我要去",
+        "table_chinese": "\\|\\s*我要去\\s*\\|",
+        "table_pinyin": "\\|\\s*wǒ\\s*yào\\s*qù\\s*\\|",
+        "table_english": "\\|\\s*I\\s*want\\s*go\\s*\\|",
+        "grammar_vocab": "Grammar/Vocab:.*wǒ.*I.*yào.*want.*qù.*go",
+        "natural_alt": "Natural Alternative:.*我要去"
+      }
+    },
+    {
+      "id": 23,
+      "title": "Third person 'ta' ambiguity",
+      "category": "ta_ambiguity",
+      "prompt": "Someone said ta qu le",
+      "expected_literal_chars": "他去了",
+      "expected_pinyin_table": "他去了",
+      "expected_pinyin_tone_marked": "tā qù le",
+      "expected_english_literal": "he/she go completed",
+      "expected_grammar_vocab": "tā (he/she/it - context dependent), qù (go), le (completed action)",
+      "expected_natural_alternative": "他去了 (tā qù le) - \"He/She went\" (already natural)",
+      "regex_patterns": {
+        "literal_section": "Literal Translation:\\s*他去了",
+        "table_chinese": "\\|\\s*他去了\\s*\\|",
+        "table_pinyin": "\\|\\s*tā\\s*qù\\s*le\\s*\\|",
+        "table_english": "\\|\\s*he/she\\s*go\\s*completed\\s*\\|",
+        "grammar_vocab": "Grammar/Vocab:.*tā.*he/she.*qù.*go.*le.*completed",
+        "natural_alt": "Natural Alternative:.*他去了"
+      }
+    },
+    {
+      "id": 24,
+      "title": "Plural 'men' with English",
+      "category": "plural_men",
+      "prompt": "They said wo men shi peng you",
+      "expected_literal_chars": "我們是朋友",
+      "expected_pinyin_table": "我們是朋友",
+      "expected_pinyin_tone_marked": "wǒ men shì péng you",
+      "expected_english_literal": "we are friend",
+      "expected_grammar_vocab": "wǒ men (we), shì (is/are), péng you (friend)",
+      "expected_natural_alternative": "我们是朋友 (wǒ men shì péng you) - \"We are friends\" (already natural)",
+      "regex_patterns": {
+        "literal_section": "Literal Translation:\\s*我們是朋友",
+        "table_chinese": "\\|\\s*我們是朋友\\s*\\|",
+        "table_pinyin": "\\|\\s*wǒ\\s*men\\s*shì\\s*péng\\s*you\\s*\\|",
+        "table_english": "\\|\\s*we\\s*are\\s*friend\\s*\\|",
+        "grammar_vocab": "Grammar/Vocab:.*wǒ men.*we.*shì.*are.*péng you.*friend",
+        "natural_alt": "Natural Alternative:.*我们是朋友"
+      }
+    },
+    {
+      "id": 25,
+      "title": "Modal 'hui' for future/ability",
+      "category": "modal_hui",
+      "prompt": "He said wo hui qu",
+      "expected_literal_chars": "我會去",
+      "expected_pinyin_table": "我會去",
+      "expected_pinyin_tone_marked": "wǒ huì qù",
+      "expected_english_literal": "I will/can go",
+      "expected_grammar_vocab": "wǒ (I), huì (will/can - future or ability), qù (go)",
+      "expected_natural_alternative": "我会去 (wǒ huì qù) - \"I will go\" / \"I can go\" (already natural)",
+      "regex_patterns": {
+        "literal_section": "Literal Translation:\\s*我會去",
+        "table_chinese": "\\|\\s*我會去\\s*\\|",
+        "table_pinyin": "\\|\\s*wǒ\\s*huì\\s*qù\\s*\\|",
+        "table_english": "\\|\\s*I\\s*will/can\\s*go\\s*\\|",
+        "grammar_vocab": "Grammar/Vocab:.*wǒ.*I.*huì.*will/can.*qù.*go",
+        "natural_alt": "Natural Alternative:.*我会去"
+      }
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+# Local vLLM / OpenAI-compatible servers config
+name: "local_models_benchmark"
+test_file: "test_cases.json"
+
+providers:
+  # Qwen 3.5 9B Q5 at 192.168.0.20:8000
+  - type: "vllm"
+    model: "/models/Qwen3.5_9b-Q5_K_M-instruct.gguf"
+    base_url: "http://192.168.0.20:8000/v1"
+    api_key: "EMPTY"
+    temperature: 0.0
+    max_tokens: 8192
+    timeout: 600
+
+  # Gemma 4 12B Q6 at 192.168.0.20:8001
+  - type: "vllm"
+    model: "/models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf"
+    base_url: "http://192.168.0.20:8001/v1"
+    api_key: "EMPTY"
+    temperature: 0.0
+    max_tokens: 8192
+    timeout: 600
+
+# Run configuration
+runs_per_model: 3
+max_workers: 1
+output_dir: "results"
+save_raw_responses: true
+save_results_json: true
+save_results_csv: true
+print_progress: true
+timeout_per_request: 300
+retry_failed: 1
