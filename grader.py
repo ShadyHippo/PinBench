@@ -26,6 +26,7 @@ _CHINESE_NORMALIZE = str.maketrans({
     '她': '他',
     '牠': '他',
     '妳': '你',
+    '您': '你',
 })
 
 
@@ -123,6 +124,17 @@ class Grader:
                 raw_output=response, **metadata
             )
 
+        try:
+            return self._grade(criteria, response, test_id, **metadata)
+        except Exception as e:
+            return GradingResult(
+                test_id=test_id, test_title=criteria.title, category=criteria.category,
+                passed=False, score=0.0,
+                errors=[f"Grader crash: {e}"],
+                raw_output=response, **metadata
+            )
+
+    def _grade(self, criteria, response, test_id, **metadata):
         details = {}
         matched_text = {}
         errors = []
@@ -172,7 +184,7 @@ class Grader:
         if literal_ok:
             total_score += criteria.WEIGHTS["literal_words"]
         else:
-            missing = self._find_missing_literal_words(literal_section, criteria)
+            missing = self._find_missing_literal_words(literal_section, criteria) if literal_section else ["(no literal breakdown section found)"]
             errors.append(f"Literal breakdown missing words: {', '.join(missing[:3])}")
 
         passed = details.get("table_content", False) and details.get("literal_words", False)
@@ -323,6 +335,8 @@ class Grader:
 
     def _find_missing_literal_words(self, section: str, criteria: GradingCriteria) -> List[str]:
         """Return labels for words missing from the literal breakdown."""
+        if not section:
+            return ["(no literal breakdown section found)"]
         section_lower = section.lower()
         section_norm = _normalize_chinese(section)
         section_pinyins = _normalize_pinyin(" ".join(re.findall(r'\(([^)]+)\)', section)))
@@ -438,7 +452,22 @@ class ResultsAggregator:
 
     def _compute_aggregate(self, results: List[GradingResult], **keys) -> dict:
         if not results:
-            return {"count": 0, **keys}
+            return {
+                **keys,
+                "count": 0,
+                "passed": 0,
+                "failed": 0,
+                "pass_rate": 0.0,
+                "avg_score": 0.0,
+                "min_score": 0.0,
+                "max_score": 0.0,
+                "avg_latency_ms": 0.0,
+                "avg_tokens": 0,
+                "criterion_pass_rates": {},
+                "categories": [],
+                "models": [],
+                "providers": [],
+            }
 
         passed = [r for r in results if r.passed]
         failed = [r for r in results if not r.passed]

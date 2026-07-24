@@ -284,7 +284,8 @@
         "english": [
           "And you?",
           "What about you?",
-          "How about you?"
+          "How about you?",
+          "you (particle"
         ]
       },
       "literal": [
@@ -1255,9 +1256,9 @@
     },
     {
       "id": 29,
-      "title": "Dirty: Go to sleep",
+      "title": "Dirty: Go to sleep (chu→qu)",
       "category": "corrected_pinyin",
-      "prompt": "Brother said chu sui jiao",
+      "prompt": "Brother said chu shui jiao",
       "table": {
         "chinese": "去睡觉",
         "pinyin": "qù shuì jiào",
@@ -1333,7 +1334,7 @@
       "id": 31,
       "title": "Dirty: Good morning",
       "category": "corrected_pinyin",
-      "prompt": "Mom said zhao sang hao",
+      "prompt": "Mom said zao xiang hao",
       "table": {
         "chinese": "早上好",
         "pinyin": "zǎo shang hǎo",
@@ -1408,9 +1409,9 @@
     },
     {
       "id": 33,
-      "title": "Dirty: Eat breakfast",
+      "title": "Dirty: Eat breakfast (zoa→zao)",
       "category": "corrected_pinyin",
-      "prompt": "Mom said ci zhao fan",
+      "prompt": "Mom said chi zoa fan",
       "table": {
         "chinese": "吃早饭",
         "pinyin": "chī zǎo fàn",
@@ -1563,9 +1564,9 @@
     },
     {
       "id": 37,
-      "title": "Dirty: Go to school",
+      "title": "Dirty: Go to school (chu→qu)",
       "category": "corrected_pinyin",
-      "prompt": "Kid said chu sang shue",
+      "prompt": "Kid said chu shang xue",
       "table": {
         "chinese": "去上学",
         "pinyin": "qù shàng xué",
@@ -1646,43 +1647,40 @@
     },
     {
       "id": 39,
-      "title": "Dirty: On a business trip",
+      "title": "Dirty: Go to school (que→xue)",
       "category": "corrected_pinyin",
-      "prompt": "He said cu cai le",
+      "prompt": "Kid said qu shang que",
       "table": {
-        "chinese": "出差了",
-        "pinyin": "chū chāi le",
+        "chinese": "去上学",
+        "pinyin": "qù shàng xué",
         "english": [
-          "On a business trip",
-          "Went on a business trip"
+          "Go to school"
         ]
       },
       "literal": [
         {
-          "chinese": "出",
-          "pinyin": "chū",
+          "chinese": "去",
+          "pinyin": "qù",
           "keywords": [
-            "go out",
-            "leave",
-            "out"
+            "go"
           ]
         },
         {
-          "chinese": "差",
-          "pinyin": "chāi",
+          "chinese": "上",
+          "pinyin": "shàng",
           "keywords": [
-            "trip",
-            "errand",
-            "business"
+            "up",
+            "attend",
+            "go to"
           ]
         },
         {
-          "chinese": "了",
-          "pinyin": "le",
+          "chinese": "学",
+          "pinyin": "xué",
           "keywords": [
-            "completed",
-            "particle",
-            "change"
+            "study",
+            "learn",
+            "school"
           ]
         }
       ]
@@ -1737,9 +1735,9 @@
     },
     {
       "id": 41,
-      "title": "Dirty: What are you doing",
+      "title": "Clean: What are you doing",
       "category": "corrected_pinyin",
-      "prompt": "Teacher asked zhai zuo sen me",
+      "prompt": "Teacher asked zai zuo shen me",
       "table": {
         "chinese": "在做什么",
         "pinyin": "zài zuò shén me",
@@ -1828,7 +1826,7 @@
       "id": 43,
       "title": "Dirty: Done washing",
       "category": "corrected_pinyin",
-      "prompt": "Sister said shi wan le",
+      "prompt": "Sister said shi wan le while I was doing the dishes",
       "table": {
         "chinese": "洗完了",
         "pinyin": "xǐ wán le",
@@ -1910,9 +1908,9 @@
     },
     {
       "id": 45,
-      "title": "Dirty: Got it / Understood",
+      "title": "Dirty: Got it / Understood (zhir→zhi)",
       "category": "corrected_pinyin",
-      "prompt": "Student said zi dao le",
+      "prompt": "Student said zhir dao le",
       "table": {
         "chinese": "知道了",
         "pinyin": "zhī dào le",
@@ -1947,6 +1945,44 @@
             "completed",
             "particle",
             "change"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 46,
+      "title": "Dirty: Good morning (shong→shang)",
+      "category": "corrected_pinyin",
+      "prompt": "Mom said zao shong hao",
+      "table": {
+        "chinese": "早上好",
+        "pinyin": "zǎo shang hǎo",
+        "english": [
+          "Good morning"
+        ]
+      },
+      "literal": [
+        {
+          "chinese": "早",
+          "pinyin": "zǎo",
+          "keywords": [
+            "morning",
+            "early"
+          ]
+        },
+        {
+          "chinese": "上",
+          "pinyin": "shang",
+          "keywords": [
+            "up",
+            "on"
+          ]
+        },
+        {
+          "chinese": "好",
+          "pinyin": "hǎo",
+          "keywords": [
+            "good"
           ]
         }
       ]

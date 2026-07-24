@@ -26,6 +26,23 @@ from grader import ResultsAggregator, create_grader_from_test_file
 from providers import create_provider
 
 
+def _resolve_env_vars(obj):
+    """Recursively resolve ${VAR_NAME} patterns in strings using env vars."""
+    if isinstance(obj, str):
+        import re
+        def _replace(m):
+            var = m.group(1)
+            val = os.environ.get(var)
+            if val is None:
+                raise ValueError(f"Environment variable '{var}' is not set")
+            return val
+        return re.sub(r'\$\{(\w+)\}', _replace, obj)
+    elif isinstance(obj, dict):
+        return {k: _resolve_env_vars(v) for k, v in obj.items()}
+    elif isinstance(obj, list):
+        return [_resolve_env_vars(item) for item in obj]
+    return obj
+
 def load_config(config_path: str) -> RunConfig:
     """Load benchmark configuration from YAML or JSON."""
     path = Path(config_path)
@@ -40,6 +57,9 @@ def load_config(config_path: str) -> RunConfig:
             data = json.load(f)
     else:
         raise ValueError(f"Unsupported config format: {path.suffix}")
+    
+    # Resolve ${ENV_VAR} patterns
+    data = _resolve_env_vars(data)
     
     return RunConfig(**data)
 
@@ -134,6 +154,7 @@ def run_benchmark(config: RunConfig) -> Dict[str, Any]:
     
     def run_single_test(test_case, provider, run_idx):
         """Run a single test case."""
+        response = None
         try:
             response = provider.generate(system_prompt, test_case.prompt)
             
@@ -142,6 +163,7 @@ def run_benchmark(config: RunConfig) -> Dict[str, Any]:
                     "test_case": test_case,
                     "provider": provider,
                     "run_idx": run_idx,
+                    "response": response,
                     "error": response.error,
                     "success": False,
                 }
@@ -169,13 +191,14 @@ def run_benchmark(config: RunConfig) -> Dict[str, Any]:
                 "test_case": test_case,
                 "provider": provider,
                 "run_idx": run_idx,
+                "response": response,
                 "error": str(e),
                 "success": False,
             }
     
     # Run test suite with retry loop for API errors
-    api_failures = []
-    max_retries = config.retry_failed if config.retry_failed > 0 else 5  # default 5 if unset
+    max_retries = config.retry_failed if config.retry_failed > 0 else 5
+    max_retry_multiplier = 5  # Each test can fail up to this many times before abandoning
     
     # Collect all task definitions
     tasks = []
@@ -186,17 +209,26 @@ def run_benchmark(config: RunConfig) -> Dict[str, Any]:
     
     pending = tasks[:]
     retry_count = 0
+    fail_count_per_test = {}  # test_id -> fail count
     
     while pending:
-        if retry_count > max_retries:
-            print(f"\nMax retries ({max_retries}) reached. {len(pending)} tests still failing.")
+        if retry_count >= max_retries:
+            print(f"\nReached max retry rounds ({max_retries}). {len(pending)} tests abandoned.")
+            for tc, _, ri in pending:
+                failed += 1
+                print(f"  ABANDONED Test {tc.id}: {tc.title} (run {ri})")
             break
         
         if retry_count > 0:
-            print(f"\n--- Retry round {retry_count}/{max_retries} ({len(pending)} remaining) ---")
+            backoff = min(retry_count * 2, 30)  # 2s, 4s, 6s, ... 30s max
+            print(f"\n--- Retry round {retry_count}/{max_retries} ({len(pending)} remaining, waiting {backoff}s) ---")
+            time.sleep(backoff)
+        else:
+            print(f"\n--- Initial run ({len(pending)} tests) ---")
         
         batch = pending
         pending = []
+        batch_failures = 0
         
         with ThreadPoolExecutor(max_workers=config.max_workers) as executor:
             futures = [executor.submit(run_single_test, tc, p, ri) for tc, p, ri in batch]
@@ -204,54 +236,68 @@ def run_benchmark(config: RunConfig) -> Dict[str, Any]:
             for future in as_completed(futures):
                 result = future.result()
                 completed += 1
+                tid = result['test_case'].id
+                run_idx = result['run_idx']
                 
                 if result["success"]:
                     grading = result["grading"]
                     aggregator.add_result(grading)
                     
-                    if config.save_raw_responses:
-                        raw_responses.append({
-                            "test_id": result["test_case"].id,
-                            "test_title": result["test_case"].title,
-                            "category": result["test_case"].category,
-                            "run_idx": result["run_idx"],
-                            "model": grading.model,
-                            "provider": grading.provider,
-                            "latency_ms": grading.latency_ms,
-                            "tokens_used": grading.tokens_used,
-                            "prompt": result["test_case"].prompt,
-                            "response": result["response"].text,
-                            "grading": grading.to_dict(),
-                        })
-                    
                     status = "✓" if grading.passed else "✗"
                     if config.print_progress:
                         passed_crit = [k for k, v in grading.details.items() if v]
                         failed_crit = [k for k, v in grading.details.items() if not v]
-                        print(f"[{completed}/{total_requests}] {status} Test {grading.test_id}: {grading.test_title}")
-                        print(f"       Score: {grading.score:.2f}  |  {grading.latency_ms:.0f}ms  |  {grading.model}")
+                        print(f"[{completed}] {status} Test {tid}: {grading.test_title}")
+                        print(f"       Score: {grading.score:.2f}  |  {grading.latency_ms:.0f}ms")
                         print(f"       PASS: {', '.join(passed_crit) if passed_crit else '(none)'}")
                         print(f"       FAIL: {', '.join(failed_crit) if failed_crit else '(none)'}")
-                        if config.verbose:
-                            print()
-                            print(result['test_case'].prompt)
-                            print()
-                            print(result['response'].text)
-                            print()
-                        print()
                 else:
-                    failed += 1
+                    batch_failures += 1
+                    fail_count_per_test[tid] = fail_count_per_test.get(tid, 0) + 1
+                    
                     if config.print_progress:
-                        print(f"[{completed}/{total_requests}] ✗ ERROR | "
-                              f"{result['provider'].get_provider_name()}/{result['provider'].get_model_name()} | "
-                              f"Test {result['test_case'].id}: {result['error']}")
-                    # Queue for retry
-                    pending.append((result['test_case'], result['provider'], result['run_idx']))
+                        print(f"[{completed}] ✗ ERROR Test {tid}: {result['error'][:80]}")
+                    
+                    # Check if this test has failed too many times
+                    if fail_count_per_test[tid] >= max_retry_multiplier:
+                        failed += 1
+                        if config.print_progress:
+                            print(f"  Abandoning test {tid} after {max_retry_multiplier} failures")
+                    else:
+                        pending.append((result['test_case'], result['provider'], run_idx))
+                
+                # Save raw response eagerly (before grading outcome)
+                if config.save_raw_responses and result.get("response") and result["response"].text:
+                    resp_data = {
+                        "test_id": tid,
+                        "test_title": result["test_case"].title,
+                        "category": result["test_case"].category,
+                        "run_idx": run_idx,
+                        "model": getattr(result.get("response"), "model", ""),
+                        "provider": getattr(result.get("response"), "provider", ""),
+                        "latency_ms": getattr(result.get("response"), "latency_ms", 0),
+                        "tokens_used": getattr(result.get("response"), "tokens_used", 0),
+                        "prompt": result["test_case"].prompt,
+                        "response": result["response"].text,
+                        "grading": result.get("grading").to_dict() if result.get("grading") else None,
+                    }
+                    raw_responses.append(resp_data)
+                
+                # Verbose output: always show response text if available
+                if config.verbose and result.get("response") and result["response"].text:
+                    if config.print_progress:
+                        print()
+                        print(result['test_case'].prompt)
+                        print()
+                        print(result['response'].text)
+                        print()
+        
+        # If more than 50% of tests in this batch failed with API errors, assume server is down
+        batch_size = len(batch)
+        if batch_size > 5 and batch_failures > batch_size * 0.5:
+            print(f"\n  ⚠ {batch_failures}/{batch_size} tests failed with API errors. Server may be unstable.")
         
         retry_count += 1
-        # Small delay between retry rounds
-        if pending:
-            time.sleep(2)
     
     elapsed = time.time() - start_time
     

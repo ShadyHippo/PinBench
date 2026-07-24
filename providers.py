@@ -584,6 +584,8 @@ def create_provider(config: Dict[str, Any]) -> ModelProvider:
         return TogetherProvider(model=model, **kwargs)
     elif provider_type == "openai":
         return OpenAIProvider(model=model, **kwargs)
+    elif provider_type == "openai_compatible":
+        return OpenAICompatibleProvider(model=model, **kwargs)
     elif provider_type == "ollama":
         return OllamaProvider(model=model, **kwargs)
     elif provider_type == "vllm":

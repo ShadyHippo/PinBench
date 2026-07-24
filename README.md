@@ -1,10 +1,23 @@
-# Pinbench: Pinyin-to-Character Conversion Benchmark
+# PinBench: Pinyin-to-Character Conversion Benchmark
+
+*An instructions-and-parsing intelligence benchmark disguised as a translation benchmark.*
+
+- **Pin** as in **Pinyin** — the input the benchmark feeds models
+- **Pin** as in **to pin** — the model must pin each syllable to the correct character, pin the output format, and pin the right breakdown, all while following strict formatting rules
 
 A benchmark framework for testing small language models (15B and below) on their ability to follow a strict Pinyin-to-Character conversion system prompt. The task requires models to:
 
 1. **Extract only Pinyin syllables** from input (ignoring ALL English words like names, "said", "told", etc.)
 2. **Map each syllable to its most literal Chinese character** (no omissions, no corrections unless absolutely necessary)
 3. **Output in a strict format** with a table and tutor's notes
+
+**What this benchmark actually tests:**
+
+You are not just testing: *"Can the model convert pinyin to Chinese?"*
+
+You are testing: *"Can the model infer the user's intended Chinese while respecting the user's input?"*
+
+This is a harder problem. A model that maps every pinyin syllable literally will fail on intentionally slightly-off pinyin. A model that over-corrects will change things that were already right. A good model balances both — it uses phrase-level context to resolve ambiguity but doesn't rewrite valid input.
 
 ## Quick Start
 
@@ -177,7 +190,7 @@ python3 run_benchmark.py --compare results/20240115_120000 results/20240116_1200
 ## Architecture
 
 ```
-pinbench/
+PinBench/
 ├── test_cases.json       # Test suite with regex patterns
 ├── test_cases.py         # Test case dataclasses
 ├── grader.py             # Regex-based grading + aggregation

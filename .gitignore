@@ -6,6 +6,19 @@ results/
 __pycache__/
 *.pyc
 
+# configs with API keys
+deepseek_config.yaml
+deepseek_free_config.yaml
+mimo_config.yaml
+laguna_config.yaml
+ling_config.yaml
+north_config.yaml
+nemotron_config.yaml
+
+# environment files
+.env
+*.env
+
 # OS
 .DS_Store
 Thumbs.db

@@ -1,0 +1,138 @@
+
+============================================================
+PINYIN BENCHMARK: deepseek_v4_flash_benchmark
+============================================================
+Test file: test_cases.json
+Models: 1
+Runs per model: 1
+Max workers: 3
+Output dir: results
+
+Test cases to run: 45
+  Created provider: openai_compat_opencode.ai/deepseek-v4-flash
+
+--- Initial run (45 tests) ---
+[1] ✗ ERROR Test 1: Missing credentials. Please pass an `api_key`, `workload_identity`, `admin_api_k
+[2] ✗ ERROR Test 4: Missing credentials. Please pass an `api_key`, `workload_identity`, `admin_api_k
+[3] ✗ ERROR Test 5: Missing credentials. Please pass an `api_key`, `workload_identity`, `admin_api_k
+[4] ✗ ERROR Test 6: Missing credentials. Please pass an `api_key`, `workload_identity`, `admin_api_k
+[5] ✗ ERROR Test 7: Missing credentials. Please pass an `api_key`, `workload_identity`, `admin_api_k
+[6] ✗ ERROR Test 8: Missing credentials. Please pass an `api_key`, `workload_identity`, `admin_api_k
+[7] ✗ ERROR Test 9: Missing credentials. Please pass an `api_key`, `workload_identity`, `admin_api_k
+[8] ✗ ERROR Test 10: Missing credentials. Please pass an `api_key`, `workload_identity`, `admin_api_k
+[9] ✗ ERROR Test 11: Missing credentials. Please pass an `api_key`, `workload_identity`, `admin_api_k
+[10] ✗ ERROR Test 12: Missing credentials. Please pass an `api_key`, `workload_identity`, `admin_api_k
+[11] ✗ ERROR Test 13: Missing credentials. Please pass an `api_key`, `workload_identity`, `admin_api_k
+[12] ✗ ERROR Test 14: Missing credentials. Please pass an `api_key`, `workload_identity`, `admin_api_k
+[13] ✗ ERROR Test 15: Missing credentials. Please pass an `api_key`, `workload_identity`, `admin_api_k
+[14] ✗ ERROR Test 16: Missing credentials. Please pass an `api_key`, `workload_identity`, `admin_api_k
+[15] ✗ ERROR Test 17: Missing credentials. Please pass an `api_key`, `workload_identity`, `admin_api_k
+[16] ✗ ERROR Test 18: Missing credentials. Please pass an `api_key`, `workload_identity`, `admin_api_k
+[17] ✗ ERROR Test 19: Missing credentials. Please pass an `api_key`, `workload_identity`, `admin_api_k
+[18] ✗ ERROR Test 20: Missing credentials. Please pass an `api_key`, `workload_identity`, `admin_api_k
+[19] ✗ ERROR Test 21: Missing credentials. Please pass an `api_key`, `workload_identity`, `admin_api_k
+[20] ✗ ERROR Test 22: Missing credentials. Please pass an `api_key`, `workload_identity`, `admin_api_k
+[21] ✗ ERROR Test 23: Missing credentials. Please pass an `api_key`, `workload_identity`, `admin_api_k
+[22] ✗ ERROR Test 24: Missing credentials. Please pass an `api_key`, `workload_identity`, `admin_api_k
+[23] ✗ ERROR Test 25: Missing credentials. Please pass an `api_key`, `workload_identity`, `admin_api_k
+[24] ✗ ERROR Test 26: Missing credentials. Please pass an `api_key`, `workload_identity`, `admin_api_k
+[25] ✗ ERROR Test 27: Missing credentials. Please pass an `api_key`, `workload_identity`, `admin_api_k
+[26] ✗ ERROR Test 28: Missing credentials. Please pass an `api_key`, `workload_identity`, `admin_api_k
+[27] ✗ ERROR Test 29: Missing credentials. Please pass an `api_key`, `workload_identity`, `admin_api_k
+[28] ✗ ERROR Test 30: Missing credentials. Please pass an `api_key`, `workload_identity`, `admin_api_k
+[29] ✗ ERROR Test 31: Missing credentials. Please pass an `api_key`, `workload_identity`, `admin_api_k
+[30] ✗ ERROR Test 32: Missing credentials. Please pass an `api_key`, `workload_identity`, `admin_api_k
+[31] ✗ ERROR Test 33: Missing credentials. Please pass an `api_key`, `workload_identity`, `admin_api_k
+[32] ✗ ERROR Test 34: Missing credentials. Please pass an `api_key`, `workload_identity`, `admin_api_k
+[33] ✗ ERROR Test 35: Missing credentials. Please pass an `api_key`, `workload_identity`, `admin_api_k
+[34] ✗ ERROR Test 36: Missing credentials. Please pass an `api_key`, `workload_identity`, `admin_api_k
+[35] ✗ ERROR Test 37: Missing credentials. Please pass an `api_key`, `workload_identity`, `admin_api_k
+[36] ✗ ERROR Test 38: Missing credentials. Please pass an `api_key`, `workload_identity`, `admin_api_k
+[37] ✗ ERROR Test 39: Missing credentials. Please pass an `api_key`, `workload_identity`, `admin_api_k
+[38] ✗ ERROR Test 40: Missing credentials. Please pass an `api_key`, `workload_identity`, `admin_api_k
+[39] ✗ ERROR Test 41: Missing credentials. Please pass an `api_key`, `workload_identity`, `admin_api_k
+[40] ✗ ERROR Test 42: Missing credentials. Please pass an `api_key`, `workload_identity`, `admin_api_k
+[41] ✗ ERROR Test 43: Missing credentials. Please pass an `api_key`, `workload_identity`, `admin_api_k
+[42] ✗ ERROR Test 44: Missing credentials. Please pass an `api_key`, `workload_identity`, `admin_api_k
+[43] ✗ ERROR Test 45: Missing credentials. Please pass an `api_key`, `workload_identity`, `admin_api_k
+[44] ✗ ERROR Test 2: Missing credentials. Please pass an `api_key`, `workload_identity`, `admin_api_k
+[45] ✗ ERROR Test 3: Missing credentials. Please pass an `api_key`, `workload_identity`, `admin_api_k
+
+  ⚠ 45/45 tests failed with API errors. Server may be unstable.
+
+Reached max retry rounds (1). 45 tests abandoned.
+  ABANDONED Test 1: Basic command with English context (run 0)
+  ABANDONED Test 4: Question with English context (run 0)
+  ABANDONED Test 5: Negative command (run 0)
+  ABANDONED Test 6: Time expression with English (run 0)
+  ABANDONED Test 7: Particle 'ne' for follow-up question (run 0)
+  ABANDONED Test 8: Complex sentence with 'de' particle (run 0)
+  ABANDONED Test 9: Experience particle 'guo' (run 0)
+  ABANDONED Test 10: Ba particle for suggestion (run 0)
+  ABANDONED Test 11: Multiple names - all should be ignored (run 0)
+  ABANDONED Test 12: English verb 'said' with colon (run 0)
+  ABANDONED Test 13: Measure word with English context (run 0)
+  ABANDONED Test 14: Directional complement (run 0)
+  ABANDONED Test 15: Resultative complement (run 0)
+  ABANDONED Test 16: Potential complement (run 0)
+  ABANDONED Test 17: Adverbial 'hen' with adjective (run 0)
+  ABANDONED Test 18: Comparison with 'bi' (run 0)
+  ABANDONED Test 19: Passive with 'bei' (run 0)
+  ABANDONED Test 20: Causative with 'rang' (run 0)
+  ABANDONED Test 21: Only pinyin - no English (run 0)
+  ABANDONED Test 22: English with quotes (run 0)
+  ABANDONED Test 23: Third person 'ta' ambiguity (run 0)
+  ABANDONED Test 24: Plural 'men' with English (run 0)
+  ABANDONED Test 25: Modal 'hui' for future/ability (run 0)
+  ABANDONED Test 26: Clean: Put it away (run 0)
+  ABANDONED Test 27: Dirty: Put it away (run 0)
+  ABANDONED Test 28: Clean: Go to sleep (run 0)
+  ABANDONED Test 29: Dirty: Go to sleep (run 0)
+  ABANDONED Test 30: Clean: Good morning (run 0)
+  ABANDONED Test 31: Dirty: Good morning (run 0)
+  ABANDONED Test 32: Clean: Eat breakfast (run 0)
+  ABANDONED Test 33: Dirty: Eat breakfast (run 0)
+  ABANDONED Test 34: Clean: Thank you (run 0)
+  ABANDONED Test 35: Dirty: Thank you (run 0)
+  ABANDONED Test 36: Clean: Go to school (run 0)
+  ABANDONED Test 37: Dirty: Go to school (run 0)
+  ABANDONED Test 38: Clean: On a business trip (run 0)
+  ABANDONED Test 39: Dirty: On a business trip (run 0)
+  ABANDONED Test 40: Clean: What are you doing (run 0)
+  ABANDONED Test 41: Dirty: What are you doing (run 0)
+  ABANDONED Test 42: Clean: Done washing (run 0)
+  ABANDONED Test 43: Dirty: Done washing (run 0)
+  ABANDONED Test 44: Clean: Got it / Understood (run 0)
+  ABANDONED Test 45: Dirty: Got it / Understood (run 0)
+  ABANDONED Test 2: English names should be ignored (run 0)
+  ABANDONED Test 3: Multiple English words interspersed (run 0)
+
+============================================================
+BENCHMARK COMPLETE
+============================================================
+Duration: 0.8s
+Total requests: 45
+Completed: 45
+Failed: 45
+
+Results saved to: results/20260724_150546
+  - summary.json (overview)
+  - results.json (detailed grading)
+  - results.csv (for analysis)
+  - raw_responses.json (full model outputs)
+  - config.yaml (run configuration)
+
+============================================================
+BENCHMARK SUMMARY
+============================================================
+Total tests:     0
+Passed:          0 (0.0%)
+Failed:          0
+Avg Score:       0.00%
+Avg Latency:     0ms
+Avg Tokens:      0
+Models:          
+Providers:       
+Categories:      
+
+By Category:
