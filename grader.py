@@ -22,6 +22,18 @@ def _normalize_pinyin(s: str) -> str:
     return ''.join(c for c in s if c.isalnum())
 
 
+_CHINESE_NORMALIZE = str.maketrans({
+    '她': '他',
+    '牠': '他',
+    '妳': '你',
+})
+
+
+def _normalize_chinese(s: str) -> str:
+    """Normalize gender-specific pronouns for comparison."""
+    return s.translate(_CHINESE_NORMALIZE)
+
+
 @dataclass
 class GradingResult:
     """Result of grading a single test case."""
@@ -197,7 +209,7 @@ class Grader:
         """Check that the table contains the expected chinese, pinyin, english."""
         # Normalize expected values
         expected_chinese = criteria.table["chinese"].strip()
-        expected_chinese_nospace = expected_chinese.replace(" ", "")
+        expected_chinese_norm = _normalize_chinese(expected_chinese).replace(" ", "")
         expected_pinyin = criteria.table["pinyin"].strip().lower()
         expected_pinyin_norm = _normalize_pinyin(expected_pinyin)
         expected_english_opts = criteria.table["english"]
@@ -234,7 +246,7 @@ class Grader:
                 all_english.append(english_col_clean)
 
                 # Try exact match on this row
-                chinese_ok = chinese_col == expected_chinese
+                chinese_ok = _normalize_chinese(chinese_col) == expected_chinese_norm
                 pinyin_ok = pinyin_col == expected_pinyin
                 english_ok = english_col_clean in expected_english_opts
                 if chinese_ok and pinyin_ok and english_ok:
@@ -242,7 +254,7 @@ class Grader:
 
                 # Fuzzy match: remove spaces from chinese
                 if not chinese_ok:
-                    chinese_ok = chinese_col.replace(" ", "") == expected_chinese_nospace
+                    chinese_ok = _normalize_chinese(chinese_col.replace(" ", "")) == expected_chinese_norm
                 # Fuzzy match: normalize pinyin (lowercase, strip tones, remove spaces)
                 if not pinyin_ok:
                     pinyin_ok = _normalize_pinyin(pinyin_col) == expected_pinyin_norm
@@ -256,10 +268,10 @@ class Grader:
 
         # Multi-row fallback: concatenate all rows and check
         if all_chinese:
-            combined_chinese = "".join(all_chinese).replace(" ", "")
+            combined_chinese = _normalize_chinese("".join(all_chinese).replace(" ", ""))
             combined_pinyin = _normalize_pinyin(" ".join(all_pinyin))
             combined_english = " ".join(all_english)
-            if (expected_chinese_nospace in combined_chinese and
+            if (expected_chinese_norm in combined_chinese and
                 expected_pinyin_norm in combined_pinyin and
                 any(opt in combined_english for opt in expected_english_opts)):
                 return True
@@ -285,18 +297,20 @@ class Grader:
     def _check_literal_words(self, section: str, criteria: GradingCriteria) -> bool:
         """Check that each literal word has chinese + pinyin + at least one keyword."""
         section_lower = section.lower()
+        section_norm = _normalize_chinese(section)
         # Extract all pinyins from parenthesized parts of bullet lines
         section_pinyins = _normalize_pinyin(" ".join(re.findall(r'\(([^)]+)\)', section)))
         missing = 0
         for word in criteria.literal:
             ch = word["chinese"]
+            ch_norm = _normalize_chinese(ch)
             py = word["pinyin"].lower()
             kws = [k.lower() for k in word["keywords"]]
 
-            # Check chinese: either the full compound word, or each character individually
-            has_chinese = ch in section
+            # Check chinese (with pronoun normalization)
+            has_chinese = ch in section or ch_norm in section_norm
             if not has_chinese and len(ch) > 1:
-                has_chinese = all(c in section for c in ch)
+                has_chinese = all(c in section or _normalize_chinese(c) in section_norm for c in ch)
             # Check pinyin (extracted from parenthesized parts)
             has_pinyin = _normalize_pinyin(py) in section_pinyins
             # Check keyword (case-insensitive)
@@ -310,17 +324,19 @@ class Grader:
     def _find_missing_literal_words(self, section: str, criteria: GradingCriteria) -> List[str]:
         """Return labels for words missing from the literal breakdown."""
         section_lower = section.lower()
+        section_norm = _normalize_chinese(section)
         section_pinyins = _normalize_pinyin(" ".join(re.findall(r'\(([^)]+)\)', section)))
         missing = []
         for word in criteria.literal:
             ch = word["chinese"]
+            ch_norm = _normalize_chinese(ch)
             py = word["pinyin"].lower()
             kws = [k.lower() for k in word["keywords"]]
 
             parts_ok = []
-            has_chinese = ch in section
+            has_chinese = ch in section or ch_norm in section_norm
             if not has_chinese and len(ch) > 1:
-                has_chinese = all(c in section for c in ch)
+                has_chinese = all(c in section or _normalize_chinese(c) in section_norm for c in ch)
             if not has_chinese:
                 parts_ok.append("chinese")
             if _normalize_pinyin(py) not in section_pinyins:

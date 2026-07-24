@@ -21,4 +21,4 @@ save_results_json: true
 save_results_csv: true
 print_progress: true
 timeout_per_request: 300
-retry_failed: 0
+retry_failed: 10

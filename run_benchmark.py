@@ -173,62 +173,85 @@ def run_benchmark(config: RunConfig) -> Dict[str, Any]:
                 "success": False,
             }
     
-    with ThreadPoolExecutor(max_workers=config.max_workers) as executor:
-        futures = []
+    # Run test suite with retry loop for API errors
+    api_failures = []
+    max_retries = config.retry_failed if config.retry_failed > 0 else 5  # default 5 if unset
+    
+    # Collect all task definitions
+    tasks = []
+    for provider in providers:
+        for test_case in test_cases:
+            for run_idx in range(config.runs_per_model):
+                tasks.append((test_case, provider, run_idx))
+    
+    pending = tasks[:]
+    retry_count = 0
+    
+    while pending:
+        if retry_count > max_retries:
+            print(f"\nMax retries ({max_retries}) reached. {len(pending)} tests still failing.")
+            break
         
-        for provider in providers:
-            for test_case in test_cases:
-                for run_idx in range(config.runs_per_model):
-                    futures.append(
-                        executor.submit(run_single_test, test_case, provider, run_idx)
-                    )
+        if retry_count > 0:
+            print(f"\n--- Retry round {retry_count}/{max_retries} ({len(pending)} remaining) ---")
         
-        # Process results
-        for future in as_completed(futures):
-            result = future.result()
-            completed += 1
+        batch = pending
+        pending = []
+        
+        with ThreadPoolExecutor(max_workers=config.max_workers) as executor:
+            futures = [executor.submit(run_single_test, tc, p, ri) for tc, p, ri in batch]
             
-            if result["success"]:
-                grading = result["grading"]
-                aggregator.add_result(grading)
+            for future in as_completed(futures):
+                result = future.result()
+                completed += 1
                 
-                # Save raw response
-                if config.save_raw_responses:
-                    raw_responses.append({
-                        "test_id": result["test_case"].id,
-                        "test_title": result["test_case"].title,
-                        "category": result["test_case"].category,
-                        "run_idx": result["run_idx"],
-                        "model": grading.model,
-                        "provider": grading.provider,
-                        "latency_ms": grading.latency_ms,
-                        "tokens_used": grading.tokens_used,
-                        "prompt": result["test_case"].prompt,
-                        "response": result["response"].text,
-                        "grading": grading.to_dict(),
-                    })
-                
-                status = "✓" if grading.passed else "✗"
-                if config.print_progress:
-                    passed_crit = [k for k, v in grading.details.items() if v]
-                    failed_crit = [k for k, v in grading.details.items() if not v]
-                    print(f"[{completed}/{total_requests}] {status} Test {grading.test_id}: {grading.test_title}")
-                    print(f"       Score: {grading.score:.2f}  |  {grading.latency_ms:.0f}ms  |  {grading.model}")
-                    print(f"       PASS: {', '.join(passed_crit) if passed_crit else '(none)'}")
-                    print(f"       FAIL: {', '.join(failed_crit) if failed_crit else '(none)'}")
-                    if config.verbose:
+                if result["success"]:
+                    grading = result["grading"]
+                    aggregator.add_result(grading)
+                    
+                    if config.save_raw_responses:
+                        raw_responses.append({
+                            "test_id": result["test_case"].id,
+                            "test_title": result["test_case"].title,
+                            "category": result["test_case"].category,
+                            "run_idx": result["run_idx"],
+                            "model": grading.model,
+                            "provider": grading.provider,
+                            "latency_ms": grading.latency_ms,
+                            "tokens_used": grading.tokens_used,
+                            "prompt": result["test_case"].prompt,
+                            "response": result["response"].text,
+                            "grading": grading.to_dict(),
+                        })
+                    
+                    status = "✓" if grading.passed else "✗"
+                    if config.print_progress:
+                        passed_crit = [k for k, v in grading.details.items() if v]
+                        failed_crit = [k for k, v in grading.details.items() if not v]
+                        print(f"[{completed}/{total_requests}] {status} Test {grading.test_id}: {grading.test_title}")
+                        print(f"       Score: {grading.score:.2f}  |  {grading.latency_ms:.0f}ms  |  {grading.model}")
+                        print(f"       PASS: {', '.join(passed_crit) if passed_crit else '(none)'}")
+                        print(f"       FAIL: {', '.join(failed_crit) if failed_crit else '(none)'}")
+                        if config.verbose:
+                            print()
+                            print(result['test_case'].prompt)
+                            print()
+                            print(result['response'].text)
+                            print()
                         print()
-                        print(result['test_case'].prompt)
-                        print()
-                        print(result['response'].text)
-                        print()
-                    print()
-            else:
-                failed += 1
-                if config.print_progress:
-                    print(f"[{completed}/{total_requests}] ✗ ERROR | "
-                          f"{result['provider'].get_provider_name()}/{result['provider'].get_model_name()} | "
-                          f"Test {result['test_case'].id}: {result['error']}")
+                else:
+                    failed += 1
+                    if config.print_progress:
+                        print(f"[{completed}/{total_requests}] ✗ ERROR | "
+                              f"{result['provider'].get_provider_name()}/{result['provider'].get_model_name()} | "
+                              f"Test {result['test_case'].id}: {result['error']}")
+                    # Queue for retry
+                    pending.append((result['test_case'], result['provider'], result['run_idx']))
+        
+        retry_count += 1
+        # Small delay between retry rounds
+        if pending:
+            time.sleep(2)
     
     elapsed = time.time() - start_time
     
