@@ -57,8 +57,8 @@ def find_summary(run_dir: str) -> Optional[str]:
     if direct.exists():
         return str(direct)
     
-    # Check timestamped subdirectories
-    for child in sorted(p.iterdir()):
+    # Check timestamped subdirectories (reverse so newest first)
+    for child in sorted(p.iterdir(), reverse=True):
         if child.is_dir():
             sp = child / "summary.json"
             if sp.exists():
@@ -337,10 +337,21 @@ def load_test_data(test_file: str = "test_cases.json") -> Dict:
     with open(path) as f:
         data = json.load(f)
     
+    # System prompt: prefer system_prompt.txt over embedded one
+    sp_file = script_dir / "system_prompt.txt"
+    if sp_file.exists():
+        with open(sp_file) as f:
+            system_prompt = f.read().strip()
+        system_prompt_source = "system_prompt.txt"
+    else:
+        system_prompt = data.get("system_prompt", "")
+        system_prompt_source = test_file
+    
     return {
         "version": data.get("version", ""),
         "description": data.get("description", ""),
-        "system_prompt": data.get("system_prompt", ""),
+        "system_prompt": system_prompt,
+        "system_prompt_source": system_prompt_source,
         "tests": [
             {
                 "id": t["id"],

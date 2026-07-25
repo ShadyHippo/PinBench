@@ -22,7 +22,8 @@ from grader import create_grader_from_test_file, ResultsAggregator
 
 
 def find_raw_responses(run_dir: str) -> List[Dict]:
-    """Find and load raw_responses.json, searching timestamped subdirs."""
+    """Find and load raw_responses.json, searching timestamped subdirs.
+    Picks the most recent (reverse alphabetical = latest timestamp)."""
     p = Path(run_dir)
     
     # Direct
@@ -33,8 +34,8 @@ def find_raw_responses(run_dir: str) -> List[Dict]:
         if isinstance(data, list) and len(data) > 0:
             return data
     
-    # Subdirectories
-    for child in sorted(p.iterdir()):
+    # Subdirectories (reverse sorted = newest first)
+    for child in sorted(p.iterdir(), reverse=True):
         if child.is_dir():
             sp = child / "raw_responses.json"
             if sp.exists():
@@ -111,6 +112,16 @@ def main():
     with open(test_file) as f:
         test_data = json.load(f)
     
+    # System prompt: prefer system_prompt.txt over embedded one
+    sp_file = script_dir / "system_prompt.txt"
+    if sp_file.exists():
+        with open(sp_file) as f:
+            system_prompt = f.read().strip()
+        system_prompt_source = "system_prompt.txt"
+    else:
+        system_prompt = test_data.get("system_prompt", "")
+        system_prompt_source = test_file
+    
     print(f"Regrading old runs from: {old_multi_dir}")
     print(f"Using test file: {test_file}")
     print(f"Output: {output_dir}")
@@ -174,7 +185,8 @@ def main():
         "test_data": {
             "version": test_data.get("version", ""),
             "description": test_data.get("description", ""),
-            "system_prompt": test_data.get("system_prompt", ""),
+            "system_prompt": system_prompt,
+            "system_prompt_source": system_prompt_source,
             "tests": [
                 {"id": t["id"], "title": t["title"], "category": t["category"], "prompt": t["prompt"]}
                 for t in test_data.get("tests", [])

@@ -134,8 +134,18 @@ def run_benchmark(config: RunConfig) -> Dict[str, Any]:
         print("No valid providers created!")
         return {}
     
-    # System prompt
-    system_prompt = config.system_prompt_override or test_config.system_prompt
+    # System prompt — prefer system_prompt.txt over test_cases.json embedded prompt
+    if config.system_prompt_override:
+        system_prompt = config.system_prompt_override
+    else:
+        sp_file = Path(__file__).parent / "system_prompt.txt"
+        if sp_file.exists():
+            with open(sp_file) as f:
+                system_prompt = f.read().strip()
+            print(f"Using system prompt from: {sp_file}")
+        else:
+            system_prompt = test_config.system_prompt
+            print(f"Using system prompt from: {config.test_file}")
     
     # Run benchmark
     run_id = datetime.now().strftime("%Y%m%d_%H%M%S")
