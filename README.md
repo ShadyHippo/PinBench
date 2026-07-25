@@ -22,6 +22,10 @@ This is a harder problem. A model that maps every pinyin syllable literally will
 ## Quick Start
 
 ```bash
+# Create and activate a virtual environment (recommended)
+python3 -m venv venv
+source venv/bin/activate
+
 # Install dependencies
 pip install -r requirements.txt
 
@@ -35,7 +39,38 @@ python3 run_benchmark.py -c benchmark_config.yaml
 # Run with Together.ai
 export TOGETHER_API_KEY="your-key"
 python3 run_benchmark.py -c benchmark_config.yaml
+
+# Run with any OpenAI-compatible API
+# (e.g. OpenCode, vLLM, llama.cpp, etc.)
+export OPENAI_API_KEY="your-key"
+export OPENAI_BASE_URL="https://api.opencode.ai/v1"
+python3 run_benchmark.py -c benchmark_config.yaml
 ```
+
+> **Tip:** You can also pass API keys and base URLs directly in the config file
+> (see [Provider Configuration](#provider-configuration) below).
+
+### Running a Benchmark
+
+Create a config file (or copy one of the existing `*_config.yaml` files) and run:
+
+```bash
+python run_benchmark.py -c your_config.yaml --verbose > results.txt
+```
+
+The `--verbose` flag prints the full prompt and model response for each test — useful for debugging or inspecting outputs. Redirecting to a file with `>` lets you review results without scrolling.
+
+Common options:
+
+| Flag | What it does |
+|------|-------------|
+| `-c config.yaml` | Config file to use |
+| `--verbose` | Print full prompt + response per test |
+| `-r N` | Override runs per model (config default: 3) |
+| `-w N` | Override max workers (config default: 1) |
+| `--filter-cat category` | Only run tests in a category |
+| `--filter-test 1 2 3` | Only run specific test IDs |
+| `--mock` | Run mock tests (no API key needed) |
 
 ## Configuration
 
@@ -68,9 +103,40 @@ output_dir: "results"
 | `featherless` | Featherless.ai API | `FEATHERLESS_API_KEY` |
 | `together` | Together.ai API | `TOGETHER_API_KEY` |
 | `openai` | OpenAI API | `OPENAI_API_KEY` |
+| `openai_compatible` | Any OpenAI-compatible API (OpenCode, vLLM, etc.) | `OPENAI_API_KEY` + `OPENAI_BASE_URL` |
 | `ollama` | Local Ollama server | (none) |
-| `local` | OpenAI-compatible local server | (none) |
+| `local` | OpenAI-compatible local server (llama.cpp, vLLM) | (none) |
+| `vllm` | vLLM server | (none) |
+| `llamacpp` | llama.cpp server | (none) |
+| `hf` / `huggingface` | HuggingFace Transformers (local) | (none) |
 | `mock` | Test without API | (none) |
+
+### Provider Configuration
+
+You can set API keys and base URLs in the config file instead of environment variables:
+
+```yaml
+providers:
+  # OpenAI-compatible API (e.g. OpenCode)
+  - type: "openai_compatible"
+    model: "opencode/deepseek-v4-flash"
+    api_key: "your-key"          # Optional; falls back to OPENAI_API_KEY
+    base_url: "https://api.opencode.ai/v1"  # Optional; falls back to OPENAI_BASE_URL
+    temperature: 0.0
+    max_tokens: 2048
+    timeout: 120
+
+  # Local vLLM server
+  - type: "vllm"
+    model: "Qwen/Qwen2.5-3B-Instruct"
+    base_url: "http://localhost:8000/v1"
+    api_key: "EMPTY"
+
+  # Local llama.cpp server
+  - type: "llamacpp"
+    model: "qwen2.5-3b-instruct"
+    base_url: "http://localhost:8080"
+```
 
 ## Test Cases
 
@@ -167,6 +233,10 @@ Edit `test_cases.json` to add more tests. Each test needs:
   }
 }
 ```
+
+> **Security note:** Don't commit config files containing real API keys.
+> The `.gitignore` already excludes `*_config.yaml` and `.env` files.
+> Use environment variables or a separate untracked config file instead.
 
 ## Running Specific Tests
 
