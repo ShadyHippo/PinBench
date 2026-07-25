@@ -1354,3 +1354,2485 @@ Word-by-word:
 - 忙 (máng) = busy
 
 [50] ✓ Test 17: Adverbial 'hen' with adjective
+       Score: 1.00  |  6366ms
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Friend said ta hen mang
+
+[Phonetic Sandbox]
+English words to ignore: Friend, said
+Pinyin syllables found: ta, hen, mang
+Combined pinyin phrase: 他很忙
+Full Chinese translation: 他很忙
+Natural English meaning: He is very busy.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 他很忙 | Tā hěn máng | He is very busy. |
+
+Word-by-word:
+- 他 (tā) = He/Him
+- 很 (hěn) = Very
+- 忙 (máng) = Busy
+
+[51] ✓ Test 17: Adverbial 'hen' with adjective
+       Score: 1.00  |  6386ms
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Friend said ta hen mang
+
+[Phonetic Sandbox]
+English words to ignore: Friend, said
+Pinyin syllables found: ta, hen, mang
+Combined pinyin phrase: 他很忙
+Full Chinese translation: 他很忙
+Natural English meaning: He is very busy.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 他很忙 | Tā hěn máng | He is very busy. |
+
+Word-by-word:
+- 他 (tā) = He/Him
+- 很 (hěn) = Very
+- 忙 (máng) = Busy
+
+[52] ✓ Test 18: Comparison with 'bi'
+       Score: 1.00  |  7922ms
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Brother said wo bi ni gao
+
+[Phonetic Sandbox]
+English words to ignore: Brother, said
+Pinyin syllables found: wo, bi, ni, gao
+Combined pinyin phrase: 我比你高
+Full Chinese translation: 我比你高
+Natural English meaning: I am taller than you.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 我比你高 | Wǒ bǐ nǐ gāo | I am taller than you. |
+
+Word-by-word:
+- 我 (wǒ) = I
+- 比 (bǐ) = than (comparison particle)
+- 你 (nǐ) = you
+- 高 (gāo) = tall
+
+[53] ✓ Test 18: Comparison with 'bi'
+       Score: 1.00  |  6699ms
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Brother said wo bi ni gao
+
+[Phonetic Sandbox]
+English words to ignore: Brother, said
+Pinyin syllables found: wo, bi, ni, gao
+Combined pinyin phrase: 我比你高
+Full Chinese translation: 我比你高
+Natural English meaning: I am taller than you.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 我比你高 | Wǒ bǐ nǐ gāo | I am taller than you. |
+
+Word-by-word:
+- 我 (wǒ) = I
+- 比 (bǐ) = than (comparison particle)
+- 你 (nǐ) = you
+- 高 (gāo) = tall
+
+[54] ✓ Test 18: Comparison with 'bi'
+       Score: 1.00  |  6743ms
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Brother said wo bi ni gao
+
+[Phonetic Sandbox]
+English words to ignore: Brother, said
+Pinyin syllables found: wo, bi, ni, gao
+Combined pinyin phrase: 我比你高
+Full Chinese translation: 我比你高
+Natural English meaning: I am taller than you.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 我比你高 | Wǒ bǐ nǐ gāo | I am taller than you. |
+
+Word-by-word:
+- 我 (wǒ) = I
+- 比 (bǐ) = than (comparison particle)
+- 你 (nǐ) = you
+- 高 (gāo) = tall
+
+[55] ✓ Test 19: Passive with 'bei'
+       Score: 1.00  |  10521ms
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+She said shu bei wo kan le
+
+[Phonetic Sandbox]
+English words to ignore: She, said
+Pinyin syllables found: shu, bei, wo, kan, le
+Combined pinyin phrase: 书被我看l了
+Full Chinese translation: 书被我看l了
+Natural English meaning: The book was read by me.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 书被我看l了 | Shū bèi wǒ kàn le | The book was read by me. |
+
+Word-by-word:
+- 书 (shū) = book
+- 被 (bèi) = by (passive marker)
+- 我 (wǒ) = I / me
+- 看 (kàn) = read / look
+- 了 (le) = [aspect particle indicating completion]
+
+[56] ✓ Test 19: Passive with 'bei'
+       Score: 1.00  |  9312ms
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+She said shu bei wo kan le
+
+[Phonetic Sandbox]
+English words to ignore: She, said
+Pinyin syllables found: shu, bei, wo, kan, le
+Combined pinyin phrase: 书被我看l了
+Full Chinese translation: 书被我看l了
+Natural English meaning: The book was read by me.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 书被我看l了 | Shū bèi wǒ kàn le | The book was read by me. |
+
+Word-by-word:
+- 书 (shū) = book
+- 被 (bèi) = [passive marker]
+- 我 (wǒ) = I / me
+- 看 (kàn) = read / look
+- 了 (le) = [completed action marker]
+
+[57] ✓ Test 19: Passive with 'bei'
+       Score: 1.00  |  9429ms
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+She said shu bei wo kan le
+
+[Phonetic Sandbox]
+English words to ignore: She, said
+Pinyin syllables found: shu, bei, wo, kan, le
+Combined pinyin phrase: 书被我看l了
+Full Chinese translation: 书被我看l了
+Natural English meaning: The book was read by me.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 书被我看l了 | Shū bèi wǒ kàn le | The book was read by me. |
+
+Word-by-word:
+- 书 (shū) = book
+- 被 (bèi) = [passive marker]
+- 我 (wǒ) = I / me
+- 看 (kàn) = read / look
+- 了 (le) = [completed action marker]
+
+[58] ✗ Test 20: Causative with 'rang'
+       Score: 0.70  |  8751ms
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section
+       FAIL: literal_words
+
+Teacher said lao shi rang wo qu
+
+[Phonetic Sandbox]
+English words to ignore: Teacher, said
+Pinyin syllables found: lao shi rang wo qu
+Combined pinyin phrase: 老师让我去
+Full Chinese translation: 老师让我去
+Natural English meaning: The teacher told me to go.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 老师让我去 | Lǎoshī ràng wǒ qù | The teacher told me to go. |
+
+Word-by-word:
+- 老师 (lǎoshī) = teacher
+- 让 (ràng) = let / tell / make
+- 我 (wǒ) = I / me
+- 去 (qù) = go
+
+[59] ✗ Test 20: Causative with 'rang'
+       Score: 0.70  |  8002ms
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section
+       FAIL: literal_words
+
+Teacher said lao shi rang wo qu
+
+[Phonetic Sandbox]
+English words to ignore: Teacher, said
+Pinyin syllables found: lao, shi, rang, wo, qu
+Combined pinyin phrase: 老师让我去
+Full Chinese translation: 老师让我去
+Natural English meaning: The teacher told me to go.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 老师让我去 | Lǎoshī ràng wǒ qù | The teacher told me to go. |
+
+Word-by-word:
+- 老师 (lǎoshī) = teacher
+- 让 (ràng) = let / tell / make
+- 我 (wǒ) = I / me
+- 去 (qù) = go
+
+[60] ✗ Test 20: Causative with 'rang'
+       Score: 0.70  |  8032ms
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section
+       FAIL: literal_words
+
+Teacher said lao shi rang wo qu
+
+[Phonetic Sandbox]
+English words to ignore: Teacher, said
+Pinyin syllables found: lao, shi, rang, wo, qu
+Combined pinyin phrase: 老师让我去
+Full Chinese translation: 老师让我去
+Natural English meaning: The teacher told me to go.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 老师让我去 | Lǎoshī ràng wǒ qù | The teacher told me to go. |
+
+Word-by-word:
+- 老师 (lǎoshī) = teacher
+- 让 (ràng) = let / tell / make
+- 我 (wǒ) = I / me
+- 去 (qù) = go
+
+[61] ✓ Test 21: Only pinyin - no English
+       Score: 1.00  |  6371ms
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+wo ai ni
+
+[Phonetic Sandbox]
+English words to ignore: None
+Pinyin syllables found: wo, ai, ni
+Combined pinyin phrase: 我爱你
+Full Chinese translation: 我爱你
+Natural English meaning: I love you
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 我爱你 | Wǒ ài nǐ | I love you |
+
+Word-by-word:
+- 我 (wǒ) = I
+- 爱 (ài) = love
+- 你 (nǐ) = you
+
+[62] ✓ Test 21: Only pinyin - no English
+       Score: 1.00  |  5097ms
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+wo ai ni
+
+[Phonetic Sandbox]
+English words to ignore: None
+Pinyin syllables found: wo, ai, ni
+Combined pinyin phrase: 我爱你
+Full Chinese translation: 我爱你
+Natural English meaning: I love you
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 我爱你 | Wǒ ài nǐ | I love you |
+
+Word-by-word:
+- 我 (wǒ) = I
+- 爱 (ài) = love
+- 你 (nǐ) = you
+
+[63] ✓ Test 21: Only pinyin - no English
+       Score: 1.00  |  5103ms
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+wo ai ni
+
+[Phonetic Sandbox]
+English words to ignore: None
+Pinyin syllables found: wo, ai, ni
+Combined pinyin phrase: 我爱你
+Full Chinese translation: 我爱你
+Natural English meaning: I love you
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 我爱你 | Wǒ ài nǐ | I love you |
+
+Word-by-word:
+- 我 (wǒ) = I
+- 爱 (ài) = love
+- 你 (nǐ) = you
+
+[64] ✓ Test 22: English with quotes
+       Score: 1.00  |  7583ms
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+He said 'wo yao qu'
+
+[Phonetic Sandbox]
+English words to ignore: He, said
+Pinyin syllables found: wo, yao, qu
+Combined pinyin phrase: 我要去
+Full Chinese translation: 我要去
+Natural English meaning: I want to go / I am going to go
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 我要去 | Wǒ yào qù | I want to go |
+
+Word-by-word:
+- 我 (wǒ) = I
+- 要 (yào) = want / will
+- 去 (qù) = go
+
+[65] ✓ Test 22: English with quotes
+       Score: 1.00  |  6475ms
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+He said 'wo yao qu'
+
+[Phonetic Sandbox]
+English words to ignore: He, said
+Pinyin syllables found: wo, yao, qu
+Combined pinyin phrase: 我要去
+Full Chinese translation: 我要去
+Natural English meaning: I want to go / I am going to go
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 我要去 | Wǒ yào qù | I want to go |
+
+Word-by-word:
+- 我 (wǒ) = I
+- 要 (yào) = want / will
+- 去 (qù) = go
+
+[66] ✓ Test 22: English with quotes
+       Score: 1.00  |  6528ms
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+He said 'wo yao qu'
+
+[Phonetic Sandbox]
+English words to ignore: He, said
+Pinyin syllables found: wo, yao, qu
+Combined pinyin phrase: 我要去
+Full Chinese translation: 我要去
+Natural English meaning: I want to go / I am going to go
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 我要去 | Wǒ yào qù | I want to go |
+
+Word-by-word:
+- 我 (wǒ) = I
+- 要 (yào) = want / will
+- 去 (qù) = go
+
+[67] ✓ Test 23: Third person 'ta' ambiguity
+       Score: 1.00  |  7266ms
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Someone said ta qu le
+
+[Phonetic Sandbox]
+English words to ignore: Someone, said
+Pinyin syllables found: ta, qu, le
+Combined pinyin phrase: 他去了
+Full Chinese translation: 他去了
+Natural English meaning: He went.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 他去了 | Tā qù le | He went. |
+
+Word-by-word:
+- 他 (tā) = He
+- 去 (qù) = go
+- 了 (le) = [past tense particle]
+
+[68] ✓ Test 23: Third person 'ta' ambiguity
+       Score: 1.00  |  6458ms
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Someone said ta qu le
+
+[Phonetic Sandbox]
+English words to ignore: Someone, said
+Pinyin syllables found: ta, qu, le
+Combined pinyin phrase: 他去了
+Full Chinese translation: 他去了
+Natural English meaning: He went.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 他去了 | Tā qùle | He went. |
+
+Word-by-word:
+- 他 (tā) = He
+- 去 (qù) = go
+- 了 (le) = [past tense particle]
+
+[69] ✓ Test 23: Third person 'ta' ambiguity
+       Score: 1.00  |  6486ms
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Someone said ta qu le
+
+[Phonetic Sandbox]
+English words to ignore: Someone, said
+Pinyin syllables found: ta, qu, le
+Combined pinyin phrase: 他去了
+Full Chinese translation: 他去了
+Natural English meaning: He went.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 他去了 | Tā qùle | He went. |
+
+Word-by-word:
+- 他 (tā) = He
+- 去 (qù) = go
+- 了 (le) = [past tense particle]
+
+[70] ✓ Test 24: Plural 'men' with English
+       Score: 1.00  |  8588ms
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+They said wo men shi peng you
+
+[Phonetic Sandbox]
+English words to ignore: They, said
+Pinyin syllables found: wo, men, shi, peng, you
+Combined pinyin phrase: 我们是朋友
+Full Chinese translation: 我们是朋友
+Natural English meaning: We are friends.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 我们是朋友 | Wǒmen shì péngyǒu | We are friends |
+
+Word-by-word:
+- 我 (wǒ) = I
+- 们 (men) = [plural particle]
+- 是 (shì) = are/is
+- 朋 (péng) = friend
+- 友 (yǒu) = friend
+
+[71] ✗ Test 24: Plural 'men' with English
+       Score: 0.70  |  6551ms
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section
+       FAIL: literal_words
+
+They said wo men shi peng you
+
+[Phonetic Sandbox]
+English words to ignore: They, said
+Pinyin syllables found: wo, men, shi, peng, you
+Combined pinyin phrase: 我们是朋友
+Full Chinese translation: 我们是朋友
+Natural English meaning: We are friends.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 我们是朋友 | Wǒmen shì péngyǒu | We are friends. |
+
+Word-by-word:
+- 我们 (wǒmen) = we
+- 是 (shì) = are/is
+- 朋友 (péngyǒu) = friends
+
+[72] ✗ Test 24: Plural 'men' with English
+       Score: 0.70  |  6549ms
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section
+       FAIL: literal_words
+
+They said wo men shi peng you
+
+[Phonetic Sandbox]
+English words to ignore: They, said
+Pinyin syllables found: wo, men, shi, peng, you
+Combined pinyin phrase: 我们是朋友
+Full Chinese translation: 我们是朋友
+Natural English meaning: We are friends.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 我们是朋友 | Wǒmen shì péngyǒu | We are friends. |
+
+Word-by-word:
+- 我们 (wǒmen) = we
+- 是 (shì) = are/is
+- 朋友 (péngyǒu) = friends
+
+[73] ✓ Test 25: Modal 'hui' for future/ability
+       Score: 1.00  |  6648ms
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+He said wo hui qu
+
+[Phonetic Sandbox]
+English words to ignore: He, said
+Pinyin syllables found: wo, hui, qu
+Combined pinyin phrase: 我会去
+Full Chinese translation: 我会去
+Natural English meaning: I will go.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 我会去 | Wǒ huì qù | I will go. |
+
+Word-by-word:
+- 我 (wǒ) = I
+- 会 (huì) = will / can
+- 去 (qù) = go
+
+[74] ✓ Test 25: Modal 'hui' for future/ability
+       Score: 1.00  |  5388ms
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+He said wo hui qu
+
+[Phonetic Sandbox]
+English words to ignore: He, said
+Pinyin syllables found: wo, hui, qu
+Combined pinyin phrase: 我会去
+Full Chinese translation: 我会去
+Natural English meaning: I will go.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 我会去 | Wǒ huì qù | I will go. |
+
+Word-by-word:
+- 我 (wǒ) = I
+- 会 (huì) = will / can
+- 去 (qù) = go
+
+[75] ✓ Test 25: Modal 'hui' for future/ability
+       Score: 1.00  |  5438ms
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+He said wo hui qu
+
+[Phonetic Sandbox]
+English words to ignore: He, said
+Pinyin syllables found: wo, hui, qu
+Combined pinyin phrase: 我会去
+Full Chinese translation: 我会去
+Natural English meaning: I will go.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 我会去 | Wǒ huì qù | I will go. |
+
+Word-by-word:
+- 我 (wǒ) = I
+- 会 (huì) = will / can
+- 去 (qù) = go
+
+[76] ✓ Test 26: Clean: Put it away
+       Score: 1.00  |  8573ms
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Dad said shou qi lai
+
+[Phonetic Sandbox]
+English words to ignore: Dad, said
+Pinyin syllables found: shou, qi, lai
+Combined pinyin phrase: 收起来
+Full Chinese translation: 收起来
+Natural English meaning: Put it away / Tidy it up
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 收起来 | Shōu qǐ lái | Put it away |
+
+Word-by-word:
+- 收 (shōu) = collect / put away
+- 起 (qǐ) = up
+- 来 (lái) = come (directional complement)
+
+[77] ✓ Test 26: Clean: Put it away
+       Score: 1.00  |  7322ms
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Dad said shou qi lai
+
+[Phonetic Sandbox]
+English words to ignore: Dad, said
+Pinyin syllables found: shou, qi, lai
+Combined pinyin phrase: 收起来
+Full Chinese translation: 收起来
+Natural English meaning: Put it away / Tidy it up
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 收起来 | Shōu qǐ lái | Put it away |
+
+Word-by-word:
+- 收 (shōu) = collect / put away
+- 起 (qǐ) = up
+- 来 (lái) = come (directional complement)
+
+[78] ✓ Test 26: Clean: Put it away
+       Score: 1.00  |  7323ms
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Dad said shou qi lai
+
+[Phonetic Sandbox]
+English words to ignore: Dad, said
+Pinyin syllables found: shou, qi, lai
+Combined pinyin phrase: 收起来
+Full Chinese translation: 收起来
+Natural English meaning: Put it away / Tidy it up
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 收起来 | Shōu qǐ lái | Put it away |
+
+Word-by-word:
+- 收 (shōu) = collect / put away
+- 起 (qǐ) = up
+- 来 (lái) = come (directional complement)
+
+[79] ✗ Test 27: Dirty: Put it away
+       Score: 0.30  |  8819ms
+       PASS: phonetic_sandbox, table_exists, literal_section
+       FAIL: table_content, literal_words
+
+Dad said shou xi lai
+
+[Phonetic Sandbox]
+English words to ignore: Dad, said
+Pinyin syllables found: shou, xi, lai
+Combined pinyin phrase: 收洗来
+Full Chinese translation: 收洗来
+Natural English meaning: Collect and wash (or "come to collect and wash")
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 收洗来 | Shōu xǐ lái | Come to collect and wash |
+
+Word-by-word:
+- 收 (shōu) = collect / receive
+- 洗 (xǐ) = wash
+- 来 (lái) = come
+
+[80] ✗ Test 27: Dirty: Put it away
+       Score: 0.30  |  7366ms
+       PASS: phonetic_sandbox, table_exists, literal_section
+       FAIL: table_content, literal_words
+
+Dad said shou xi lai
+
+[Phonetic Sandbox]
+English words to ignore: Dad, said
+Pinyin syllables found: shou, xi, lai
+Combined pinyin phrase: 收洗来
+Full Chinese translation: 收洗来
+Natural English meaning: Collect and wash (coming/towards)
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 收洗来 | Shōu xǐ lái | Collect and wash (coming) |
+
+Word-by-word:
+- 收 (shōu) = collect / receive
+- 洗 (xǐ) = wash
+- 来 (lái) = come
+
+[81] ✗ Test 27: Dirty: Put it away
+       Score: 0.30  |  7297ms
+       PASS: phonetic_sandbox, table_exists, literal_section
+       FAIL: table_content, literal_words
+
+Dad said shou xi lai
+
+[Phonetic Sandbox]
+English words to ignore: Dad, said
+Pinyin syllables found: shou, xi, lai
+Combined pinyin phrase: 收洗来
+Full Chinese translation: 收洗来
+Natural English meaning: Collect and wash (coming/towards)
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 收洗来 | Shōu xǐ lái | Collect and wash (coming) |
+
+Word-by-word:
+- 收 (shōu) = collect / receive
+- 洗 (xǐ) = wash
+- 来 (lái) = come
+
+[82] ✓ Test 28: Clean: Go to sleep
+       Score: 1.00  |  7770ms
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Brother said qu shui jiao
+
+[Phonetic Sandbox]
+English words to ignore: Brother, said
+Pinyin syllables found: qu, shui, jiao
+Combined pinyin phrase: 去睡觉
+Full Chinese translation: 去睡觉
+Natural English meaning: Go to sleep
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 去睡觉 | qù shuìjiào | Go to sleep |
+
+Word-by-word:
+- 去 (qù) = go
+- 睡 (shuì) = sleep
+- 觉 (jiào) = sleep (suffix/noun)
+
+[83] ✓ Test 28: Clean: Go to sleep
+       Score: 1.00  |  6545ms
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Brother said qu shui jiao
+
+[Phonetic Sandbox]
+English words to ignore: Brother, said
+Pinyin syllables found: qu, shui, jiao
+Combined pinyin phrase: 去睡觉
+Full Chinese translation: 去睡觉
+Natural English meaning: Go to sleep
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 去睡觉 | qù shuìjiào | Go to sleep |
+
+Word-by-word:
+- 去 (qù) = go
+- 睡 (shuì) = sleep
+- 觉 (jiào) = sleep (suffix/noun)
+
+[84] ✓ Test 28: Clean: Go to sleep
+       Score: 1.00  |  6534ms
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Brother said qu shui jiao
+
+[Phonetic Sandbox]
+English words to ignore: Brother, said
+Pinyin syllables found: qu, shui, jiao
+Combined pinyin phrase: 去睡觉
+Full Chinese translation: 去睡觉
+Natural English meaning: Go to sleep
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 去睡觉 | qù shuìjiào | Go to sleep |
+
+Word-by-word:
+- 去 (qù) = go
+- 睡 (shuì) = sleep
+- 觉 (jiào) = sleep (suffix/noun)
+
+[85] ✗ Test 29: Dirty: Go to sleep (chu→qu)
+       Score: 0.30  |  8342ms
+       PASS: phonetic_sandbox, table_exists, literal_section
+       FAIL: table_content, literal_words
+
+Brother said chu shui jiao
+
+[Phonetic Sandbox]
+English words to ignore: Brother, said
+Pinyin syllables found: chu, shui, jiao
+Combined pinyin phrase: 出水饺
+Full Chinese translation: 出水饺
+Natural English meaning: Water dumplings (or dumplings coming out of water)
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 出水饺 | chū shuǐ jiǎo | Water dumplings |
+
+Word-by-word:
+- 出 (chū) = out / exit
+- 水 (shuǐ) = water
+- 饺 (jiǎo) = dumpling
+
+[86] ✗ Test 29: Dirty: Go to sleep (chu→qu)
+       Score: 0.30  |  6684ms
+       PASS: phonetic_sandbox, table_exists, literal_section
+       FAIL: table_content, literal_words
+
+Brother said chu shui jiao
+
+[Phonetic Sandbox]
+English words to ignore: Brother, said
+Pinyin syllables found: chu, shui, jiao
+Combined pinyin phrase: 出水饺
+Full Chinese translation: 出水饺
+Natural English meaning: Water dumplings (or dumplings coming out of water)
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 出水饺 | chū shuǐ jiǎo | Water dumplings |
+
+Word-by-word:
+- 出 (chū) = out / exit
+- 水 (shuǐ) = water
+- 饺 (jiǎo) = dumpling
+
+[87] ✗ Test 29: Dirty: Go to sleep (chu→qu)
+       Score: 0.30  |  6659ms
+       PASS: phonetic_sandbox, table_exists, literal_section
+       FAIL: table_content, literal_words
+
+Brother said chu shui jiao
+
+[Phonetic Sandbox]
+English words to ignore: Brother, said
+Pinyin syllables found: chu, shui, jiao
+Combined pinyin phrase: 出水饺
+Full Chinese translation: 出水饺
+Natural English meaning: Water dumplings (or dumplings coming out of water)
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 出水饺 | chū shuǐ jiǎo | Water dumplings |
+
+Word-by-word:
+- 出 (chū) = out / exit
+- 水 (shuǐ) = water
+- 饺 (jiǎo) = dumpling
+
+[88] ✓ Test 30: Clean: Good morning
+       Score: 1.00  |  8763ms
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Mom said zao shang hao
+
+[Phonetic Sandbox]
+English words to ignore: Mom, said
+Pinyin syllables found: zao shang hao
+Combined pinyin phrase: 早上好
+Full Chinese translation: 早上好
+Natural English meaning: Good morning
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 早上好 | Zǎoshang hǎo | Good morning |
+
+Word-by-word:
+- 早 (zǎo) = early
+- 上 (shang) = above/up (together with 早, it means morning)
+- 好 (hǎo) = good
+
+[89] ✓ Test 30: Clean: Good morning
+       Score: 1.00  |  7283ms
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Mom said zao shang hao
+
+[Phonetic Sandbox]
+English words to ignore: Mom, said
+Pinyin syllables found: zao shang hao
+Combined pinyin phrase: 早上好
+Full Chinese translation: 早上好
+Natural English meaning: Good morning
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 早上好 | Zǎoshang hǎo | Good morning |
+
+Word-by-word:
+- 早 (zǎo) = early
+- 上 (shang) = above/up (together with 早, it means morning)
+- 好 (hǎo) = good
+
+[90] ✓ Test 30: Clean: Good morning
+       Score: 1.00  |  7279ms
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Mom said zao shang hao
+
+[Phonetic Sandbox]
+English words to ignore: Mom, said
+Pinyin syllables found: zao shang hao
+Combined pinyin phrase: 早上好
+Full Chinese translation: 早上好
+Natural English meaning: Good morning
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 早上好 | Zǎoshang hǎo | Good morning |
+
+Word-by-word:
+- 早 (zǎo) = early
+- 上 (shang) = above/up (together with 早, it means morning)
+- 好 (hǎo) = good
+
+[91] ✗ Test 31: Dirty: Good morning
+       Score: 0.30  |  8404ms
+       PASS: phonetic_sandbox, table_exists, literal_section
+       FAIL: table_content, literal_words
+
+Mom said zao xiang hao
+
+[Phonetic Sandbox]
+English words to ignore: Mom, said
+Pinyin syllables found: zao, xiang, hao
+Combined pinyin phrase: 早想好
+Full Chinese translation: 早想好
+Natural English meaning: Thought of it early / Already decided early
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 早想好 | Zǎo xiǎng hǎo | Thought of it early |
+
+Word-by-word:
+- 早 (zǎo) = early
+- 想 (xiǎng) = think/want
+- 好 (hǎo) = good/done
+
+[92] ✗ Test 31: Dirty: Good morning
+       Score: 0.30  |  7108ms
+       PASS: phonetic_sandbox, table_exists, literal_section
+       FAIL: table_content, literal_words
+
+Mom said zao xiang hao
+
+[Phonetic Sandbox]
+English words to ignore: Mom, said
+Pinyin syllables found: zao, xiang, hao
+Combined pinyin phrase: 早想好
+Full Chinese translation: 早想好
+Natural English meaning: Thought of it early / Already decided early
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 早想好 | Zǎo xiǎng hǎo | Thought of it early |
+
+Word-by-word:
+- 早 (zǎo) = early
+- 想 (xiǎng) = think/want
+- 好 (hǎo) = good/done
+
+[93] ✗ Test 31: Dirty: Good morning
+       Score: 0.30  |  7173ms
+       PASS: phonetic_sandbox, table_exists, literal_section
+       FAIL: table_content, literal_words
+
+Mom said zao xiang hao
+
+[Phonetic Sandbox]
+English words to ignore: Mom, said
+Pinyin syllables found: zao, xiang, hao
+Combined pinyin phrase: 早想好
+Full Chinese translation: 早想好
+Natural English meaning: Thought of it early / Already decided early
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 早想好 | Zǎo xiǎng hǎo | Thought of it early |
+
+Word-by-word:
+- 早 (zǎo) = early
+- 想 (xiǎng) = think/want
+- 好 (hǎo) = good/done
+
+[94] ✓ Test 32: Clean: Eat breakfast
+       Score: 1.00  |  7011ms
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Mom said chi zao fan
+
+[Phonetic Sandbox]
+English words to ignore: Mom, said
+Pinyin syllables found: chi, zao, fan
+Combined pinyin phrase: 吃早饭
+Full Chinese translation: 吃早饭
+Natural English meaning: Eat breakfast
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 吃早饭 | chī zǎo fàn | Eat breakfast |
+
+Word-by-word:
+- 吃 (chī) = eat
+- 早 (zǎo) = early / morning
+- 饭 (fàn) = meal / rice
+
+[95] ✓ Test 32: Clean: Eat breakfast
+       Score: 1.00  |  6008ms
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Mom said chi zao fan
+
+[Phonetic Sandbox]
+English words to ignore: Mom, said
+Pinyin syllables found: chi, zao, fan
+Combined pinyin phrase: 吃早饭
+Full Chinese translation: 吃早饭
+Natural English meaning: Eat breakfast
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 吃早饭 | chī zǎo fàn | Eat breakfast |
+
+Word-by-word:
+- 吃 (chī) = eat
+- 早 (zǎo) = early / morning
+- 饭 (fàn) = meal / rice
+
+[96] ✓ Test 32: Clean: Eat breakfast
+       Score: 1.00  |  6054ms
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Mom said chi zao fan
+
+[Phonetic Sandbox]
+English words to ignore: Mom, said
+Pinyin syllables found: chi, zao, fan
+Combined pinyin phrase: 吃早饭
+Full Chinese translation: 吃早饭
+Natural English meaning: Eat breakfast
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 吃早饭 | chī zǎo fàn | Eat breakfast |
+
+Word-by-word:
+- 吃 (chī) = eat
+- 早 (zǎo) = early / morning
+- 饭 (fàn) = meal / rice
+
+[97] ✗ Test 33: Dirty: Eat breakfast (zoa→zao)
+       Score: 0.30  |  10249ms
+       PASS: phonetic_sandbox, table_exists, literal_section
+       FAIL: table_content, literal_words
+
+Mom said chi zoa fan
+
+[Phonetic Sandbox]
+English words to ignore: Mom, said
+Pinyin syllables found: chi, zuo, fan
+Combined pinyin phrase: 吃做饭
+Full Chinese translation: 吃做饭
+Natural English meaning: Eat making food (Note: In natural Chinese, this would usually be "做饭" (making food) or "吃饭" (eating food), but following the literal mapping of the provided pinyin: 吃做饭)
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 吃做饭 | chī zuò fàn | Eat making food |
+
+Word-by-word:
+- 吃 (chī) = eat
+- 做 (zuò) = make/do
+- 饭 (fàn) = meal/food
+
+[98] ✗ Test 33: Dirty: Eat breakfast (zoa→zao)
+       Score: 0.30  |  8873ms
+       PASS: phonetic_sandbox, table_exists, literal_section
+       FAIL: table_content, literal_words
+
+Mom said chi zoa fan
+
+[Phonetic Sandbox]
+English words to ignore: Mom, said
+Pinyin syllables found: chi, zuo, fan
+Combined pinyin phrase: 吃做饭
+Full Chinese translation: 吃做饭
+Natural English meaning: Eat making food (Note: In natural Chinese, this would usually be "做饭" (making food) or "吃饭" (eating food), but following the literal mapping of the provided pinyin: 吃做饭)
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 吃做饭 | chī zuò fàn | Eat making food |
+
+Word-by-word:
+- 吃 (chī) = eat
+- 做 (zuò) = make/do
+- 饭 (fàn) = meal/food
+
+[99] ✗ Test 33: Dirty: Eat breakfast (zoa→zao)
+       Score: 0.30  |  8913ms
+       PASS: phonetic_sandbox, table_exists, literal_section
+       FAIL: table_content, literal_words
+
+Mom said chi zoa fan
+
+[Phonetic Sandbox]
+English words to ignore: Mom, said
+Pinyin syllables found: chi, zuo, fan
+Combined pinyin phrase: 吃做饭
+Full Chinese translation: 吃做饭
+Natural English meaning: Eat making food (Note: In natural Chinese, this would usually be "做饭" (making food) or "吃饭" (eating food), but following the literal mapping of the provided pinyin: 吃做饭)
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 吃做饭 | chī zuò fàn | Eat making food |
+
+Word-by-word:
+- 吃 (chī) = eat
+- 做 (zuò) = make/do
+- 饭 (fàn) = meal/food
+
+[100] ✓ Test 34: Clean: Thank you
+       Score: 1.00  |  7290ms
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Friend said xie xie ni
+
+[Phonetic Sandbox]
+English words to ignore: Friend, said
+Pinyin syllables found: xie xie ni
+Combined pinyin phrase: 谢谢你
+Full Chinese translation: 谢谢你
+Natural English meaning: Thank you.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 谢谢你 | xièxie nǐ | Thank you |
+
+Word-by-word:
+- 谢 (xiè) = thank
+- 谢 (xie) = [reduplication particle]
+- 你 (nǐ) = you
+
+[101] ✓ Test 34: Clean: Thank you
+       Score: 1.00  |  5533ms
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Friend said xie xie ni
+
+[Phonetic Sandbox]
+English words to ignore: Friend, said
+Pinyin syllables found: xie xie ni
+Combined pinyin phrase: 谢谢你
+Full Chinese translation: 谢谢你
+Natural English meaning: Thank you.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 谢谢你 | xièxie nǐ | Thank you |
+
+Word-by-word:
+- 谢谢 (xièxie) = thank
+- 你 (nǐ) = you
+
+[102] ✓ Test 34: Clean: Thank you
+       Score: 1.00  |  5536ms
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Friend said xie xie ni
+
+[Phonetic Sandbox]
+English words to ignore: Friend, said
+Pinyin syllables found: xie xie ni
+Combined pinyin phrase: 谢谢你
+Full Chinese translation: 谢谢你
+Natural English meaning: Thank you.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 谢谢你 | xièxie nǐ | Thank you |
+
+Word-by-word:
+- 谢谢 (xièxie) = thank
+- 你 (nǐ) = you
+
+[103] ✓ Test 35: Dirty: Thank you
+       Score: 1.00  |  7068ms
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Friend said shie shie ni
+
+[Phonetic Sandbox]
+English words to ignore: Friend, said
+Pinyin syllables found: xie xie ni
+Combined pinyin phrase: 谢谢你
+Full Chinese translation: 谢谢你
+Natural English meaning: Thank you.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 谢谢你 | Xièxie nǐ | Thank you |
+
+Word-by-word:
+- 谢谢 (xièxie) = thank / thanks
+- 你 (nǐ) = you
+
+[104] ✓ Test 35: Dirty: Thank you
+       Score: 1.00  |  6350ms
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Friend said shie shie ni
+
+[Phonetic Sandbox]
+English words to ignore: Friend, said
+Pinyin syllables found: xie xie ni
+Combined pinyin phrase: 谢谢你
+Full Chinese translation: 谢谢你
+Natural English meaning: Thank you.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 谢谢你 | Xièxie nǐ | Thank you |
+
+Word-by-word:
+- 谢 (xiè) = thank
+- 谢 (xie) = [reduplication particle]
+- 你 (nǐ) = you
+
+[105] ✓ Test 35: Dirty: Thank you
+       Score: 1.00  |  6355ms
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Friend said shie shie ni
+
+[Phonetic Sandbox]
+English words to ignore: Friend, said
+Pinyin syllables found: xie xie ni
+Combined pinyin phrase: 谢谢你
+Full Chinese translation: 谢谢你
+Natural English meaning: Thank you.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 谢谢你 | Xièxie nǐ | Thank you |
+
+Word-by-word:
+- 谢 (xiè) = thank
+- 谢 (xie) = [reduplication particle]
+- 你 (nǐ) = you
+
+[106] ✓ Test 36: Clean: Go to school
+       Score: 1.00  |  6817ms
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Kid said qu shang xue
+
+[Phonetic Sandbox]
+English words to ignore: Kid, said
+Pinyin syllables found: qu, shang, xue
+Combined pinyin phrase: 去上学
+Full Chinese translation: 去上学
+Natural English meaning: Go to school
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 去上学 | qù shàng xué | Go to school |
+
+Word-by-word:
+- 去 (qù) = go
+- 上 (shàng) = attend/go up
+- 学 (xué) = study/school
+
+[107] ✓ Test 36: Clean: Go to school
+       Score: 1.00  |  5690ms
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Kid said qu shang xue
+
+[Phonetic Sandbox]
+English words to ignore: Kid, said
+Pinyin syllables found: qu, shang, xue
+Combined pinyin phrase: 去上学
+Full Chinese translation: 去上学
+Natural English meaning: Go to school
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 去上学 | qù shàng xué | Go to school |
+
+Word-by-word:
+- 去 (qù) = go
+- 上 (shàng) = attend/go up
+- 学 (xué) = study/school
+
+[108] ✓ Test 36: Clean: Go to school
+       Score: 1.00  |  5784ms
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Kid said qu shang xue
+
+[Phonetic Sandbox]
+English words to ignore: Kid, said
+Pinyin syllables found: qu, shang, xue
+Combined pinyin phrase: 去上学
+Full Chinese translation: 去上学
+Natural English meaning: Go to school
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 去上学 | qù shàng xué | Go to school |
+
+Word-by-word:
+- 去 (qù) = go
+- 上 (shàng) = attend/go up
+- 学 (xué) = study/school
+
+[109] ✗ Test 37: Dirty: Go to school (chu→qu)
+       Score: 0.30  |  8239ms
+       PASS: phonetic_sandbox, table_exists, literal_section
+       FAIL: table_content, literal_words
+
+Kid said chu shang xue
+
+[Phonetic Sandbox]
+English words to ignore: Kid, said
+Pinyin syllables found: chu, shang, xue
+Combined pinyin phrase: 出上学
+Full Chinese translation: 出上学
+Natural English meaning: Going to school (literally: out to school)
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 出上学 | chū shàng xué | Going to school |
+
+Word-by-word:
+- 出 (chū) = out / leave
+- 上 (shàng) = up / attend
+- 学 (xué) = study / school
+
+[110] ✗ Test 37: Dirty: Go to school (chu→qu)
+       Score: 0.30  |  6984ms
+       PASS: phonetic_sandbox, table_exists, literal_section
+       FAIL: table_content, literal_words
+
+Kid said chu shang xue
+
+[Phonetic Sandbox]
+English words to ignore: Kid, said
+Pinyin syllables found: chu, shang, xue
+Combined pinyin phrase: 出上学
+Full Chinese translation: 出上学
+Natural English meaning: Going to school (literally: out to school)
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 出上学 | chū shàng xué | Going to school |
+
+Word-by-word:
+- 出 (chū) = out / leave
+- 上 (shàng) = up / attend
+- 学 (xué) = study / school
+
+[111] ✗ Test 37: Dirty: Go to school (chu→qu)
+       Score: 0.30  |  7017ms
+       PASS: phonetic_sandbox, table_exists, literal_section
+       FAIL: table_content, literal_words
+
+Kid said chu shang xue
+
+[Phonetic Sandbox]
+English words to ignore: Kid, said
+Pinyin syllables found: chu, shang, xue
+Combined pinyin phrase: 出上学
+Full Chinese translation: 出上学
+Natural English meaning: Going to school (literally: out to school)
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 出上学 | chū shàng xué | Going to school |
+
+Word-by-word:
+- 出 (chū) = out / leave
+- 上 (shàng) = up / attend
+- 学 (xué) = study / school
+
+[112] ✗ Test 38: Clean: On a business trip
+       Score: 0.30  |  8097ms
+       PASS: phonetic_sandbox, table_exists, literal_section
+       FAIL: table_content, literal_words
+
+He said chu chai le
+
+[Phonetic Sandbox]
+English words to ignore: He, said
+Pinyin syllables found: chu, chai, le
+Combined pinyin phrase: 出彩了
+Full Chinese translation: 出彩了
+Natural English meaning: It was brilliant / It stood out.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 出彩了 | chū cǎi le | It was brilliant. |
+
+Word-by-word:
+- 出 (chū) = out / emerge
+- 彩 (cǎi) = color / brilliance
+- 了 (le) = [particle indicating completed action/change of state]
+
+[113] ✗ Test 38: Clean: On a business trip
+       Score: 0.30  |  6824ms
+       PASS: phonetic_sandbox, table_exists, literal_section
+       FAIL: table_content, literal_words
+
+He said chu chai le
+
+[Phonetic Sandbox]
+English words to ignore: He, said
+Pinyin syllables found: chu, chai, le
+Combined pinyin phrase: 出彩了
+Full Chinese translation: 出彩了
+Natural English meaning: It was brilliant / It stood out.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 出彩了 | chū cǎi le | It was brilliant. |
+
+Word-by-word:
+- 出 (chū) = out / emerge
+- 彩 (cǎi) = color / brilliance
+- 了 (le) = [particle indicating completed action/change of state]
+
+[114] ✗ Test 38: Clean: On a business trip
+       Score: 0.30  |  6839ms
+       PASS: phonetic_sandbox, table_exists, literal_section
+       FAIL: table_content, literal_words
+
+He said chu chai le
+
+[Phonetic Sandbox]
+English words to ignore: He, said
+Pinyin syllables found: chu, chai, le
+Combined pinyin phrase: 出彩了
+Full Chinese translation: 出彩了
+Natural English meaning: It was brilliant / It stood out.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 出彩了 | chū cǎi le | It was brilliant. |
+
+Word-by-word:
+- 出 (chū) = out / emerge
+- 彩 (cǎi) = color / brilliance
+- 了 (le) = [particle indicating completed action/change of state]
+
+[115] ✗ Test 39: Dirty: Go to school (que→xue)
+       Score: 0.30  |  6983ms
+       PASS: phonetic_sandbox, table_exists, literal_section
+       FAIL: table_content, literal_words
+
+Kid said qu shang que
+
+[Phonetic Sandbox]
+English words to ignore: Kid, said
+Pinyin syllables found: qu, shang, que
+Combined pinyin phrase: 去上课
+Full Chinese translation: 去上课
+Natural English meaning: Go to class
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 去上课 | qù shàngkè | Go to class |
+
+Word-by-word:
+- 去 (qù) = go
+- 上 (shàng) = attend/on
+- 课 (kè) = class
+
+[116] ✗ Test 39: Dirty: Go to school (que→xue)
+       Score: 0.30  |  5852ms
+       PASS: phonetic_sandbox, table_exists, literal_section
+       FAIL: table_content, literal_words
+
+Kid said qu shang que
+
+[Phonetic Sandbox]
+English words to ignore: Kid, said
+Pinyin syllables found: qu, shang, que
+Combined pinyin phrase: 去上课
+Full Chinese translation: 去上课
+Natural English meaning: Go to class
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 去上课 | qù shàngkè | Go to class |
+
+Word-by-word:
+- 去 (qù) = go
+- 上 (shàng) = attend/on
+- 课 (kè) = class
+
+[117] ✗ Test 39: Dirty: Go to school (que→xue)
+       Score: 0.30  |  5854ms
+       PASS: phonetic_sandbox, table_exists, literal_section
+       FAIL: table_content, literal_words
+
+Kid said qu shang que
+
+[Phonetic Sandbox]
+English words to ignore: Kid, said
+Pinyin syllables found: qu, shang, que
+Combined pinyin phrase: 去上课
+Full Chinese translation: 去上课
+Natural English meaning: Go to class
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 去上课 | qù shàngkè | Go to class |
+
+Word-by-word:
+- 去 (qù) = go
+- 上 (shàng) = attend/on
+- 课 (kè) = class
+
+[118] ✗ Test 40: Clean: What are you doing
+       Score: 0.70  |  9125ms
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section
+       FAIL: literal_words
+
+Teacher asked zai zuo shen me
+
+[Phonetic Sandbox]
+English words to ignore: Teacher, asked
+Pinyin syllables found: zai, zuo, shen, me
+Combined pinyin phrase: 在做什么
+Full Chinese translation: 在做什么
+Natural English meaning: What are you doing?
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 在做什么 | Zài zuò shénme | What are you doing? |
+
+Word-by-word:
+- 在 (zài) = at / in (progressive marker)
+- 做 (zuò) = do / make
+- 什 (shén) = what (part 1)
+- 么 (me) = what (part 2)
+
+[119] ✗ Test 40: Clean: What are you doing
+       Score: 0.70  |  7645ms
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section
+       FAIL: literal_words
+
+Teacher asked zai zuo shen me
+
+[Phonetic Sandbox]
+English words to ignore: Teacher, asked
+Pinyin syllables found: zai, zuo, shen, me
+Combined pinyin phrase: 在做什么
+Full Chinese translation: 在做什么
+Natural English meaning: What are you doing?
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 在做什么 | Zài zuò shénme | What are you doing? |
+
+Word-by-word:
+- 在 (zài) = at / in (progressive marker)
+- 做 (zuò) = do / make
+- 什 (shén) = what (part 1)
+- 么 (me) = what (part 2)
+
+[120] ✗ Test 40: Clean: What are you doing
+       Score: 0.70  |  7674ms
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section
+       FAIL: literal_words
+
+Teacher asked zai zuo shen me
+
+[Phonetic Sandbox]
+English words to ignore: Teacher, asked
+Pinyin syllables found: zai, zuo, shen, me
+Combined pinyin phrase: 在做什么
+Full Chinese translation: 在做什么
+Natural English meaning: What are you doing?
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 在做什么 | Zài zuò shénme | What are you doing? |
+
+Word-by-word:
+- 在 (zài) = at / in (progressive marker)
+- 做 (zuò) = do / make
+- 什 (shén) = what (part 1)
+- 么 (me) = what (part 2)
+
+[121] ✗ Test 41: Clean: What are you doing
+       Score: 0.70  |  7672ms
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section
+       FAIL: literal_words
+
+Teacher asked zai zuo shen me
+
+[Phonetic Sandbox]
+English words to ignore: Teacher, asked
+Pinyin syllables found: zai, zuo, shen, me
+Combined pinyin phrase: 在做什么
+Full Chinese translation: 在做什么
+Natural English meaning: What are you doing?
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 在做什么 | Zài zuò shénme | What are you doing? |
+
+Word-by-word:
+- 在 (zài) = at / in (progressive marker)
+- 做 (zuò) = do / make
+- 什 (shén) = what (part 1)
+- 么 (me) = what (part 2)
+
+[122] ✗ Test 41: Clean: What are you doing
+       Score: 0.70  |  7710ms
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section
+       FAIL: literal_words
+
+Teacher asked zai zuo shen me
+
+[Phonetic Sandbox]
+English words to ignore: Teacher, asked
+Pinyin syllables found: zai, zuo, shen, me
+Combined pinyin phrase: 在做什么
+Full Chinese translation: 在做什么
+Natural English meaning: What are you doing?
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 在做什么 | Zài zuò shénme | What are you doing? |
+
+Word-by-word:
+- 在 (zài) = at / in (progressive marker)
+- 做 (zuò) = do / make
+- 什 (shén) = what (part 1)
+- 么 (me) = what (part 2)
+
+[123] ✗ Test 41: Clean: What are you doing
+       Score: 0.70  |  7648ms
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section
+       FAIL: literal_words
+
+Teacher asked zai zuo shen me
+
+[Phonetic Sandbox]
+English words to ignore: Teacher, asked
+Pinyin syllables found: zai, zuo, shen, me
+Combined pinyin phrase: 在做什么
+Full Chinese translation: 在做什么
+Natural English meaning: What are you doing?
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 在做什么 | Zài zuò shénme | What are you doing? |
+
+Word-by-word:
+- 在 (zài) = at / in (progressive marker)
+- 做 (zuò) = do / make
+- 什 (shén) = what (part 1)
+- 么 (me) = what (part 2)
+
+[124] ✗ Test 42: Clean: Done washing
+       Score: 0.30  |  9854ms
+       PASS: phonetic_sandbox, table_exists, literal_section
+       FAIL: table_content, literal_words
+
+Sister said xi wan le
+
+[Phonetic Sandbox]
+English words to ignore: Sister, said
+Pinyin syllables found: xi, wan, le
+Combined pinyin phrase: 喜万了
+Full Chinese translation: 喜万了
+Natural English meaning: Joyous ten thousand times (or a specific idiomatic expression depending on context, but literally "Joy ten thousand [times]").
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 喜万了 | Xǐ wàn le | Joyous ten thousand times |
+
+Word-by-word:
+- 喜 (xǐ) = joy / happy
+- 万 (wàn) = ten thousand
+- 了 (le) = [particle indicating completed action or change of state]
+
+[125] ✗ Test 42: Clean: Done washing
+       Score: 0.30  |  7986ms
+       PASS: phonetic_sandbox, table_exists, literal_section
+       FAIL: table_content, literal_words
+
+Sister said xi wan le
+
+[Phonetic Sandbox]
+English words to ignore: Sister, said
+Pinyin syllables found: xi, wan, le
+Combined pinyin phrase: 喜万了
+Full Chinese translation: 喜万了
+Natural English meaning: Joyous ten thousand times (or a specific idiomatic expression depending on context).
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 喜万了 | Xǐ wàn le | Joyous ten thousand times |
+
+Word-by-word:
+- 喜 (xǐ) = joy / happy
+- 万 (wàn) = ten thousand
+- 了 (le) = [particle indicating completed action or change of state]
+
+[126] ✗ Test 42: Clean: Done washing
+       Score: 0.30  |  8006ms
+       PASS: phonetic_sandbox, table_exists, literal_section
+       FAIL: table_content, literal_words
+
+Sister said xi wan le
+
+[Phonetic Sandbox]
+English words to ignore: Sister, said
+Pinyin syllables found: xi, wan, le
+Combined pinyin phrase: 喜万了
+Full Chinese translation: 喜万了
+Natural English meaning: Joyous ten thousand times (or a specific idiomatic expression depending on context).
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 喜万了 | Xǐ wàn le | Joyous ten thousand times |
+
+Word-by-word:
+- 喜 (xǐ) = joy / happy
+- 万 (wàn) = ten thousand
+- 了 (le) = [particle indicating completed action or change of state]
+
+[127] ✗ Test 43: Dirty: Done washing
+       Score: 0.30  |  8727ms
+       PASS: phonetic_sandbox, table_exists, literal_section
+       FAIL: table_content, literal_words
+
+Sister said shi wan le while I was doing the dishes
+
+[Phonetic Sandbox]
+English words to ignore: Sister, said, while, I, was, doing, the, dishes
+Pinyin syllables found: shi, wan, le
+Combined pinyin phrase: 是晚了
+Full Chinese translation: 是晚了
+Natural English meaning: It is late.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 是晚了 | shì wǎn le | It is late. |
+
+Word-by-word:
+- 是 (shì) = is/am/are
+- 晚 (wǎn) = late
+- 了 (le) = [particle indicating change of state/completion]
+
+[128] ✗ Test 43: Dirty: Done washing
+       Score: 0.30  |  7656ms
+       PASS: phonetic_sandbox, table_exists, literal_section
+       FAIL: table_content, literal_words
+
+Sister said shi wan le while I was doing the dishes
+
+[Phonetic Sandbox]
+English words to ignore: Sister, said, while, I, was, doing, the, dishes
+Pinyin syllables found: shi, wan, le
+Combined pinyin phrase: 是晚了
+Full Chinese translation: 是晚了
+Natural English meaning: It is late.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 是晚了 | shì wǎn le | It is late. |
+
+Word-by-word:
+- 是 (shì) = is/am/are
+- 晚 (wǎn) = late
+- 了 (le) = [particle indicating change of state/completion]
+
+[129] ✗ Test 43: Dirty: Done washing
+       Score: 0.30  |  7683ms
+       PASS: phonetic_sandbox, table_exists, literal_section
+       FAIL: table_content, literal_words
+
+Sister said shi wan le while I was doing the dishes
+
+[Phonetic Sandbox]
+English words to ignore: Sister, said, while, I, was, doing, the, dishes
+Pinyin syllables found: shi, wan, le
+Combined pinyin phrase: 是晚了
+Full Chinese translation: 是晚了
+Natural English meaning: It is late.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 是晚了 | shì wǎn le | It is late. |
+
+Word-by-word:
+- 是 (shì) = is/am/are
+- 晚 (wǎn) = late
+- 了 (le) = [particle indicating change of state/completion]
+
+[130] ✓ Test 44: Clean: Got it / Understood
+       Score: 1.00  |  9363ms
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Student said zhi dao le
+
+[Phonetic Sandbox]
+English words to ignore: Student, said
+Pinyin syllables found: zhi, dao, le
+Combined pinyin phrase: 知道了
+Full Chinese translation: 知道了
+Natural English meaning: I know / Understood.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 知道了 | zhī dào le | I know / Understood. |
+
+Word-by-word:
+- 知 (zhī) = know
+- 道 (dào) = way/path (together "know")
+- 了 (le) = [particle indicating completed action/change of state]
+
+[131] ✓ Test 44: Clean: Got it / Understood
+       Score: 1.00  |  8428ms
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Student said zhi dao le
+
+[Phonetic Sandbox]
+English words to ignore: Student, said
+Pinyin syllables found: zhi, dao, le
+Combined pinyin phrase: 知道了
+Full Chinese translation: 知道了
+Natural English meaning: I know / Understood.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 知道了 | zhī dào le | I know / Understood. |
+
+Word-by-word:
+- 知 (zhī) = know
+- 道 (dào) = way/path (together with 知 means "to know")
+- 了 (le) = [particle indicating completed action/change of state]
+
+[132] ✓ Test 44: Clean: Got it / Understood
+       Score: 1.00  |  8397ms
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Student said zhi dao le
+
+[Phonetic Sandbox]
+English words to ignore: Student, said
+Pinyin syllables found: zhi, dao, le
+Combined pinyin phrase: 知道了
+Full Chinese translation: 知道了
+Natural English meaning: I know / Understood.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 知道了 | zhī dào le | I know / Understood. |
+
+Word-by-word:
+- 知 (zhī) = know
+- 道 (dào) = way/path (together with 知 means "to know")
+- 了 (le) = [particle indicating completed action/change of state]
+
+[133] ✓ Test 45: Dirty: Got it / Understood (zhir→zhi)
+       Score: 1.00  |  9916ms
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Student said zhir dao le
+
+[Phonetic Sandbox]
+English words to ignore: Student, said
+Pinyin syllables found: zhi, dao, le
+Combined pinyin phrase: 知道了
+Full Chinese translation: 知道了
+Natural English meaning: I know / Understood.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 知道了 | zhī dào le | I know / Understood. |
+
+Word-by-word:
+- 知 (zhī) = know
+- 道 (dào) = way/path (together with 知 means "to know")
+- 了 (le) = [particle indicating completed action/change of state]
+
+[134] ✓ Test 45: Dirty: Got it / Understood (zhir→zhi)
+       Score: 1.00  |  8367ms
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Student said zhir dao le
+
+[Phonetic Sandbox]
+English words to ignore: Student, said
+Pinyin syllables found: zhi, dao, le
+Combined pinyin phrase: 知道了
+Full Chinese translation: 知道了
+Natural English meaning: I know / Understood.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 知道了 | zhī dào le | I know / Understood. |
+
+Word-by-word:
+- 知 (zhī) = know
+- 道 (dào) = way/path (together with 知 means "to know")
+- 了 (le) = [particle indicating completed action/change of state]
+
+[135] ✓ Test 45: Dirty: Got it / Understood (zhir→zhi)
+       Score: 1.00  |  8414ms
+       PASS: phonetic_sandbox, table_exists, table_content, literal_section, literal_words
+       FAIL: (none)
+
+Student said zhir dao le
+
+[Phonetic Sandbox]
+English words to ignore: Student, said
+Pinyin syllables found: zhi, dao, le
+Combined pinyin phrase: 知道了
+Full Chinese translation: 知道了
+Natural English meaning: I know / Understood.
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 知道了 | zhī dào le | I know / Understood. |
+
+Word-by-word:
+- 知 (zhī) = know
+- 道 (dào) = way/path (together with 知 means "to know")
+- 了 (le) = [particle indicating completed action/change of state]
+
+[136] ✗ Test 46: Dirty: Good morning (shong→shang)
+       Score: 0.30  |  8228ms
+       PASS: phonetic_sandbox, table_exists, literal_section
+       FAIL: table_content, literal_words
+
+Mom said zao shong hao
+
+[Phonetic Sandbox]
+English words to ignore: Mom, said
+Pinyin syllables found: zao, shong, hao
+Combined pinyin phrase: 早诵好
+Full Chinese translation: 早诵好
+Natural English meaning: Good morning recitation (or Good morning)
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 早诵好 | Zǎo sòng hǎo | Good morning recitation |
+
+Word-by-word:
+- 早 (zǎo) = early / morning
+- 诵 (sòng) = recite
+- 好 (hǎo) = good
+
+[137] ✗ Test 46: Dirty: Good morning (shong→shang)
+       Score: 0.30  |  7301ms
+       PASS: phonetic_sandbox, table_exists, literal_section
+       FAIL: table_content, literal_words
+
+Mom said zao shong hao
+
+[Phonetic Sandbox]
+English words to ignore: Mom, said
+Pinyin syllables found: zao, shong, hao
+Combined pinyin phrase: 早诵好
+Full Chinese translation: 早诵好
+Natural English meaning: Good morning recitation (or "Good morning" in a specific context)
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 早诵好 | Zǎo sòng hǎo | Good morning recitation |
+
+Word-by-word:
+- 早 (zǎo) = early / morning
+- 诵 (sòng) = to recite
+- 好 (hǎo) = good
+
+[138] ✗ Test 46: Dirty: Good morning (shong→shang)
+       Score: 0.30  |  7302ms
+       PASS: phonetic_sandbox, table_exists, literal_section
+       FAIL: table_content, literal_words
+
+Mom said zao shong hao
+
+[Phonetic Sandbox]
+English words to ignore: Mom, said
+Pinyin syllables found: zao, shong, hao
+Combined pinyin phrase: 早诵好
+Full Chinese translation: 早诵好
+Natural English meaning: Good morning recitation (or "Good morning" in a specific context)
+
+---
+
+Now output the results:
+
+| Chinese | Pinyin | English |
+| :--- | :--- | :--- |
+| 早诵好 | Zǎo sòng hǎo | Good morning recitation |
+
+Word-by-word:
+- 早 (zǎo) = early / morning
+- 诵 (sòng) = to recite
+- 好 (hǎo) = good
+
+
+============================================================
+BENCHMARK COMPLETE
+============================================================
+Duration: 1004.0s
+Total requests: 138
+Completed: 138
+Failed: 0
+
+Results saved to: results/20260724_155934
+  - summary.json (overview)
+  - results.json (detailed grading)
+  - results.csv (for analysis)
+  - raw_responses.json (full model outputs)
+  - config.yaml (run configuration)
+
+============================================================
+BENCHMARK SUMMARY
+============================================================
+Total tests:     138
+Passed:          85 (61.6%)
+Failed:          53
+Avg Score:       77.83%
+Avg Latency:     7268ms
+Avg Tokens:      540
+Models:          /models/.oldmodels/gemma-4-12B-it-Q6_K_L.gguf
+Providers:       vllm
+Categories:      english_names, comparison_bi, ba_particle, potential_complement, quotes, question, guo_particle, multiple_names, mixed_english, directional_complement, adverbial_hen, particle_ne, modal_hui, time_expression, de_particle, pure_pinyin, english_verb_colon, corrected_pinyin, causative_rang, measure_word, plural_men, basic_command, ta_ambiguity, resultative_complement, negative_command, passive_bei
+
+Criterion Pass Rates:
+  literal_section          : 100.0%
+  literal_words            :  63.8%
+  phonetic_sandbox         : 100.0%
+  table_content            :  71.7%
+  table_exists             : 100.0%
+
+By Category:
+  adverbial_hen            : 3/3 (100.0%)
+  ba_particle              : 0/3 (0.0%)
+  basic_command            : 3/3 (100.0%)
+  causative_rang           : 0/3 (0.0%)
+  comparison_bi            : 3/3 (100.0%)
+  corrected_pinyin         : 27/63 (42.9%)
+  de_particle              : 3/3 (100.0%)
+  directional_complement   : 3/3 (100.0%)
+  english_names            : 3/3 (100.0%)
+  english_verb_colon       : 3/3 (100.0%)
+  guo_particle             : 3/3 (100.0%)
+  measure_word             : 3/3 (100.0%)
+  mixed_english            : 0/3 (0.0%)
+  modal_hui                : 3/3 (100.0%)
+  multiple_names           : 3/3 (100.0%)
+  negative_command         : 3/3 (100.0%)
+  particle_ne              : 3/3 (100.0%)
+  passive_bei              : 3/3 (100.0%)
+  plural_men               : 1/3 (33.3%)
+  potential_complement     : 3/3 (100.0%)
+  pure_pinyin              : 3/3 (100.0%)
+  question                 : 0/3 (0.0%)
+  quotes                   : 3/3 (100.0%)
+  resultative_complement   : 3/3 (100.0%)
+  ta_ambiguity             : 3/3 (100.0%)
+  time_expression          : 0/3 (0.0%)

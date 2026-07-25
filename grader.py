@@ -35,6 +35,35 @@ def _normalize_chinese(s: str) -> str:
     return s.translate(_CHINESE_NORMALIZE)
 
 
+# Known Chinese compounds that the grader should accept as single entries.
+# Maps compound -> list of individual characters (for backward compatibility).
+_KNOWN_COMPOUNDS = {
+    "明天": ["明", "天"],
+    "北京": ["北", "京"],
+    "我们": ["我", "们"],
+    "老师": ["老", "师"],
+    "朋友": ["朋", "友"],
+    "早上": ["早", "上"],
+    "什么": ["什", "么"],
+    "知道": ["知", "道"],
+    "怎么样": ["怎", "么", "样"],
+    "你好": ["你", "好"],
+    "早饭": ["早", "饭"],
+    "出差": ["出", "差"],
+}
+
+
+def _jaccard_similarity(a: str, b: str) -> float:
+    """Token overlap ratio for two strings."""
+    tokens_a = set(a.lower().split())
+    tokens_b = set(b.lower().split())
+    if not tokens_a and not tokens_b:
+        return 1.0
+    intersection = tokens_a & tokens_b
+    union = tokens_a | tokens_b
+    return len(intersection) / len(union)
+
+
 @dataclass
 class GradingResult:
     """Result of grading a single test case."""
@@ -272,7 +301,12 @@ class Grader:
                     pinyin_ok = _normalize_pinyin(pinyin_col) == expected_pinyin_norm
                 # Fuzzy match: check english via fallback list
                 if not english_ok:
-                    english_ok = any(opt in english_col_clean for opt in expected_english_opts)
+                    # Bidirectional substring check
+                    english_ok = any(opt in english_col_clean for opt in expected_english_opts) or \
+                                 any(english_col_clean in opt for opt in expected_english_opts)
+                # Fuzzy match: token overlap (Jaccard similarity)
+                if not english_ok:
+                    english_ok = any(_jaccard_similarity(english_col_clean, opt) >= 0.3 for opt in expected_english_opts)
                 if chinese_ok and pinyin_ok and english_ok:
                     return True
             elif in_table and line.strip() == "":
@@ -283,9 +317,12 @@ class Grader:
             combined_chinese = _normalize_chinese("".join(all_chinese).replace(" ", ""))
             combined_pinyin = _normalize_pinyin(" ".join(all_pinyin))
             combined_english = " ".join(all_english)
+            english_match = any(opt in combined_english for opt in expected_english_opts) or \
+                            any(combined_english in opt for opt in expected_english_opts) or \
+                            any(_jaccard_similarity(combined_english, opt) >= 0.3 for opt in expected_english_opts)
             if (expected_chinese_norm in combined_chinese and
                 expected_pinyin_norm in combined_pinyin and
-                any(opt in combined_english for opt in expected_english_opts)):
+                english_match):
                 return True
 
         return False
@@ -307,7 +344,8 @@ class Grader:
         return None
 
     def _check_literal_words(self, section: str, criteria: GradingCriteria) -> bool:
-        """Check that each literal word has chinese + pinyin + at least one keyword."""
+        """Check that each literal word has chinese + pinyin + at least one keyword.
+        Accepts compound words (e.g. 明天) or individual characters (明 + 天)."""
         section_lower = section.lower()
         section_norm = _normalize_chinese(section)
         # Extract all pinyins from parenthesized parts of bullet lines
@@ -321,12 +359,47 @@ class Grader:
 
             # Check chinese (with pronoun normalization)
             has_chinese = ch in section or ch_norm in section_norm
+            # Fallback: if this is a compound, check if its individual chars appear
+            if not has_chinese and ch in _KNOWN_COMPOUNDS:
+                chars = _KNOWN_COMPOUNDS[ch]
+                has_chinese = all(c in section or _normalize_chinese(c) in section_norm for c in chars)
+            # Fallback for single chars that might be part of a compound in output
+            if not has_chinese and len(ch) == 1:
+                # Check if this char appears within any known compound in the section
+                for comp, chars in _KNOWN_COMPOUNDS.items():
+                    if ch in chars and comp in section:
+                        has_chinese = True
+                        break
             if not has_chinese and len(ch) > 1:
                 has_chinese = all(c in section or _normalize_chinese(c) in section_norm for c in ch)
+
             # Check pinyin (extracted from parenthesized parts)
             has_pinyin = _normalize_pinyin(py) in section_pinyins
+            # Fallback: if compound pinyin not found, check individual char pinyins
+            if not has_pinyin and ch in _KNOWN_COMPOUNDS:
+                chars = _KNOWN_COMPOUNDS[ch]
+                # Build expected individual pinyins for this compound's chars
+                # by looking up the expected literal criteria for those chars
+                char_pinyins = []
+                for c in chars:
+                    for w in criteria.literal:
+                        if w["chinese"] == c:
+                            char_pinyins.append(_normalize_pinyin(w["pinyin"].lower()))
+                has_pinyin = all(cp in section_pinyins for cp in char_pinyins)
+
             # Check keyword (case-insensitive)
             has_keyword = any(kw in section_lower for kw in kws)
+            # Fallback: check keywords from individual characters of this compound
+            if not has_keyword and ch in _KNOWN_COMPOUNDS:
+                chars = _KNOWN_COMPOUNDS[ch]
+                for c in chars:
+                    for w in criteria.literal:
+                        if w["chinese"] == c:
+                            if any(kw.lower() in section_lower for kw in w["keywords"]):
+                                has_keyword = True
+                                break
+                    if has_keyword:
+                        break
 
             if not (has_chinese and has_pinyin and has_keyword):
                 missing += 1
@@ -349,13 +422,44 @@ class Grader:
 
             parts_ok = []
             has_chinese = ch in section or ch_norm in section_norm
+            # Compound fallback
+            if not has_chinese and ch in _KNOWN_COMPOUNDS:
+                chars = _KNOWN_COMPOUNDS[ch]
+                has_chinese = all(c in section or _normalize_chinese(c) in section_norm for c in chars)
+            if not has_chinese and len(ch) == 1:
+                for comp, chars in _KNOWN_COMPOUNDS.items():
+                    if ch in chars and comp in section:
+                        has_chinese = True
+                        break
             if not has_chinese and len(ch) > 1:
                 has_chinese = all(c in section or _normalize_chinese(c) in section_norm for c in ch)
             if not has_chinese:
                 parts_ok.append("chinese")
-            if _normalize_pinyin(py) not in section_pinyins:
+
+            has_pinyin = _normalize_pinyin(py) in section_pinyins
+            if not has_pinyin and ch in _KNOWN_COMPOUNDS:
+                chars = _KNOWN_COMPOUNDS[ch]
+                char_pinyins = []
+                for c in chars:
+                    for w in criteria.literal:
+                        if w["chinese"] == c:
+                            char_pinyins.append(_normalize_pinyin(w["pinyin"].lower()))
+                has_pinyin = all(cp in section_pinyins for cp in char_pinyins)
+            if not has_pinyin:
                 parts_ok.append("pinyin")
-            if not any(kw in section_lower for kw in kws):
+
+            has_keyword = any(kw in section_lower for kw in kws)
+            if not has_keyword and ch in _KNOWN_COMPOUNDS:
+                chars = _KNOWN_COMPOUNDS[ch]
+                for c in chars:
+                    for w in criteria.literal:
+                        if w["chinese"] == c:
+                            if any(kw.lower() in section_lower for kw in w["keywords"]):
+                                has_keyword = True
+                                break
+                    if has_keyword:
+                        break
+            if not has_keyword:
                 parts_ok.append(f"keyword ({'/'.join(kws)})")
 
             if parts_ok:

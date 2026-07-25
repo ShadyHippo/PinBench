@@ -1,7 +1,7 @@
 {
-  "version": "1.1",
+  "version": "1.3",
   "description": "Pinyin-to-Character Conversion Benchmark for Small Models",
-  "system_prompt": "**Role:** Expert Mandarin Chinese Tutor.\n\n**CORE INSTRUCTION:**\nYou are a Pinyin-to-Character converter. You process only Pinyin syllables.\nIGNORE ALL ENGLISH WORDS. If the input contains English words or names, skip them entirely. Do not translate them or map them to characters.\n\nRULES:\n- NEVER translate English words like \"Grandma\", \"told\", \"said\", \"asked\", \"replied\", etc.\n- NEVER translate English names like \"John\", \"Joe\", \"Jane\", \"Mary\", \"Sue\", \"Tom\", \"Alice\", etc.\n- Map EVERY Pinyin syllable to its most literal Chinese character.\n- Do NOT omit any pinyin syllables, including particles like ba (吧), ma (吗), le (了), ne (呢), etc.\n- The pinyin syllables form a coherent Chinese phrase. Use the full context to identify the intended characters. If individual syllables are ambiguous, let the phrase-level meaning guide your mapping.\n- The output must contain characters only for the pinyin. Never add characters for English names or verbs.\n\n---\n\n[Phonetic Sandbox]\nUse this space to work through the input step by step:\n\nEnglish words to ignore:\nPinyin syllables found:\nCombined pinyin phrase:\nFull Chinese translation:\nNatural English meaning:\n\n---\n\nNow output the results:\n\n| Chinese | Pinyin | English |\n| :--- | :--- | :--- |\n| [Full Chinese phrase] | [Tone-marked Pinyin] | [Natural English translation] |\n\nWord-by-word:\n- [Character] ([Pinyin]) = [Literal English meaning]\n- [Character] ([Pinyin]) = [Literal English meaning]\n- ...continue for each syllable",
+  "system_prompt": "**Role:** Expert Mandarin Chinese Tutor.\n\n**CORE INSTRUCTION:**\nYou are a Pinyin-to-Character converter. You process only Pinyin syllables.\nIGNORE ALL ENGLISH WORDS. If the input contains English words or names, skip them entirely. Do not translate them or map them to characters.\n\nRULES:\n- NEVER translate English words like \"Grandma\", \"told\", \"said\", \"asked\", \"replied\", etc.\n- NEVER translate English names like \"John\", \"Joe\", \"Jane\", \"Mary\", \"Sue\", \"Tom\", \"Alice\", etc.\n- Map every pinyin syllable to Chinese. Do NOT omit any pinyin syllables, including particles like ba (吧), ma (吗), le (了), ne (呢), etc.\n- COMPOUND WORDS: ALWAYS group standard Chinese compound words into a single entry in the word-by-word section. For example, \"wo men\" → 我们 (NOT 我 + 们), \"ming tian\" → 明天 (NOT 明 + 天), \"lao shi\" → 老师 (NOT 老 + 师), \"peng you\" → 朋友 (NOT 朋 + 友), \"shen me\" → 什么 (NOT 什 + 么), \"zhi dao\" → 知道 (NOT 知 + 道), \"zao shang\" → 早上 (NOT 早 + 上). Write compounds the way a native speaker would read them.\n- The pinyin syllables form a coherent Chinese phrase. Use the full context to identify the intended characters. If individual syllables are ambiguous, let the phrase-level meaning guide your mapping.\n- The output must contain characters only for the pinyin. Never add characters for English names or verbs.\n\n---\n\n[Phonetic Sandbox]\nUse this space to work through the input step by step:\n\nEnglish words to ignore:\nPinyin syllables found:\nCombined pinyin phrase:\nFull Chinese translation:\nNatural English meaning:\n\n---\n\nNow output the results:\n\n| Chinese | Pinyin | English |\n| :--- | :--- | :--- |\n| [Full Chinese phrase] | [Tone-marked Pinyin] | [Natural English translation] |\n\nWord-by-word:\n- [Chinese word or compound] ([Pinyin]) = [Literal English meaning]\n- [Chinese word or compound] ([Pinyin]) = [Literal English meaning]\n- ...continue for each word — grouping compounds like 明天, 我们, 什么 as single entries",
   "tests": [
     {
       "id": 1,
@@ -160,28 +160,11 @@
       },
       "literal": [
         {
-          "chinese": "怎",
-          "pinyin": "zěn",
+          "chinese": "怎么样",
+          "pinyin": "zěnmeyàng",
           "keywords": [
-            "how"
-          ]
-        },
-        {
-          "chinese": "么",
-          "pinyin": "me",
-          "keywords": [
-            "particle",
-            "suffix"
-          ]
-        },
-        {
-          "chinese": "样",
-          "pinyin": "yàng",
-          "keywords": [
-            "kind",
-            "manner",
-            "way",
-            "appearance"
+            "how",
+            "how about"
           ]
         }
       ]
@@ -236,7 +219,8 @@
         "english": [
           "I will go tomorrow",
           "I'll go tomorrow",
-          "I go tomorrow"
+          "I go tomorrow",
+          "I am going tomorrow"
         ]
       },
       "literal": [
@@ -249,19 +233,10 @@
           ]
         },
         {
-          "chinese": "明",
-          "pinyin": "míng",
+          "chinese": "明天",
+          "pinyin": "míngtiān",
           "keywords": [
-            "bright",
-            "next"
-          ]
-        },
-        {
-          "chinese": "天",
-          "pinyin": "tiān",
-          "keywords": [
-            "day",
-            "sky"
+            "tomorrow"
           ]
         },
         {
@@ -400,19 +375,10 @@
           ]
         },
         {
-          "chinese": "北",
-          "pinyin": "běi",
+          "chinese": "北京",
+          "pinyin": "běijīng",
           "keywords": [
-            "north",
-            "bei"
-          ]
-        },
-        {
-          "chinese": "京",
-          "pinyin": "jīng",
-          "keywords": [
-            "capital",
-            "jing"
+            "beijing"
           ]
         }
       ]
@@ -432,19 +398,11 @@
       },
       "literal": [
         {
-          "chinese": "我",
-          "pinyin": "wǒ",
+          "chinese": "我们",
+          "pinyin": "wǒmen",
           "keywords": [
-            "i",
-            "me"
-          ]
-        },
-        {
-          "chinese": "们",
-          "pinyin": "men",
-          "keywords": [
-            "plural",
-            "marker"
+            "we",
+            "us"
           ]
         },
         {
@@ -481,17 +439,11 @@
       },
       "literal": [
         {
-          "chinese": "你",
-          "pinyin": "nǐ",
+          "chinese": "你好",
+          "pinyin": "nǐhǎo",
           "keywords": [
-            "you"
-          ]
-        },
-        {
-          "chinese": "好",
-          "pinyin": "hǎo",
-          "keywords": [
-            "good"
+            "hello",
+            "hi"
           ]
         }
       ]
@@ -526,21 +478,10 @@
           ]
         },
         {
-          "chinese": "知",
-          "pinyin": "zhī",
+          "chinese": "知道",
+          "pinyin": "zhīdào",
           "keywords": [
-            "know",
-            "knowledge"
-          ]
-        },
-        {
-          "chinese": "道",
-          "pinyin": "dào",
-          "keywords": [
-            "way",
-            "dao",
-            "know",
-            "knowledge"
+            "know"
           ]
         }
       ]
@@ -821,8 +762,8 @@
       "category": "passive_bei",
       "prompt": "She said shu bei wo kan le",
       "table": {
-        "chinese": "书被我看",
-        "pinyin": "shū bèi wǒ kān",
+        "chinese": "书被我看了",
+        "pinyin": "shū bèi wǒ kàn le",
         "english": [
           "The book was seen by me",
           "I saw the book",
@@ -881,20 +822,10 @@
       },
       "literal": [
         {
-          "chinese": "老",
-          "pinyin": "lǎo",
+          "chinese": "老师",
+          "pinyin": "lǎoshī",
           "keywords": [
-            "old",
-            "lao"
-          ]
-        },
-        {
-          "chinese": "师",
-          "pinyin": "shī",
-          "keywords": [
-            "teacher",
-            "master",
-            "shi"
+            "teacher"
           ]
         },
         {
@@ -1056,19 +987,11 @@
       },
       "literal": [
         {
-          "chinese": "我",
-          "pinyin": "wǒ",
+          "chinese": "我们",
+          "pinyin": "wǒmen",
           "keywords": [
-            "i",
-            "me"
-          ]
-        },
-        {
-          "chinese": "们",
-          "pinyin": "men",
-          "keywords": [
-            "plural",
-            "marker"
+            "we",
+            "us"
           ]
         },
         {
@@ -1082,15 +1005,8 @@
           ]
         },
         {
-          "chinese": "朋",
-          "pinyin": "péng",
-          "keywords": [
-            "friend"
-          ]
-        },
-        {
-          "chinese": "友",
-          "pinyin": "yǒu",
+          "chinese": "朋友",
+          "pinyin": "péngyou",
           "keywords": [
             "friend"
           ]
@@ -1306,19 +1222,10 @@
       },
       "literal": [
         {
-          "chinese": "早",
-          "pinyin": "zǎo",
+          "chinese": "早上",
+          "pinyin": "zǎoshang",
           "keywords": [
-            "morning",
-            "early"
-          ]
-        },
-        {
-          "chinese": "上",
-          "pinyin": "shang",
-          "keywords": [
-            "up",
-            "on"
+            "morning"
           ]
         },
         {
@@ -1344,19 +1251,10 @@
       },
       "literal": [
         {
-          "chinese": "早",
-          "pinyin": "zǎo",
+          "chinese": "早上",
+          "pinyin": "zǎoshang",
           "keywords": [
-            "morning",
-            "early"
-          ]
-        },
-        {
-          "chinese": "上",
-          "pinyin": "shang",
-          "keywords": [
-            "up",
-            "on"
+            "morning"
           ]
         },
         {
@@ -1389,20 +1287,10 @@
           ]
         },
         {
-          "chinese": "早",
-          "pinyin": "zǎo",
+          "chinese": "早饭",
+          "pinyin": "zǎofàn",
           "keywords": [
-            "morning",
-            "early"
-          ]
-        },
-        {
-          "chinese": "饭",
-          "pinyin": "fàn",
-          "keywords": [
-            "rice",
-            "meal",
-            "food"
+            "breakfast"
           ]
         }
       ]
@@ -1617,21 +1505,11 @@
       },
       "literal": [
         {
-          "chinese": "出",
-          "pinyin": "chū",
+          "chinese": "出差",
+          "pinyin": "chūchāi",
           "keywords": [
-            "go out",
-            "leave",
-            "out"
-          ]
-        },
-        {
-          "chinese": "差",
-          "pinyin": "chāi",
-          "keywords": [
-            "trip",
-            "errand",
-            "business"
+            "business trip",
+            "on business"
           ]
         },
         {
@@ -1717,18 +1595,10 @@
           ]
         },
         {
-          "chinese": "什",
-          "pinyin": "shén",
+          "chinese": "什么",
+          "pinyin": "shénme",
           "keywords": [
             "what"
-          ]
-        },
-        {
-          "chinese": "么",
-          "pinyin": "me",
-          "keywords": [
-            "suffix",
-            "particle"
           ]
         }
       ]
@@ -1765,18 +1635,10 @@
           ]
         },
         {
-          "chinese": "什",
-          "pinyin": "shén",
+          "chinese": "什么",
+          "pinyin": "shénme",
           "keywords": [
             "what"
-          ]
-        },
-        {
-          "chinese": "么",
-          "pinyin": "me",
-          "keywords": [
-            "suffix",
-            "particle"
           ]
         }
       ]
@@ -1879,20 +1741,10 @@
       },
       "literal": [
         {
-          "chinese": "知",
-          "pinyin": "zhī",
+          "chinese": "知道",
+          "pinyin": "zhīdào",
           "keywords": [
-            "know",
-            "knowledge"
-          ]
-        },
-        {
-          "chinese": "道",
-          "pinyin": "dào",
-          "keywords": [
-            "way",
-            "path",
-            "dao"
+            "know"
           ]
         },
         {
@@ -1922,20 +1774,10 @@
       },
       "literal": [
         {
-          "chinese": "知",
-          "pinyin": "zhī",
+          "chinese": "知道",
+          "pinyin": "zhīdào",
           "keywords": [
-            "know",
-            "knowledge"
-          ]
-        },
-        {
-          "chinese": "道",
-          "pinyin": "dào",
-          "keywords": [
-            "way",
-            "path",
-            "dao"
+            "know"
           ]
         },
         {
@@ -1963,19 +1805,10 @@
       },
       "literal": [
         {
-          "chinese": "早",
-          "pinyin": "zǎo",
+          "chinese": "早上",
+          "pinyin": "zǎoshang",
           "keywords": [
-            "morning",
-            "early"
-          ]
-        },
-        {
-          "chinese": "上",
-          "pinyin": "shang",
-          "keywords": [
-            "up",
-            "on"
+            "morning"
           ]
         },
         {
