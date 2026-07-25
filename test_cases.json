@@ -1316,20 +1316,10 @@
           ]
         },
         {
-          "chinese": "早",
-          "pinyin": "zǎo",
+          "chinese": "早饭",
+          "pinyin": "zǎofàn",
           "keywords": [
-            "morning",
-            "early"
-          ]
-        },
-        {
-          "chinese": "饭",
-          "pinyin": "fàn",
-          "keywords": [
-            "rice",
-            "meal",
-            "food"
+            "breakfast"
           ]
         }
       ]
